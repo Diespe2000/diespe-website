@@ -19,17 +19,17 @@
 <header class="site-header" role="banner">
 	<div class="container header-inner">
 		<div class="site-branding">
-			<?php if ( has_custom_logo() ) : ?>
-				<?php the_custom_logo(); ?>
-			<?php else : ?>
-				<div class="site-identity">
-					<p class="site-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><span class="die">DIE</span><span class="s">S</span><span class="pe">PE</span></a>
-					<span class="site-subline">omgevingsprojecten</span>
-				</p>
-				</div>
-			<?php endif; ?>
-
+			<?php
+			if ( has_custom_logo() ) {
+				the_custom_logo();
+			} else {
+				printf(
+					'<a href="%1$s" class="custom-logo-link" rel="home"><img src="%2$s" alt="DIESPE omgevingsprojecten" class="custom-logo"></a>',
+					esc_url( home_url( '/' ) ),
+					esc_url( get_template_directory_uri() . '/assets/img/logo-diespe.svg' )
+				);
+			}
+			?>
 		</div>
 
 		<button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">

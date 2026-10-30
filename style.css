@@ -136,24 +136,13 @@ p { margin: 0 0 1.2em; }
 
 .site-branding { display: flex; align-items: center; gap: 12px; }
 
-.custom-logo { max-height: 56px; width: auto; }
+.custom-logo { max-height: 64px; width: auto; }
+.custom-logo-link { display: inline-block; }
 
-/* Woordmerk zonder geüpload logo */
+/* Alleen als er noch custom logo noch fallback-SVG geladen is: tekstfallback */
 .site-title { margin: 0; font-size: 1.55rem; letter-spacing: 0.02em; font-family: var(--diespe-logo-font); font-weight: 800; font-style: italic; }
 .site-title a { color: var(--diespe-blue); }
 .site-title a:hover { text-decoration: none; }
-.site-title .die { color: var(--diespe-orange); }
-.site-title .s { color: var(--diespe-blue); }
-.site-title .pe { color: var(--diespe-orange); }
-
-.site-subline {
-  display: block;
-  font-family: var(--diespe-body-font);
-  font-size: 0.72rem;
-  letter-spacing: 0.28em;
-  text-transform: lowercase;
-  color: var(--diespe-black);
-}
 
 .site-description {
   margin: 0;

@@ -29,27 +29,27 @@ get_header();
 		<div class="grid-3">
 			<div class="card">
 				<span class="card-icon" aria-hidden="true">&#9851;</span>
-				<h3><?php esc_html_e( 'Projectmanagement', 'diespe' ); ?></h3>
-				<p><?php esc_html_e( 'Regie over het hele traject: planning, budget, kwaliteit en communicatie met alle partijen.', 'diespe' ); ?></p>
+				<h3><?php esc_html_e( 'Project- en technischmanagement', 'diespe' ); ?></h3>
+				<p><?php esc_html_e( 'Regie over het hele traject: van planning en budget tot kwaliteit en technisch ontwerp.', 'diespe' ); ?></p>
 				<ul>
+					<li><?php esc_html_e( 'IPM-rollen: projectmanager en technisch manager', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Procesregie en bestuurlijke besluitvorming', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Risicomanagement', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Inkoop en contracteren', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Risicomanagement, inkoop en contracteren', 'diespe' ); ?></li>
 				</ul>
 			</div>
 			<div class="card">
 				<span class="card-icon" aria-hidden="true">&#9881;</span>
-				<h3><?php esc_html_e( 'Technisch management', 'diespe' ); ?></h3>
-				<p><?php esc_html_e( 'Vertaling van doel naar ontwerp en uitvoering, met oog voor haalbaarheid en duurzaamheid.', 'diespe' ); ?></p>
+				<h3><?php esc_html_e( 'Integraal ontwerpleiderschap', 'diespe' ); ?></h3>
+				<p><?php esc_html_e( 'Vertalen van doelen naar technisch haalbaar ontwerp en uitvoering, met oog voor duurzaamheid.', 'diespe' ); ?></p>
 				<ul>
-					<li><?php esc_html_e( 'Energie- en middenspanningsprojecten', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Vertalen van KRW- en NBW-doelen naar maatregelen', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'KRW- en NBW-doelen vertalen naar maatregelen', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Leidinggeven aan (ontwerp-)teams en ingenieursbureaus', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Systems Engineering en SE-GIS', 'diespe' ); ?></li>
 				</ul>
 			</div>
 			<div class="card">
 				<span class="card-icon" aria-hidden="true">&#127795;</span>
-				<h3><?php esc_html_e( 'Omgevingsmanagement', 'diespe' ); ?></h3>
+				<h3><?php esc_html_e( 'Omgevingsgericht', 'diespe' ); ?></h3>
 				<p><?php esc_html_e( 'Samenwerking, vertrouwen en het versterken van elkaars krachten — binnen en buiten het project.', 'diespe' ); ?></p>
 				<ul>
 					<li><?php esc_html_e( 'Draagvlak en betrokkenheid van belanghebbenden', 'diespe' ); ?></li>

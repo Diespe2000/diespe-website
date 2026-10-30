@@ -12,6 +12,7 @@ $postal  = get_theme_mod( 'diespe_postal', '7131 HS Lichtenvoorde' );
 </main>
 
 <footer class="site-footer" role="contentinfo">
+	<div class="diespe-stripes" aria-hidden="true"></div>
 	<div class="container">
 		<div class="footer-grid">
 			<div>

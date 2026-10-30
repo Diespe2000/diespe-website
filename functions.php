@@ -44,6 +44,34 @@ function diespe_scripts() {
 	wp_enqueue_style( 'diespe-style', get_stylesheet_uri(), array(), DIESPE_VERSION );
 	wp_enqueue_script( 'diespe-nav', get_template_directory_uri() . '/assets/js/nav.js', array(), DIESPE_VERSION, true );
 }
+
+/**
+ * Huisstijl: logo als standaard custom logo.
+ */
+function diespe_default_logo( $html ) {
+	if ( ! $html ) {
+		$html = '<a href="' . esc_url( home_url( '/' ) ) . '" class="custom-logo-link" rel="home">'
+			. '<img src="' . esc_url( get_template_directory_uri() . '/assets/img/logo-diespe.svg' ) . '" alt="DIESPE omgevingsprojecten" class="custom-logo">'
+			. '</a>';
+	}
+	return $html;
+}
+add_filter( 'get_custom_logo', 'diespe_default_logo' );
+
+/**
+ * Huisstijl: standaard site-description.
+ */
+function diespe_site_description( $description ) {
+	if ( ! $description ) {
+		$description = __( 'Partner in duurzame omgevingsprojecten', 'diespe' );
+	}
+	return $description;
+}
+add_filter( 'option_blogdescription', 'diespe_site_description' );
+
+/**
+ * Scripts.
+ */
 add_action( 'wp_enqueue_scripts', 'diespe_scripts' );
 
 /**

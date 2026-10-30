@@ -23,15 +23,13 @@
 				<?php the_custom_logo(); ?>
 			<?php else : ?>
 				<div class="site-identity">
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">DIESPE</a></p>
+					<p class="site-title">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><span class="die">DIE</span><span class="s">S</span><span class="pe">PE</span></a>
+					<span class="site-subline">omgevingsprojecten</span>
+				</p>
 				</div>
 			<?php endif; ?>
-			<?php
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description ) :
-				?>
-				<p class="site-description"><?php echo esc_html( $description ); ?></p>
-			<?php endif; ?>
+
 		</div>
 
 		<button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">

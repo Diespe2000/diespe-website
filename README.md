@@ -5,6 +5,27 @@ omgevingsprojecten* (Lichtenvoorde). Gebaseerd op de huisstijl van diespe.nl:
 Project-, Technisch- en Omgevingsmanagement van omgevings- en energieprojecten,
 algemene voorwaarden volgens DNR 2011.
 
+## Huisstijl
+
+Het thema gebruikt de officiële huisstijl van DIESPE Management & Advies:
+
+| Kleur | HEX |
+|---|---|
+| Oranje | `#ff8000` |
+| Donkerblauw | `#001f99` |
+| Lichtblauw | `#2b97d9` |
+| Groen | `#41d92c` |
+| Zwart | `#1a1a1a` |
+
+- **Lettertype logo**: Tw Cen MT Condensed Extra Bold (fallback: Arial Narrow / Segoe UI)
+- **Lettertype documenten**: Nirmala UI (fallback: Segoe UI / systeemfonts)
+- **Strepen**: de kenmerkende 4-kleurige streep (oranje, groen, lichtblauw, donkerblauw)
+  komt terug onder de header, in de hero en boven de footer.
+- **Logo**: bij gebrek aan een geüpload logo toont het thema een gestapeld woordmerk
+  (DIESPE in oranje/donkerblauw met "omgevingsprojecten" eronder). Het officiële
+  logo staat in `assets/img/logo-diespe.svg` — upload het via de Customizer
+  (Site-identiteit) voor het echte logo.
+
 ## Installatie
 
 1. Zip de map `diespe` (met daarin `style.css` en `functions.php`).

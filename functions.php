@@ -41,7 +41,8 @@ add_action( 'after_setup_theme', 'diespe_setup' );
  * Stijlen en scripts.
  */
 function diespe_scripts() {
-	wp_enqueue_style( 'diespe-style', get_stylesheet_uri(), array(), DIESPE_VERSION );
+	wp_enqueue_style( 'diespe-fonts', get_template_directory_uri() . '/assets/css/fonts.css', array(), DIESPE_VERSION );
+	wp_enqueue_style( 'diespe-style', get_stylesheet_uri(), array( 'diespe-fonts' ), DIESPE_VERSION );
 	wp_enqueue_script( 'diespe-nav', get_template_directory_uri() . '/assets/js/nav.js', array(), DIESPE_VERSION, true );
 }
 
@@ -68,6 +69,19 @@ function diespe_site_description( $description ) {
 	return $description;
 }
 add_filter( 'option_blogdescription', 'diespe_site_description' );
+
+/**
+ * Huisstijl: favicon en PWA-manifest.
+ */
+function diespe_favicons() {
+	$base = get_template_directory_uri() . '/assets/img/favicons';
+	echo '<link rel="icon" href="' . esc_url( $base . '/favicon.ico' ) . '" sizes="any">' . "\n";
+	echo '<link rel="icon" type="image/png" sizes="32x32" href="' . esc_url( $base . '/logo-32.png' ) . '">' . "\n";
+	echo '<link rel="icon" type="image/png" sizes="192x192" href="' . esc_url( $base . '/logo-192.png' ) . '">' . "\n";
+	echo '<link rel="apple-touch-icon" href="' . esc_url( $base . '/logo-180.png' ) . '">' . "\n";
+	echo '<link rel="manifest" href="' . esc_url( $base . '/site.webmanifest' ) . '">' . "\n";
+}
+add_action( 'wp_head', 'diespe_favicons' );
 
 /**
  * Scripts.

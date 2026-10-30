@@ -17,8 +17,13 @@ Het thema gebruikt de officiële huisstijl van DIESPE Management & Advies:
 | Groen | `#41d92c` |
 | Zwart | `#1a1a1a` |
 
-- **Lettertype logo**: Tw Cen MT Condensed Extra Bold (fallback: Arial Narrow / Segoe UI)
+- **Lettertype logo**: Tw Cen MT Condensed Extra Bold. Bezoekers zonder dit font zien
+  een gebundelde condensed webfont (Oswald, SIL OFL 1.1) zodat het woordmerk overal
+  gelijk rendert — zie `assets/css/fonts.css` en `assets/fonts/`.
 - **Lettertype documenten**: Nirmala UI (fallback: Segoe UI / systeemfonts)
+- **Favicon & app-iconen**: complete set in `assets/img/favicons/` (favicon.ico,
+  16/32/48/64/180/192/512 px PNG, `site.webmanifest` voor PWA-installatie). WordPress
+  laadt ze automatisch via `functions.php`.
 - **Strepen**: de kenmerkende 4-kleurige streep (oranje, groen, lichtblauw, donkerblauw)
   komt terug onder de header, in de hero en boven de footer.
 - **Logo**: bij gebrek aan een geüpload logo toont het thema een gestapeld woordmerk

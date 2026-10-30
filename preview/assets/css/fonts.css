@@ -1,0 +1,26 @@
+/*
+ * DIESPE huisstijl-webfonts.
+ * Voorkeur: lokaal geïnstalleerde Tw Cen MT (Microsoft); fallback: gebundelde
+ * condensed webfont (Oswald, SIL OFL 1.1) zodat het woordmerk overal gelijk rendert.
+ * Bron: https://fonts.google.com/specimen/Oswald — licentie: assets/fonts/OFL.txt
+ */
+
+@font-face {
+  font-family: "DIESPE Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Tw Cen MT Condensed Extra Bold"),
+       local("Tw Cen MT Condensed"),
+       url("../fonts/oswald-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "DIESPE Display";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Tw Cen MT Condensed Extra Bold"),
+       local("Tw Cen MT Condensed"),
+       url("../fonts/oswald-700.woff2") format("woff2");
+}

@@ -18,7 +18,18 @@ get_header();
 			<p><em><?php echo esc_html( get_theme_mod( 'diespe_tagline' ) ); ?></em></p>
 		<?php endif; ?>
 		<a class="btn btn--accent" href="#werkvelden"><?php esc_html_e( 'Lees verder', 'diespe' ); ?></a>
-		<a class="btn" href="#projecten"><?php esc_html_e( 'Bekijk meer', 'diespe' ); ?></a>
+		<a class="btn btn--white" href="#projecten"><?php esc_html_e( 'Bekijk meer', 'diespe' ); ?></a>
+	</div>
+</section>
+
+<section class="section workfields-strip" id="werkgebieden">
+	<div class="container">
+		<ul class="workfields-list">
+			<li><?php esc_html_e( 'Watersysteem projecten', 'diespe' ); ?></li>
+			<li><?php esc_html_e( 'Energietransitie projecten', 'diespe' ); ?></li>
+			<li><?php esc_html_e( 'Waterketen projecten', 'diespe' ); ?></li>
+			<li><?php esc_html_e( 'Waterveiligheid', 'diespe' ); ?></li>
+		</ul>
 	</div>
 </section>
 
@@ -49,7 +60,7 @@ get_header();
 			</div>
 			<div class="card">
 				<span class="card-icon" aria-hidden="true">&#127795;</span>
-				<h3><?php esc_html_e( 'Omgevingsgericht', 'diespe' ); ?></h3>
+				<h3><?php esc_html_e( 'Omgevingsgericht werken', 'diespe' ); ?></h3>
 				<p><?php esc_html_e( 'Samenwerking, vertrouwen en het versterken van elkaars krachten — binnen en buiten het project.', 'diespe' ); ?></p>
 				<ul>
 					<li><?php esc_html_e( 'Draagvlak en betrokkenheid van belanghebbenden', 'diespe' ); ?></li>
@@ -104,12 +115,11 @@ get_header();
 				<a class="btn" href="<?php echo esc_url( home_url( '/over-diederik-speksnijder/' ) ); ?>"><?php esc_html_e( 'Meer over Diederik', 'diespe' ); ?></a>
 			</div>
 			<div class="card">
-				<h3><?php esc_html_e( 'Werkgebieden', 'diespe' ); ?></h3>
+				<h3><?php esc_html_e( 'Waarom DIESPE?', 'diespe' ); ?></h3>
 				<ul>
-					<li><?php esc_html_e( 'Watersysteemprojecten (KRW, NBW, klimaatrobuustheid)', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Energietransitie (middenspanningsnetten, windparken)', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Waterketen en waterveiligheid', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Grond-, weg- en waterbouw', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Eerst denken, dan doen', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Integrale benadering, innovatieve methoden', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Maatschappelijke meerwaarde als uitgangspunt', 'diespe' ); ?></li>
 				</ul>
 			</div>
 		</div>

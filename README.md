@@ -24,6 +24,24 @@ Het thema gebruikt de officiële huisstijl van DIESPE Management & Advies:
 - **Favicon & app-iconen**: complete set in `assets/img/favicons/` (favicon.ico,
   16/32/48/64/180/192/512 px PNG, `site.webmanifest` voor PWA-installatie). WordPress
   laadt ze automatisch via `functions.php`.
+
+## Voorbeeldinhoud (WXR-import)
+
+In `sample-content/` staan twee WordPress-importbestanden met de volledige
+inhoudelijke content van DIESPE:
+
+- `diespe-portfolio.xml` — **44 projecten** uit het projectenportfolio, verdeeld over
+  vijf projecttypes: Watersysteem, Energietransitie, Waterketen, Waterveiligheid en
+  Overige. Elk project bevat omschrijving, opdrachtgever, projectfasen, rol,
+  contractvorm en een kaartlink.
+- `diespe-pages.xml` — de pagina **Over Diederik Speksnijder** (persoonlijk profiel,
+ volledige werkervaring, secundaire activiteiten, opleidingen en trainingen), de
+  pagina **Werkvelden** en een welkomstbericht.
+
+**Importeren:** ga in WordPress naar **Tools → Importeren → WordPress** (installeer
+de importeur bij eerste gebruik), upload beide bestanden en vink "Download and import
+file attachments" niet aan (alle content is tekst). Importeer eerst
+`diespe-pages.xml`, daarna `diespe-portfolio.xml`.
 - **Strepen**: de kenmerkende 4-kleurige streep (oranje, groen, lichtblauw, donkerblauw)
   komt terug onder de header, in de hero en boven de footer.
 - **Logo**: bij gebrek aan een geüpload logo toont het thema een gestapeld woordmerk

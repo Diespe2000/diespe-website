@@ -32,7 +32,7 @@ get_header();
 				<h3><?php esc_html_e( 'Projectmanagement', 'diespe' ); ?></h3>
 				<p><?php esc_html_e( 'Regie over het hele traject: planning, budget, kwaliteit en communicatie met alle partijen.', 'diespe' ); ?></p>
 				<ul>
-					<li><?php esc_html_e( 'Procesregie en besluitvorming', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Procesregie en bestuurlijke besluitvorming', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Risicomanagement', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Inkoop en contracteren', 'diespe' ); ?></li>
 				</ul>
@@ -42,9 +42,9 @@ get_header();
 				<h3><?php esc_html_e( 'Technisch management', 'diespe' ); ?></h3>
 				<p><?php esc_html_e( 'Vertaling van doel naar ontwerp en uitvoering, met oog voor haalbaarheid en duurzaamheid.', 'diespe' ); ?></p>
 				<ul>
-					<li><?php esc_html_e( 'Energieprojecten', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Technische haalbaarheidsstudies', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Toetsing en advies', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Energie- en middenspanningsprojecten', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Vertalen van KRW- en NBW-doelen naar maatregelen', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Systems Engineering en SE-GIS', 'diespe' ); ?></li>
 				</ul>
 			</div>
 			<div class="card">
@@ -52,9 +52,9 @@ get_header();
 				<h3><?php esc_html_e( 'Omgevingsmanagement', 'diespe' ); ?></h3>
 				<p><?php esc_html_e( 'Samenwerking, vertrouwen en het versterken van elkaars krachten — binnen en buiten het project.', 'diespe' ); ?></p>
 				<ul>
-					<li><?php esc_html_e( 'Participatie en omgevingswet', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Belangenhoudersdialogen', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Gebiedsontwikkeling', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Draagvlak en betrokkenheid van belanghebbenden', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Belangen balanceren, win-win oplossingen vinden', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Gebiedsontwikkeling en maatschappelijke meerwaarde', 'diespe' ); ?></li>
 				</ul>
 			</div>
 		</div>
@@ -95,21 +95,25 @@ get_header();
 <section class="section" id="over">
 	<div class="container">
 		<h2 class="section-title"><?php esc_html_e( 'Over DIESPE', 'diespe' ); ?></h2>
-		<p class="section-intro"><?php esc_html_e( 'Bij DIESPE Omgevingsprojecten hechten we veel waarde aan samenwerking, vertrouwen en het versterken van elkaars krachten.', 'diespe' ); ?></p>
+		<p class="section-intro"><?php esc_html_e( 'Betrokken en proactief, met een pragmatische "eerst denken, dan doen"-aanpak. Expertise in het organiseren en coördineren van complexe omgevingsprojecten binnen de grond-, weg- en waterbouwsector.', 'diespe' ); ?></p>
 		<div class="contact-grid">
 			<div>
-				<p><?php esc_html_e( 'We voeren onze diensten en werkzaamheden uit volgens De Nieuwe Regeling 2011 (DNR 2011), herziening juli 2013 — de branchevoorwaarden voor ontwerpen, adviseren en organiseren voor de gebouwde omgeving.', 'diespe' ); ?></p>
-				<a class="btn" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Neem contact op', 'diespe' ); ?></a>
+				<h3><?php esc_html_e( 'Diederik Speksnijder', 'diespe' ); ?></h3>
+				<p><?php esc_html_e( 'Flexibel in verschillende IPM-rollen, met een voorkeur voor technisch manager, projectmanager of omgevingsmanager. De kracht ligt in het verbinden van specialisten en stakeholders om gezamenlijke doelen te bereiken en maatschappelijke meerwaarde te creëren.', 'diespe' ); ?></p>
+				<p><?php esc_html_e( 'Met focus op duurzame en efficiënte oplossingen draagt DIESPE bij aan technisch solide projecten die voldoen aan de behoeften van de gemeenschap.', 'diespe' ); ?></p>
+				<a class="btn" href="<?php echo esc_url( home_url( '/over-diederik-speksnijder/' ) ); ?>"><?php esc_html_e( 'Meer over Diederik', 'diespe' ); ?></a>
 			</div>
 			<div class="card">
-				<h3><?php esc_html_e( 'Waarom DIESPE?', 'diespe' ); ?></h3>
+				<h3><?php esc_html_e( 'Werkgebieden', 'diespe' ); ?></h3>
 				<ul>
-					<li><?php esc_html_e( 'Eerst denken, dan doen', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Duurzame omgevings- en energieprojecten', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Persoonlijke betrokkenheid en proactieve aanpak', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Watersysteemprojecten (KRW, NBW, klimaatrobuustheid)', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Energietransitie (middenspanningsnetten, windparken)', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Waterketen en waterveiligheid', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Grond-, weg- en waterbouw', 'diespe' ); ?></li>
 				</ul>
 			</div>
 		</div>
+		<p class="section-intro" style="margin-top:44px; margin-bottom:0;"><?php esc_html_e( 'We voeren onze diensten en werkzaamheden uit volgens De Nieuwe Regeling 2011 (DNR 2011), herziening juli 2013.', 'diespe' ); ?></p>
 	</div>
 </section>
 

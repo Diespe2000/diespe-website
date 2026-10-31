@@ -12,7 +12,7 @@ get_header();
 	<div class="container">
 		<h1><?php esc_html_e( 'DIESPE: Uw partner in projecten', 'diespe' ); ?></h1>
 		<p>
-			<?php esc_html_e( 'Pragmatische aanpak, oog voor belangen, resultaatgericht en samenwerking. Van initiatief via verkenning en planuitwerking tot realisatie.', 'diespe' ); ?>
+			<?php esc_html_e( 'Kansen benutten en denken in oplossingen: voor elke uitdaging is een kans om op te lossen. Met een out-of-the-box aanpak en pragmatische aanpak, van initiatief tot realisatie.', 'diespe' ); ?>
 		</p>
 		<a class="btn btn--accent" href="<?php echo esc_url( home_url( '/over-diederik-speksnijder/' ) ); ?>"><?php esc_html_e( 'Maak kennis', 'diespe' ); ?></a>
 		<a class="btn btn--white" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Contact', 'diespe' ); ?></a>

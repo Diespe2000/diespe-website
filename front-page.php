@@ -11,7 +11,7 @@ get_header();
 $hero_titel  = diespe_home_text( 'hero_titel', __( 'DIESPE: Uw partner in projecten', 'diespe' ) );
 $hero_tekst  = diespe_home_text( 'hero_tekst', __( 'Kansen benutten en denken in oplossingen: voor elke uitdaging is een kans om iets moois te realiseren. Met een out-of-the-box kijk en een pragmatische aanpak, van initiatief tot realisatie.', 'diespe' ) );
 
-$werkgebieden_raw = diespe_home_text( 'werkgebieden', __( "Watersysteem\nEnergietransitie\nWaterketen\nWaterveiligheid\nUtiliteit\nNatuurherstel", 'diespe' ) );
+$werkgebieden_raw = diespe_home_text( 'werkgebieden', __( "Watersysteem\nEnergietransitie\nWaterketen\nWaterveiligheid\nGebiedsontwikkeling\nNatuurherstel", 'diespe' ) );
 $werkgebieden     = array_filter( array_map( 'trim', explode( "\n", $werkgebieden_raw ) ) );
 
 $werkvelden_intro = diespe_home_text( 'werkvelden_intro', __( 'Van initiëring tot oplevering: DIESPE verbindt denkkracht en uitvoering in de gebouwde en levende omgeving.', 'diespe' ) );
@@ -68,7 +68,11 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Met de focus op duurzame, e
 	<div class="container">
 		<ul class="workfields-list">
 			<?php foreach ( $werkgebieden as $item ) : ?>
-				<li><?php echo esc_html( $item ); ?></li>
+				<?php
+				$term = get_term_by( 'name', $item, 'diespe_projecttype' );
+				$link = $term && ! is_wp_error( $term ) ? get_term_link( $term ) : get_post_type_archive_link( 'diespe_project' );
+				?>
+				<li><a href="<?php echo esc_url( $link ); ?>" style="color:inherit;"><?php echo esc_html( $item ); ?></a></li>
 			<?php endforeach; ?>
 		</ul>
 	</div>
@@ -189,21 +193,20 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Met de focus op duurzame, e
 			<div class="card">
 				<div class="card-header">
 					<span class="card-icon" aria-hidden="true">&#127757;</span>
-					<h3><?php esc_html_e( 'Werkgebieden', 'diespe' ); ?></h3>
+					<h3><?php esc_html_e( 'Werkwijze', 'diespe' ); ?></h3>
 				</div>
 				<ul>
-					<li><?php esc_html_e( 'Watersysteem', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Energietransitie', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Waterketen', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Waterveiligheid', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Gebiedsontwikkeling', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Natuurherstel', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Verkennen: opgave helder krijgen, kansen benoemen', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Ontwerpen: integrale oplossingen, realiseerbaar en betaalbaar', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Verbinden: draagvlak bij belanghebbenden en bestuur', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Realiseren: passende contractvorm, van plan tot oplevering', 'diespe' ); ?></li>
 				</ul>
+				<p class="card-case"><?php esc_html_e( 'Van initiatief via verkenning en planuitwerking tot realisatie.', 'diespe' ); ?></p>
 				<a class="btn btn--kleur3 card-more" href="<?php echo esc_url( get_post_type_archive_link( 'diespe_project' ) ); ?>"><?php esc_html_e( 'Bekijk de projecten', 'diespe' ); ?></a>
 			</div>
 		</div>
 		<p class="section-intro" style="margin-top:44px; margin-bottom:0;"><?php esc_html_e( 'We voeren onze diensten en werkzaamheden uit volgens De Nieuwe Regeling 2011 (DNR 2011), herziening juli 2013.', 'diespe' ); ?></p>
-		<p class="lid-van"><?php esc_html_e( 'Lid van:', 'diespe' ); ?> <strong>ZZP Nederland</strong> &nbsp;&middot;&nbsp; <strong><?php esc_html_e( 'KNW — Koninklijk Waternetwerk', 'diespe' ); ?></strong></p>
+		<p class="lid-van"><?php esc_html_e( 'Lid van:', 'diespe' ); ?> <strong><a href="https://zzpnederland.nl" target="_blank" rel="noopener">ZZP Nederland</a></strong> &nbsp;&middot;&nbsp; <strong><a href="https://www.waternetwerk.nl" target="_blank" rel="noopener"><?php esc_html_e( 'KNW — Koninklijk Waternetwerk', 'diespe' ); ?></a></strong></p>
 	</div>
 </section>
 

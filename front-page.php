@@ -42,8 +42,8 @@ $kaarten = array(
 
 $over_intro = diespe_home_text( 'over_intro', __( 'DIESPE is Diederik Speksnijder: betrokken, proactief en met een pragmatische "eerst denken, dan doen"-aanpak. Al meer dan 25 jaar het gezicht achter duurzame omgevingsprojecten in de grond-, weg- en waterbouwsector.', 'diespe' ) );
 $over_naam  = diespe_home_text( 'over_naam', __( 'Diederik Speksnijder', 'diespe' ) );
-$over_tekst1 = diespe_home_text( 'over_tekst1', __( 'Als ervaren projectmanager, technisch manager en omgevingsmanager verbindt Diederik specialisten en stakeholders om gezamenlijke doelen te bereiken. Hij denkt in kansen, balanceert belangen en vindt win-win-oplossingen — van initiatief tot realisatie.', 'diespe' ) );
-$over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Van vispassage Doesburg tot windpark Duiven: mee de focus op duurzame, efficiënte oplossingen realiseert hij technisch solide projecten met maatschappelijke meerwaarde.', 'diespe' ) );
+$over_tekst1 = diespe_home_text( 'over_tekst1', __( 'Verbindt specialisten en stakeholders, denkt in kansen en vindt win-win-oplossingen — van initiatief tot realisatie.', 'diespe' ) );
+$over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Van vispassage Doesburg tot windpark Duiven: technisch solide, duurzaam en met maatschappelijke meerwaarde.', 'diespe' ) );
 ?>
 
 <section class="hero">

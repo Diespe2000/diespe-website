@@ -738,3 +738,4 @@ button[type="submit"], .wp-block-search__button, .search-submit { border: 0; cur
 .tile-info strong { color: var(--diespe-blue); }
 .tile-meer { font-size: 0.8rem; padding: 7px 14px; align-self: flex-start; margin-top: auto; }
 .tile-hint { text-align: center; color: var(--diespe-muted); font-size: 0.85rem; margin-top: 26px; }
+.tile-cats { display: inline-flex; flex-wrap: wrap; gap: 4px; }

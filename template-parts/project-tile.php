@@ -1,44 +1,46 @@
 <?php
 /**
  * Project-tegel (flip) voor het projectenoverzicht.
+ * Ondersteunt meerdere categorieën per project.
  *
  * @package Diespe
  */
 
-$cats      = wp_get_post_terms( get_the_ID(), 'diespe_projecttype' );
-$cat       = $cats ? $cats[0] : null;
-$cat_naam  = $cat ? $cat->name : '';
-$cat_slug  = $cat ? $cat->slug : '';
+$cats     = wp_get_post_terms( get_the_ID(), 'diespe_projecttype' );
+$slugs    = wp_get_post_terms( get_the_ID(), 'diespe_projecttype', array( 'fields' => 'slugs' ) );
 
 $kleuren = array(
-	'watersysteem'       => '#2b97d9',
-	'energietransitie'   => '#ff8000',
-	'waterketen'         => '#41d92c',
-	'waterveiligheid'    => '#001f99',
+	'watersysteem'        => '#2b97d9',
+	'energietransitie'    => '#ff8000',
+	'waterketen'          => '#41d92c',
+	'waterveiligheid'     => '#001f99',
 	'gebiedsontwikkeling' => '#84db2d',
-	'natuurherstel'      => '#84db2d',
+	'natuurherstel'       => '#84db2d',
 );
-$kleur = isset( $kleuren[ $cat_slug ] ) ? $kleuren[ $cat_slug ] : '#84db2d';
+$kleur = $cats && isset( $kleuren[ $slugs[0] ] ) ? $kleuren[ $slugs[0] ] : '#84db2d';
 
-$cat_slugs = wp_get_post_terms( get_the_ID(), 'diespe_projecttype', array( 'fields' => 'slugs' ) );
 $fallback = '';
-foreach ( array( $cat_slug, 'gebiedsontwikkeling' ) as $slug ) {
+foreach ( array_merge( $slugs, array( 'gebiedsontwikkeling' ) ) as $slug ) {
 	if ( $slug && file_exists( get_template_directory() . '/assets/img/projecten/' . $slug . '.png' ) ) {
 		$fallback = get_template_directory_uri() . '/assets/img/projecten/' . $slug . '.png';
 		break;
 	}
 }
 ?>
-<div class="flip-tile" data-cat="<?php echo esc_attr( $cat_slug ); ?>">
+<div class="flip-tile" data-cats="<?php echo esc_attr( implode( ' ', $slugs ) ); ?>">
 	<div class="flip-inner">
 		<div class="flip-face flip-front" style="border-top-color:<?php echo esc_attr( $kleur ); ?>">
 			<?php if ( has_post_thumbnail() ) : ?>
 				<?php the_post_thumbnail( 'large', array( 'loading' => 'lazy' ) ); ?>
 			<?php elseif ( $fallback ) : ?>
-				<img src="<?php echo esc_url( $fallback ); ?>" alt="<?php echo esc_attr( $cat_naam ); ?>" loading="lazy">
+				<img src="<?php echo esc_url( $fallback ); ?>" alt="" loading="lazy">
 			<?php endif; ?>
 			<div class="tile-label">
-				<span class="tile-cat" style="color:<?php echo esc_attr( $kleur ); ?>"><?php echo esc_html( $cat_naam ); ?></span>
+				<span class="tile-cats">
+					<?php foreach ( $cats as $index => $cat ) : ?>
+						<span class="tile-cat" style="color:<?php echo esc_attr( isset( $kleuren[ $cat->slug ] ) ? $kleuren[ $cat->slug ] : '#84db2d' ); ?>"><?php echo esc_html( $cat->name ); ?></span><?php echo $index < count( $cats ) - 1 ? ' &middot; ' : ''; ?>
+					<?php endforeach; ?>
+				</span>
 				<span class="tile-titel"><?php the_title(); ?></span>
 			</div>
 		</div>

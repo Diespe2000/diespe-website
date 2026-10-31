@@ -19,7 +19,8 @@
       knop.classList.add( 'is-active' );
       var f = knop.dataset.filter;
       tiles.forEach( function ( tile ) {
-        tile.style.display = ( f === 'all' || tile.dataset.cat === f ) ? '' : 'none';
+        var cats = ( tile.dataset.cats || tile.dataset.cat || '' ).split( ' ' );
+        tile.style.display = ( f === 'all' || cats.indexOf( f ) !== -1 ) ? '' : 'none';
       } );
     } );
   } );

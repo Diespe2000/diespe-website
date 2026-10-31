@@ -166,6 +166,8 @@ function diespe_customize_register( $wp_customize ) {
 		'diespe_postal'   => __( 'Postcode en plaats', 'diespe' ),
 		'diespe_kvk'      => __( 'KvK-nummer', 'diespe' ),
 		'diespe_tagline'  => __( 'Payoff', 'diespe' ),
+		'diespe_ts_site'  => __( 'Turnstile site-sleutel (optioneel)', 'diespe' ),
+		'diespe_ts_secret' => __( 'Turnstile secret-sleutel (optioneel)', 'diespe' ),
 	);
 
 	foreach ( $fields as $id => $label ) {
@@ -264,6 +266,8 @@ function diespe_contact_form_shortcode() {
 		} elseif ( isset( $_POST['diespe_tijd'] ) && ( time() - (int) $_POST['diespe_tijd'] ) < 5 ) {
 			// Te snel verzonden: vrijwel zeker een bot.
 			$verzonden = true;
+		} elseif ( get_theme_mod( 'diespe_ts_secret' ) && ! diespe_turnstile_ok() ) {
+			$fout = __( 'De verificatie is niet gelukt. Probeer het opnieuw.', 'diespe' );
 		} else {
 			$naam    = sanitize_text_field( wp_unslash( $_POST['diespe_naam'] ?? '' ) );
 			$email   = sanitize_email( wp_unslash( $_POST['diespe_email'] ?? '' ) );
@@ -315,6 +319,11 @@ function diespe_contact_form_shortcode() {
 						<input type="text" name="diespe_website" tabindex="-1" autocomplete="off">
 					</label>
 				</p>
+				<?php $ts_site = get_theme_mod( 'diespe_ts_site' ); ?>
+				<?php if ( $ts_site ) : ?>
+					<div class="diespe-turnstile" data-sitekey="<?php echo esc_attr( $ts_site ); ?>"></div>
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+				<?php endif; ?>
 				<div>
 					<button type="submit" name="diespe_contact" value="1" class="btn"><?php esc_html_e( 'Verstuur bericht', 'diespe' ); ?></button>
 				</div>
@@ -435,3 +444,26 @@ function diespe_project_meta_save( $post_id ) {
 	}
 }
 add_action( 'save_post_diespe_project', 'diespe_project_meta_save' );
+
+/**
+ * Turnstile-token serverzijde verifiëren.
+ *
+ * @return bool Geldig.
+ */
+function diespe_turnstile_ok() {
+	$token = isset( $_POST['cf-turnstile-response'] ) ? sanitize_text_field( wp_unslash( $_POST['cf-turnstile-response'] ) ) : '';
+	if ( ! $token ) {
+		return false;
+	}
+	$antwoord = wp_remote_post( 'https://challenges.cloudflare.com/turnstile/v0/siteverify', array(
+		'body' => array(
+			'secret'   => get_theme_mod( 'diespe_ts_secret' ),
+			'response' => $token,
+		),
+	) );
+	if ( is_wp_error( $antwoord ) ) {
+		return false;
+	}
+	$data = json_decode( wp_remote_retrieve_body( $antwoord ) );
+	return ! empty( $data->success );
+}

@@ -106,6 +106,19 @@ De contactpagina toont **automatisch** een formulier:
   Form 7") en aanmaken van een formulier (Contact → Contactformulieren) toont de
   contactpagina automatisch het eerste CF7-formulier; het ingebouwde formulier
   schakelt zichzelf uit.
+
+### Spambescherming
+
+Het ingebouwde formulier beschermt met honeypot, tijdcheck en nonce. Optioneel op
+top: **Cloudflare Turnstile** (gratis, privacyvriendelijk):
+
+1. Maak een Turnstile-site aan op [dash.cloudflare.com](https://dash.cloudflare.com) → Turnstile
+   (kies widget "Managed", domein: je websitedomein)
+2. Vul de **site-sleutel** en **secret-sleutel** in via **Customizer → Contactgegevens →
+   Turnstile site-/secret-sleutel**
+3. Vanaf dat moment verschijnt de Turnstile-controle in het formulier en wordt elke
+   inzending serverzijde geverifieerd. Zonder sleutels werkt het formulier gewoon
+   met honeypot + tijdcheck.
 - **Strepen**: de kenmerkende 4-kleurige streep (oranje, groen, lichtblauw, donkerblauw)
   komt terug onder de header, in de hero en boven de footer.
 - **Logo**: bij gebrek aan een geüpload logo toont het thema een gestapeld woordmerk

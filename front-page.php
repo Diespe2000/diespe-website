@@ -1,20 +1,56 @@
 <?php
 /**
  * Voorpagina (statische homepage met secties).
+ * Alle teksten zijn aanpasbaar via Customizer → Homepage-teksten.
  *
  * @package Diespe
  */
 
 get_header();
+
+$hero_titel  = diespe_home_text( 'hero_titel', __( 'DIESPE: Uw partner in projecten', 'diespe' ) );
+$hero_tekst  = diespe_home_text( 'hero_tekst', __( 'Kansen benutten en denken in oplossingen: voor elke uitdaging is een kans om iets moois te realiseren. Met een out-of-the-box kijk en een pragmatische aanpak, van initiatief tot realisatie.', 'diespe' ) );
+
+$werkgebieden_raw = diespe_home_text( 'werkgebieden', __( "Watersysteem\nEnergietransitie\nWaterketen\nWaterveiligheid\nUtiliteit\nNatuurherstel", 'diespe' ) );
+$werkgebieden     = array_filter( array_map( 'trim', explode( "\n", $werkgebieden_raw ) ) );
+
+$werkvelden_intro = diespe_home_text( 'werkvelden_intro', __( 'Van initiëring tot oplevering: DIESPE verbindt denkkracht en uitvoering in de gebouwde en levende omgeving.', 'diespe' ) );
+
+$kaarten = array(
+	array(
+		'icon'    => '&#9851;',
+		'titel'   => diespe_home_text( 'kaart1_titel', __( 'Project- en technischmanagement', 'diespe' ) ),
+		'tekst'   => diespe_home_text( 'kaart1_tekst', __( 'Regie over het hele traject: van planning en budget tot kwaliteit en technisch ontwerp.', 'diespe' ) ),
+		'punten'  => diespe_home_text( 'kaart1_punten', __( "IPM-rollen: projectmanager en technisch manager\nProcesregie en bestuurlijke besluitvorming\nRisicomanagement, inkoop en contracteren", 'diespe' ) ),
+		'voorbeeld' => diespe_home_text( 'kaart1_voorbeeld', __( 'Zoals: Vispassage Doesburg — één van Nederlands grootste vispassages, van verkenning tot realisatie.', 'diespe' ) ),
+	),
+	array(
+		'icon'    => '&#9881;',
+		'titel'   => diespe_home_text( 'kaart2_titel', __( 'Integraal ontwerpleiderschap', 'diespe' ) ),
+		'tekst'   => diespe_home_text( 'kaart2_tekst', __( 'Vertalen van doelen naar technisch haalbaar ontwerp en uitvoering, met oog voor duurzaamheid.', 'diespe' ) ),
+		'punten'  => diespe_home_text( 'kaart2_punten', __( "KRW- en NBW-doelen vertalen naar maatregelen\nLeidinggeven aan (ontwerp-)teams en ingenieursbureaus\nSystems Engineering en SE-GIS", 'diespe' ) ),
+		'voorbeeld' => diespe_home_text( 'kaart2_voorbeeld', __( 'Zoals: Waardevolle Kleine Wateren, Bovenlopen Loolee — KRW-doelen vertaald naar inrichtingsmaatregelen voor vier beken.', 'diespe' ) ),
+	),
+	array(
+		'icon'    => '&#127795;',
+		'titel'   => diespe_home_text( 'kaart3_titel', __( 'Omgevingsgericht werken', 'diespe' ) ),
+		'tekst'   => diespe_home_text( 'kaart3_tekst', __( 'Samenwerking, vertrouwen en het versterken van elkaars krachten — binnen en buiten het project.', 'diespe' ) ),
+		'punten'  => diespe_home_text( 'kaart3_punten', __( "Draagvlak en betrokkenheid van belanghebbenden\nBelangen balanceren, win-win oplossingen vinden\nGebiedsontwikkeling en maatschappelijke meerwaarde", 'diespe' ) ),
+		'voorbeeld' => diespe_home_text( 'kaart3_voorbeeld', __( 'Zoals: Optimalisatie watersysteem Lichtenvoorde — wateroverlast aangepakt met een uitgebreid burgerparticipatietraject.', 'diespe' ) ),
+	),
+);
+
+$over_intro = diespe_home_text( 'over_intro', __( 'Betrokken en proactief, met een pragmatische "eerst denken, dan doen"-aanpak. Expertise in het organiseren en coördineren van complexe omgevingsprojecten binnen de grond-, weg- en waterbouwsector.', 'diespe' ) );
+$over_naam  = diespe_home_text( 'over_naam', __( 'Diederik Speksnijder', 'diespe' ) );
+$over_tekst1 = diespe_home_text( 'over_tekst1', __( 'Flexibel in verschillende IPM-rollen, met een voorkeur voor technisch manager, projectmanager of omgevingsmanager. De kracht ligt in het verbinden van specialisten en stakeholders om gezamenlijke doelen te bereiken en maatschappelijke meerwaarde te creëren.', 'diespe' ) );
+$over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Met focus op duurzame en efficiënte oplossingen draagt DIESPE bij aan technisch solide projecten die voldoen aan de behoeften van de gemeenschap.', 'diespe' ) );
 ?>
 
 <section class="hero">
 	<div class="container hero-inner">
 		<div class="hero-text">
-			<h1><?php esc_html_e( 'DIESPE: Uw partner in projecten', 'diespe' ); ?></h1>
-			<p>
-				<?php esc_html_e( 'Kansen benutten en denken in oplossingen: voor elke uitdaging is een kans om iets moois te realiseren. Met een out-of-the-box kijk en een pragmatische aanpak, van initiatief tot realisatie.', 'diespe' ); ?>
-			</p>
+			<h1><?php echo esc_html( $hero_titel ); ?></h1>
+			<p><?php echo esc_html( $hero_tekst ); ?></p>
 			<a class="btn btn--accent" href="<?php echo esc_url( home_url( '/over-diederik-speksnijder/' ) ); ?>"><?php esc_html_e( 'Maak kennis', 'diespe' ); ?></a>
 			<a class="btn btn--white" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Contact', 'diespe' ); ?></a>
 		</div>
@@ -31,12 +67,9 @@ get_header();
 <section class="section workfields-strip" id="werkgebieden">
 	<div class="container">
 		<ul class="workfields-list">
-			<li><?php esc_html_e( 'Watersysteem', 'diespe' ); ?></li>
-			<li><?php esc_html_e( 'Energietransitie', 'diespe' ); ?></li>
-			<li><?php esc_html_e( 'Waterketen', 'diespe' ); ?></li>
-			<li><?php esc_html_e( 'Waterveiligheid', 'diespe' ); ?></li>
-			<li><?php esc_html_e( 'Utiliteit', 'diespe' ); ?></li>
-			<li><?php esc_html_e( 'Natuurherstel', 'diespe' ); ?></li>
+			<?php foreach ( $werkgebieden as $item ) : ?>
+				<li><?php echo esc_html( $item ); ?></li>
+			<?php endforeach; ?>
 		</ul>
 	</div>
 </section>
@@ -44,50 +77,24 @@ get_header();
 <section class="section" id="werkvelden">
 	<div class="container">
 		<h2 class="section-title"><?php esc_html_e( 'Werkvelden', 'diespe' ); ?></h2>
-		<p class="section-intro"><?php esc_html_e( 'Van initiëring tot oplevering: DIESPE verbindt denkkracht en uitvoering in de gebouwde en levende omgeving.', 'diespe' ); ?></p>
+		<p class="section-intro"><?php echo esc_html( $werkvelden_intro ); ?></p>
 		<div class="grid-3">
-			<div class="card">
-				<div class="card-header">
-					<span class="card-icon" aria-hidden="true">&#9851;</span>
-					<h3><?php esc_html_e( 'Project- en technischmanagement', 'diespe' ); ?></h3>
+			<?php foreach ( $kaarten as $kaart ) : ?>
+				<div class="card">
+					<div class="card-header">
+						<span class="card-icon" aria-hidden="true"><?php echo $kaart['icon']; ?></span>
+						<h3><?php echo esc_html( $kaart['titel'] ); ?></h3>
+					</div>
+					<p><?php echo esc_html( $kaart['tekst'] ); ?></p>
+					<ul>
+						<?php foreach ( array_filter( array_map( 'trim', explode( "\n", $kaart['punten'] ) ) ) as $punt ) : ?>
+							<li><?php echo esc_html( $punt ); ?></li>
+						<?php endforeach; ?>
+					</ul>
+					<p class="card-case"><?php echo esc_html( $kaart['voorbeeld'] ); ?></p>
+					<a class="btn btn--outline card-more" href="<?php echo esc_url( home_url( '/werkvelden/' ) ); ?>"><?php esc_html_e( 'Lees verder', 'diespe' ); ?></a>
 				</div>
-				<p><?php esc_html_e( 'Regie over het hele traject: van planning en budget tot kwaliteit en technisch ontwerp.', 'diespe' ); ?></p>
-				<ul>
-					<li><?php esc_html_e( 'IPM-rollen: projectmanager en technisch manager', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Procesregie en bestuurlijke besluitvorming', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Risicomanagement, inkoop en contracteren', 'diespe' ); ?></li>
-				</ul>
-				<p class="card-case"><?php esc_html_e( 'Zoals: Vispassage Doesburg — één van Nederlands grootste vispassages, van verkenning tot realisatie.', 'diespe' ); ?></p>
-				<a class="btn btn--outline card-more" href="<?php echo esc_url( home_url( '/werkvelden/' ) ); ?>"><?php esc_html_e( 'Lees verder', 'diespe' ); ?></a>
-			</div>
-			<div class="card">
-				<div class="card-header">
-					<span class="card-icon" aria-hidden="true">&#9881;</span>
-					<h3><?php esc_html_e( 'Integraal ontwerpleiderschap', 'diespe' ); ?></h3>
-				</div>
-				<p><?php esc_html_e( 'Vertalen van doelen naar technisch haalbaar ontwerp en uitvoering, met oog voor duurzaamheid.', 'diespe' ); ?></p>
-				<ul>
-					<li><?php esc_html_e( 'KRW- en NBW-doelen vertalen naar maatregelen', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Leidinggeven aan (ontwerp-)teams en ingenieursbureaus', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Systems Engineering en SE-GIS', 'diespe' ); ?></li>
-				</ul>
-				<p class="card-case"><?php esc_html_e( 'Zoals: Waardevolle Kleine Wateren, Bovenlopen Loolee — KRW-doelen vertaald naar inrichtingsmaatregelen voor vier beken.', 'diespe' ); ?></p>
-				<a class="btn btn--outline card-more" href="<?php echo esc_url( home_url( '/werkvelden/' ) ); ?>"><?php esc_html_e( 'Lees verder', 'diespe' ); ?></a>
-			</div>
-			<div class="card">
-				<div class="card-header">
-					<span class="card-icon" aria-hidden="true">&#127795;</span>
-					<h3><?php esc_html_e( 'Omgevingsgericht werken', 'diespe' ); ?></h3>
-				</div>
-				<p><?php esc_html_e( 'Samenwerking, vertrouwen en het versterken van elkaars krachten — binnen en buiten het project.', 'diespe' ); ?></p>
-				<ul>
-					<li><?php esc_html_e( 'Draagvlak en betrokkenheid van belanghebbenden', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Belangen balanceren, win-win oplossingen vinden', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Gebiedsontwikkeling en maatschappelijke meerwaarde', 'diespe' ); ?></li>
-				</ul>
-				<p class="card-case"><?php esc_html_e( 'Zoals: Optimalisatie watersysteem Lichtenvoorde — wateroverlast aangepakt met een uitgebreid burgerparticipatietraject.', 'diespe' ); ?></p>
-				<a class="btn btn--outline card-more" href="<?php echo esc_url( home_url( '/werkvelden/' ) ); ?>"><?php esc_html_e( 'Lees verder', 'diespe' ); ?></a>
-			</div>
+			<?php endforeach; ?>
 		</div>
 	</div>
 </section>
@@ -95,7 +102,7 @@ get_header();
 <section class="section section--alt" id="projecten">
 	<div class="container">
 		<h2 class="section-title"><?php esc_html_e( 'Projecten', 'diespe' ); ?></h2>
-		<p class="section-intro"><?php esc_html_e( 'Een selectie van opgaven waaraan wij werken.', 'diespe' ); ?></p>
+		<p class="section-intro"><?php esc_html_e( 'Een selectie van de opgaven waaraan wij werken.', 'diespe' ); ?></p>
 
 		<?php
 		$projects = new WP_Query( array(
@@ -126,12 +133,12 @@ get_header();
 <section class="section" id="over">
 	<div class="container">
 		<h2 class="section-title"><?php esc_html_e( 'Over DIESPE', 'diespe' ); ?></h2>
-		<p class="section-intro"><?php esc_html_e( 'Betrokken en proactief, met een pragmatische "eerst denken, dan doen"-aanpak. Expertise in het organiseren en coördineren van complexe omgevingsprojecten binnen de grond-, weg- en waterbouwsector.', 'diespe' ); ?></p>
+		<p class="section-intro"><?php echo esc_html( $over_intro ); ?></p>
 		<div class="contact-grid">
 			<div>
-				<h3><?php esc_html_e( 'Diederik Speksnijder', 'diespe' ); ?></h3>
-				<p><?php esc_html_e( 'Flexibel in verschillende IPM-rollen, met een voorkeur voor technisch manager, projectmanager of omgevingsmanager. De kracht ligt in het verbinden van specialisten en stakeholders om gezamenlijke doelen te bereiken en maatschappelijke meerwaarde te creëren.', 'diespe' ); ?></p>
-				<p><?php esc_html_e( 'Met focus op duurzame en efficiënte oplossingen draagt DIESPE bij aan technisch solide projecten die voldoen aan de behoeften van de gemeenschap.', 'diespe' ); ?></p>
+				<h3><?php echo esc_html( $over_naam ); ?></h3>
+				<p><?php echo esc_html( $over_tekst1 ); ?></p>
+				<p><?php echo esc_html( $over_tekst2 ); ?></p>
 				<a class="btn" href="<?php echo esc_url( home_url( '/over-diederik-speksnijder/' ) ); ?>"><?php esc_html_e( 'Meer over Diederik', 'diespe' ); ?></a>
 			</div>
 			<div class="card">

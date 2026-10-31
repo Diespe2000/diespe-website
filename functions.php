@@ -188,6 +188,62 @@ function diespe_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'diespe_customize_register' );
 
 /**
+ * Homepage-tekst ophalen (Customizer met standaardwaarde).
+ */
+function diespe_home_text( $key, $default = '' ) {
+	$mod = get_theme_mod( 'diespe_txt_' . $key );
+	return $mod ? $mod : $default;
+}
+
+/**
+ * Customizer: homepage-teksten.
+ *
+ * @param WP_Customize_Manager $wp_customize Customizer-object.
+ */
+function diespe_customize_homepage_texts( $wp_customize ) {
+	$wp_customize->add_section( 'diespe_homepage', array(
+		'title'    => __( 'Homepage-teksten', 'diespe' ),
+		'priority' => 25,
+	) );
+
+	$fields = array(
+		'hero_titel'        => array( __( 'Hero: titel', 'diespe' ), 'text' ),
+		'hero_tekst'        => array( __( 'Hero: tekst', 'diespe' ), 'textarea' ),
+		'werkgebieden'      => array( __( 'Werkgebieden-balk (één per regel)', 'diespe' ), 'textarea' ),
+		'werkvelden_intro'  => array( __( 'Werkvelden: intro', 'diespe' ), 'textarea' ),
+		'kaart1_titel'      => array( __( 'Kaart 1: titel', 'diespe' ), 'text' ),
+		'kaart1_tekst'      => array( __( 'Kaart 1: omschrijving', 'diespe' ), 'textarea' ),
+		'kaart1_punten'     => array( __( 'Kaart 1: punten (één per regel)', 'diespe' ), 'textarea' ),
+		'kaart1_voorbeeld'  => array( __( 'Kaart 1: praktijkvoorbeeld', 'diespe' ), 'textarea' ),
+		'kaart2_titel'      => array( __( 'Kaart 2: titel', 'diespe' ), 'text' ),
+		'kaart2_tekst'      => array( __( 'Kaart 2: omschrijving', 'diespe' ), 'textarea' ),
+		'kaart2_punten'     => array( __( 'Kaart 2: punten (één per regel)', 'diespe' ), 'textarea' ),
+		'kaart2_voorbeeld'  => array( __( 'Kaart 2: praktijkvoorbeeld', 'diespe' ), 'textarea' ),
+		'kaart3_titel'      => array( __( 'Kaart 3: titel', 'diespe' ), 'text' ),
+		'kaart3_tekst'      => array( __( 'Kaart 3: omschrijving', 'diespe' ), 'textarea' ),
+		'kaart3_punten'     => array( __( 'Kaart 3: punten (één per regel)', 'diespe' ), 'textarea' ),
+		'kaart3_voorbeeld'  => array( __( 'Kaart 3: praktijkvoorbeeld', 'diespe' ), 'textarea' ),
+		'over_intro'        => array( __( 'Over DIESPE: intro', 'diespe' ), 'textarea' ),
+		'over_naam'         => array( __( 'Over DIESPE: naam', 'diespe' ), 'text' ),
+		'over_tekst1'       => array( __( 'Over DIESPE: tekst 1', 'diespe' ), 'textarea' ),
+		'over_tekst2'       => array( __( 'Over DIESPE: tekst 2', 'diespe' ), 'textarea' ),
+	);
+
+	foreach ( $fields as $id => $field ) {
+		$wp_customize->add_setting( 'diespe_txt_' . $id, array(
+			'default'           => '',
+			'sanitize_callback' => 'text' === $field[1] ? 'sanitize_text_field' : 'wp_kses_post',
+		) );
+		$wp_customize->add_control( 'diespe_txt_' . $id, array(
+			'label'   => $field[0],
+			'section' => 'diespe_homepage',
+			'type'    => $field[1],
+		) );
+	}
+}
+add_action( 'customize_register', 'diespe_customize_homepage_texts' );
+
+/**
  * Contactformulier: weergave (shortcode [diespe_contactformulier]).
  */
 function diespe_contact_form_shortcode() {

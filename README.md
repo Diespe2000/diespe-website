@@ -56,6 +56,20 @@ de voorkeur.
 op basis van het CV en portfolio, plus menu-items voor hoofd- en footermenu. Wijs na
 import het menu toe via **Weergave → Menu's** (menu "Hoofdmenu" → locatie *Hoofdmenu*).
 
+## Homepage-teksten aanpassen
+
+Alle inhoudelijke teksten op de homepage zijn **zonder code aan te passen** via
+**Customizer → Homepage-teksten** (Weergave → Customizer):
+
+- Hero: titel en tekst
+- Werkgebieden-balk: één werkgebied per regel (vul je eigen lijst in)
+- Werkvelden: intro en per kaart titel, omschrijving, punten (één per regel) en
+  praktijkvoorbeeld
+- Over DIESPE: intro, naam en twee tekstblokken
+
+Laat je een veld leeg, dan geldt de ingebouwde standaardtekst. De Customizer toont
+live een voorvertoning naast het aanpassen.
+
 ## Contactformulier
 
 De contactpagina toont **automatisch** een formulier:

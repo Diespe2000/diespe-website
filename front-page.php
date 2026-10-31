@@ -105,24 +105,50 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Met focus op duurzame en ef
 		<p class="section-intro"><?php esc_html_e( 'Een selectie van de opgaven waaraan wij werken.', 'diespe' ); ?></p>
 
 		<?php
-		$projects = new WP_Query( array(
+		$showcase = new WP_Query( array(
 			'post_type'      => 'diespe_project',
 			'posts_per_page' => 3,
+			'name'           => 'vispassage-doesburg',
 		) );
 
-		if ( $projects->have_posts() ) :
+		$showcase_ids = array();
+		if ( $showcase->have_posts() ) {
+			$showcase_ids[] = $showcase->posts[0]->ID;
+		}
+		foreach ( array( 'windpark-duiven-te-duiven', 'transportsystemen-lochem-zutphen' ) as $slug ) {
+			$proj = get_page_by_path( $slug, OBJECT, 'diespe_project' );
+			if ( $proj ) {
+				$showcase_ids[] = $proj->ID;
+			}
+		}
+
+		if ( $showcase_ids ) {
+			$showcase = new WP_Query( array(
+				'post_type'      => 'diespe_project',
+				'posts_per_page' => 3,
+				'post__in'       => $showcase_ids,
+				'orderby'        => 'post__in',
+			) );
+		} else {
+			$showcase = new WP_Query( array(
+				'post_type'      => 'diespe_project',
+				'posts_per_page' => 3,
+			) );
+		}
+
+		if ( $showcase->have_posts() ) :
 			?>
 			<div class="project-grid">
 				<?php
-				while ( $projects->have_posts() ) :
-					$projects->the_post();
+				while ( $showcase->have_posts() ) :
+					$showcase->the_post();
 					get_template_part( 'template-parts/project', 'card' );
 				endwhile;
 				wp_reset_postdata();
 				?>
 			</div>
 			<p style="text-align:center; margin-top:36px;">
-				<a class="btn btn--outline" href="<?php echo esc_url( get_post_type_archive_link( 'diespe_project' ) ); ?>"><?php esc_html_e( 'Alle projecten', 'diespe' ); ?></a>
+				<a class="btn btn--outline" href="<?php echo esc_url( get_post_type_archive_link( 'diespe_project' ) ); ?>"><?php esc_html_e( 'Meer projecten', 'diespe' ); ?></a>
 			</p>
 		<?php else : ?>
 			<p style="text-align:center;"><?php esc_html_e( 'Nog geen projecten gepubliceerd.', 'diespe' ); ?></p>

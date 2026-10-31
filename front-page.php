@@ -26,9 +26,9 @@ $kaarten = array(
 	),
 	array(
 		'icon'    => '&#9881;',
-		'titel'   => diespe_home_text( 'kaart2_titel', __( 'Integraal ontwerpleiderschap', 'diespe' ) ),
-		'tekst'   => diespe_home_text( 'kaart2_tekst', __( 'Vertalen van doelen naar technisch haalbaar ontwerp en uitvoering, met oog voor duurzaamheid.', 'diespe' ) ),
-		'punten'  => diespe_home_text( 'kaart2_punten', __( "KRW- en NBW-doelen vertalen naar maatregelen\nLeidinggeven aan (ontwerp-)teams en ingenieursbureaus\nSystems Engineering en SE-GIS", 'diespe' ) ),
+		'titel'   => diespe_home_text( 'kaart2_titel', __( 'Integrale ontwerpleiding', 'diespe' ) ),
+		'tekst'   => diespe_home_text( 'kaart2_tekst', __( 'Vertalen van beleidsdoelen en opgaven naar integrale oplossingen: realiseerbaar, betaalbaar en acceptabel, met oog voor detail en duurzaamheid.', 'diespe' ) ),
+		'punten'  => diespe_home_text( 'kaart2_punten', __( "Beleidsdoelen en opgaven (o.a. waterkwaliteit, klimaat) vertalen naar maatregelen\nOntwerpfasering: verkenning met alternatievenstudies, planuitwerking, realiseerbaar ontwerp\nSysteembenadering en systemengineering (SE)\nPassende contractvormen: 2-fase, bouwteam, raamovereenkomsten, RAW, geïntegreerde contracten", 'diespe' ) ),
 		'voorbeeld' => diespe_home_text( 'kaart2_voorbeeld', __( 'Zoals: Waardevolle Kleine Wateren, Bovenlopen Loolee — KRW-doelen vertaald naar inrichtingsmaatregelen voor vier beken.', 'diespe' ) ),
 	),
 	array(

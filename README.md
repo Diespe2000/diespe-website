@@ -1,5 +1,17 @@
 # DIESPE Omgevingsprojecten — WordPress-thema
 
+## Preview direct bekijken (zonder zip)
+
+Zodra GitHub Pages aanstaat, bekijk je de site direct in de browser:
+
+- Homepage: <https://diespe2000.github.io/diespe-website/>
+- Projectenpagina: <https://diespe2000.github.io/diespe-website/projecten.html>
+
+**Eenmalig activeren (1 klik):** ga in deze repository naar
+**Settings → Pages → Source → "GitHub Actions"** en kies eventueel de workflow
+"Preview-site via GitHub Pages". Daarna wordt bij elke push de preview automatisch
+ververst — geen downloaden of uitpakken meer nodig.
+
 Aangepast WordPress-thema voor **DIESPE Omgevingsprojecten** — *Partner in duurzame
 omgevingsprojecten* (Lichtenvoorde). Gebaseerd op de huisstijl van diespe.nl:
 Project-, Technisch- en Omgevingsmanagement van omgevings- en energieprojecten,

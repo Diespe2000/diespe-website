@@ -10,6 +10,7 @@ while ( have_posts() ) :
 	the_post();
 	?>
 	<div class="container section">
+		<p class="project-meta"><a href="<?php echo esc_url( get_post_type_archive_link( 'diespe_project' ) ); ?>">&larr; <?php esc_html_e( 'Alle projecten', 'diespe' ); ?></a></p>
 		<article <?php post_class(); ?>>
 			<header class="entry-header">
 				<?php

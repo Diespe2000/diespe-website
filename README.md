@@ -44,9 +44,17 @@ file attachments" niet aan (alle content is tekst). Importeer eerst
 `diespe-pages.xml`, daarna `diespe-portfolio.xml`.
 
 **Projectcategorieën:** Watersysteem, Energietransitie, Waterketen, Waterveiligheid,
-Utiliteit, Natuurherstel, Overige — dezelfde namen als de werkgebieden-balk op de
-homepage. Wijs projecten handmatig toe aan Utiliteit/Natuurherstel zodra van
-toepassing.
+Utiliteit — dezelfde namen als de werkgebieden-balk op de homepage (plus de term
+Natuurherstel, klaar voor toekomstige projecten).
+
+**Projectafbeeldingen:** heeft een project geen eigen uitgelichte afbeelding, dan toont
+het thema automatisch een categorie-illustratie in huisstijl (zie
+`assets/img/projecten/`). Eigen foto's uploaden via het project-scherm heeft altijd
+de voorkeur.
+
+**Nieuwsberichten:** `diespe-pages.xml` bevat naast de pagina's ook drie nieuwsberichten
+op basis van het CV en portfolio, plus menu-items voor hoofd- en footermenu. Wijs na
+import het menu toe via **Weergave → Menu's** (menu "Hoofdmenu" → locatie *Hoofdmenu*).
 
 ## Contactformulier
 

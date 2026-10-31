@@ -302,3 +302,13 @@ function diespe_excerpt_more( $more ) {
 	return '&hellip;';
 }
 add_filter( 'excerpt_more', 'diespe_excerpt_more' );
+
+/**
+ * Zoeken ook op projecten.
+ */
+function diespe_search_projecten( $query ) {
+	if ( ! is_admin() && $query->is_main_query() && $query->is_search() ) {
+		$query->set( 'post_type', array( 'post', 'page', 'diespe_project' ) );
+	}
+}
+add_action( 'pre_get_posts', 'diespe_search_projecten' );

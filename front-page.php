@@ -57,6 +57,8 @@ get_header();
 					<li><?php esc_html_e( 'Procesregie en bestuurlijke besluitvorming', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Risicomanagement, inkoop en contracteren', 'diespe' ); ?></li>
 				</ul>
+				<p class="card-case"><?php esc_html_e( 'Zoals: Vispassage Doesburg — één van Nederlands grootste vispassages, van verkenning tot realisatie.', 'diespe' ); ?></p>
+				<a class="btn btn--outline card-more" href="<?php echo esc_url( home_url( '/werkvelden/' ) ); ?>"><?php esc_html_e( 'Lees verder', 'diespe' ); ?></a>
 			</div>
 			<div class="card">
 				<div class="card-header">
@@ -69,6 +71,8 @@ get_header();
 					<li><?php esc_html_e( 'Leidinggeven aan (ontwerp-)teams en ingenieursbureaus', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Systems Engineering en SE-GIS', 'diespe' ); ?></li>
 				</ul>
+				<p class="card-case"><?php esc_html_e( 'Zoals: Waardevolle Kleine Wateren, Bovenlopen Loolee — KRW-doelen vertaald naar inrichtingsmaatregelen voor vier beken.', 'diespe' ); ?></p>
+				<a class="btn btn--outline card-more" href="<?php echo esc_url( home_url( '/werkvelden/' ) ); ?>"><?php esc_html_e( 'Lees verder', 'diespe' ); ?></a>
 			</div>
 			<div class="card">
 				<div class="card-header">
@@ -81,6 +85,8 @@ get_header();
 					<li><?php esc_html_e( 'Belangen balanceren, win-win oplossingen vinden', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Gebiedsontwikkeling en maatschappelijke meerwaarde', 'diespe' ); ?></li>
 				</ul>
+				<p class="card-case"><?php esc_html_e( 'Zoals: Optimalisatie watersysteem Lichtenvoorde — wateroverlast aangepakt met een uitgebreid burgerparticipatietraject.', 'diespe' ); ?></p>
+				<a class="btn btn--outline card-more" href="<?php echo esc_url( home_url( '/werkvelden/' ) ); ?>"><?php esc_html_e( 'Lees verder', 'diespe' ); ?></a>
 			</div>
 		</div>
 	</div>

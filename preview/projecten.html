@@ -5,10 +5,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Projecten — DIESPE Omgevingsprojecten</title>
 <link rel="stylesheet" href="style.css">
+<style>
+.project-filters {
+  display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 28px 0 36px;
+}
+.filter-btn {
+  padding: 9px 18px; border-radius: 999px; border: 2px solid var(--diespe-blue);
+  background: transparent; color: var(--diespe-blue); font-weight: 700; font-size: 0.9rem; cursor: pointer;
+  font-family: inherit; transition: background .15s, color .15s;
+}
+.filter-btn:hover { border-color: var(--diespe-orange); color: var(--diespe-orange); }
+.filter-btn.is-active { background: var(--diespe-blue); color: #fff; }
+
+.tile-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+@media (max-width: 900px) { .tile-grid { grid-template-columns: 1fr; } }
+
+.flip-tile { perspective: 1200px; height: 300px; cursor: pointer; }
+.flip-inner { position: relative; width: 100%; height: 100%; transition: transform .55s ease; transform-style: preserve-3d; }
+.flip-tile.is-flipped .flip-inner { transform: rotateY(180deg); }
+.flip-face {
+  position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  border: 1px solid var(--diespe-border); border-top: 4px solid; border-radius: var(--diespe-radius);
+  overflow: hidden; background: #fff; box-shadow: var(--diespe-shadow);
+  display: flex; flex-direction: column;
+}
+.flip-front img { width: 100%; height: 100%; object-fit: cover; }
+.tile-label {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 34px 18px 16px;
+  background: linear-gradient(180deg, transparent, rgba(26,26,26,0.85)); color: #fff;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.tile-cat { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+.tile-titel { font-size: 1.05rem; font-weight: 700; line-height: 1.25; }
+.flip-back { transform: rotateY(180deg); padding: 20px 20px 16px; }
+.flip-back h3 { font-size: 1rem; margin-bottom: 0.5em; }
+.flip-back p { font-size: 0.85rem; color: var(--diespe-muted); margin-bottom: 0.7em; }
+.tile-info { list-style: none; padding: 0; margin: 0 0 0.8em; font-size: 0.8rem; color: var(--diespe-muted); }
+.tile-info li { margin-bottom: 4px; }
+.tile-info strong { color: var(--diespe-blue); }
+.tile-meer { font-size: 0.8rem; padding: 7px 14px; align-self: flex-start; margin-top: auto; }
+.tile-hint { text-align: center; color: var(--diespe-muted); font-size: 0.85rem; margin-top: 26px; }
+</style>
 </head>
 <body id="top">
-<a class="skip-link screen-reader-text" href="#content">Ga naar de inhoud</a>
-
 <header class="site-header" role="banner">
   <div class="container header-inner">
     <div class="site-branding">
@@ -29,375 +68,747 @@
 <div class="container section">
   <header class="entry-header">
     <h1>Projecten</h1>
-    <p class="section-intro" style="margin-bottom:0;">Op deze pagina een selectie van de projecten waaraan DIESPE heeft bijgedragen &mdash; van watersysteem- en energieprojecten tot waterveiligheid en gebiedsontwikkeling. Wilt u meer weten over een specifiek project of over de aanpak? Neem gerust contact op.</p>
-    <p class="project-meta" style="margin-top:14px;">Watersysteem (25) &nbsp;&middot;&nbsp; Energietransitie (7) &nbsp;&middot;&nbsp; Waterketen (10) &nbsp;&middot;&nbsp; Waterveiligheid (2) &nbsp;&middot;&nbsp; Gebiedsontwikkeling (1)</p>
+    <p class="section-intro" style="margin-bottom:0;">Op deze pagina een selectie van de projecten waaraan DIESPE heeft bijgedragen &mdash; van watersysteem- en energieprojecten tot waterveiligheid en gebiedsontwikkeling. Klik op een tegel voor meer informatie.</p>
   </header>
-  <div class="project-grid" style="margin-top:36px;">
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Waardevolle kleine Wateren, Bovenlopen Loolee</a></h3>
-          <p>KRW inrichtingsmaatregelen in de waardevolle kleine wateren bovenlopen Loolee: Lemselerbeek, Weerseloschebeek, Rossumerbeek, Baasdammerbeek | &hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Integraalwatersysteem project Oude Vaart, gebied tussen Ruinen en Meppel</a></h3>
-          <p>Verkenning voor programma aanpak klimaat robuust watersysteem 2100, KRW en Nationaal Bestuursakkoord Water (NBW) in samenhang met project Wold Aa | &hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Integraalwatersysteem project Wold Aa, gebied tussen Ruinen en Meppel</a></h3>
-          <p>Verkenning voor programma aanpak klimaat robuust watersysteem 2100, KRW en Nationaal Bestuursakkoord Water (NBW) in samenhang met project Oude Vaart | &hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Peilbesluit Mastenbroek inclusief Koekkoekspolder</a></h3>
-          <p>Nieuw peil besluit voor veenweide gebied voor de oudste rationele polder van Nederland | &hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Integraalwatersysteem project restopgave Oude Diep, gebied tussen Fluitenberg - Hoogeveen</a></h3>
-          <p>Pre-verkenning voor project aanpak KRW en Nationaal Bestuursakkoord Water (NBW)&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Integraalwatersysteem project Wapserveensche Aa, gebied tussen Diever, Wapse en Steenwijk</a></h3>
-          <p>KRW, 2,5 km 7 meter brede natuurvriendelijke oever, vier vispassages, baggerwerkzaamheden, herstel oeverbescherming.&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Integraalwatersysteem project Boerenveensche plassen, gebied tussen Pesse, Gijsselte en Ruinen</a></h3>
-          <p>Verbetering van watersysteem tbv Nationaal Bestuursakkoord Water (NBW) ontwerp en aanleg van waterbergingen, automatische-, stuwen, duikers.&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Integraalwatersysteem project Ruiner AA, gebied tussen Spier, Wijster en Pesse</a></h3>
-          <p>Verbetering van watersysteem tbv Nationaal Bestuursakkoord Water (NBW) ontwerp en aanleg van waterbergingen, automatische-, stuwen, duikers.&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Integraalwatersysteem project Domeinweg, omgeving Fluitenberg</a></h3>
-          <p>Verbetering van watersysteem tbv Nationaal Bestuursakkoord Water (NBW) ontwerp en aanleg van waterbergingen, automatische-, stuwen, duikers. | &hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Herinrichting Groenlose slinge deel RWZI-Winterswijk – N18</a></h3>
-          <p>KRW, beekherstel, waterbodem verhoging, vispasseerbaar maken, profiel aanpassing, vergoten biodiversiteit vergoten&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Natuurlijke nazuivering RWZI Winterswijk</a></h3>
-          <p>KRW, waterkwaliteit verbetering door middel van natuurlijke nazuivering van effluent RWZI Winterswijk&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Beurzerbeek bovenlopen deel Walienseweg  - Greuneweg te Winterswijk</a></h3>
-          <p>KRW, beekherstel, waterbodem verhoging, vispasseerbaar maken, profiel aanpassing, vergoten biodiversiteit vergoten | &hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Berenschotbrug – stuw Miste te Winterswijk</a></h3>
-          <p>Beekherstel, waterbodem verhoging, vispasseerbaar maken, profiel aanpassing, vergoten biodiversiteit vergoten&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Osinkbeek, Bemersbeek en Schippersbeek te Winterswijk</a></h3>
-          <p>Beekherstel, water vasthouden, vergoten biodiversiteit vergoten&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="vispassage-doesburg.jpg" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Vispassage Doesburg</a></h3>
-          <p>Een van de grootse vispassage van Nederland, vergoten belevingswaarde, recreatie, aanleg zwaluwwand, herinrichting omgeving | &hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Renovatie stuw Doesburg</a></h3>
-          <p>Groot onderhoud aan bouwkundig en civiel onderdelen van stuw Doesburg&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Optimalisatie watersysteem Lichtenvoorde</a></h3>
-          <p>Aanleg wateropvang en aanpassing watersysteem ter voorkoming wateroverlast in stedelijk gebied met uitgebreid burgerparticipatie proces | &hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Vispassage Erfkamelingschap</a></h3>
-          <p>Aanleg technische vispassage en verbeteren peilbeheer Rijnstrangen gebied&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Verbeteren watersysteem Arnhem Presikhaaf en Velp</a></h3>
-          <p>Verbeteren watersysteem, verminderen wateroverlast, herinrichting watersysteem, vervangen duikers, bouw (tussen-) gemalen, nieuwe duiker onder A348&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Renovatie gemaal Bevermeer te Angerlo</a></h3>
-          <p>Opwaardering en renovatie, nieuwe betonnen slakhuispompen, elektrificatie, renovatie afsluit middelen&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Herinrichting Whemerbeek en aanleg retentie Eelink deel Bataafseweg – Eelinkstraat te Winterswijk</a></h3>
-          <p>Integrale herinrichting beek, vispasseerbaar maken, watervast houden, vergroten biodiversiteit, recreatie | &hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Integrale herinrichting Wehmerbeek deel Singelweg – Burgermeester van Nispenstraat te Winterswijk</a></h3>
-          <p>Herinrichting beek, vispasseerbaar maken, watervast houden, vergroten biodiversiteit, recreatie, fietsverbinding | &hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Aanleg Waterretentie SKB te Winterswijk</a></h3>
-          <p>Aanleg waterretentie tbv stedelijk water nabij Streekziekenhuis Koning Beatrix te Winterswijk inclusief aanpassingen in aan- en afvoerend watersysteem&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Waterretentie Sibbinkweg te Winterswijk</a></h3>
-          <p>Aanleg waterretentie tbv stedelijk water aan de Sibbinkweg te Winterswijk inclusief aanpassingen in aan- en afvoerend watersysteem&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/watersysteem.png" alt="Watersysteem" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Watersysteem</p>
-          <h3><a href="#">Integraal meetnet watersysteem</a></h3>
-          <p>Gebied dekkend meetnet bestaande uit 55 debietmeet locaties in openwater met telemetrie&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="windpark-duiven.jpg" alt="Energietransitie" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Energietransitie</p>
-          <h3><a href="#">Windpark Duiven te Duiven</a></h3>
-          <p>Ontwikkelen van windpark Duiven bestaande uit 2 windturbines met tip hoogte van 200 meter. | &hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/energietransitie.png" alt="Energietransitie" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Energietransitie</p>
-          <h3><a href="#">Netverbetering 10-20 kV Duiven en Westervoort</a></h3>
-          <p>Realisatie van middenspanningsverbindingen en middenspanningstations, projectomvang €10 milj.&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/energietransitie.png" alt="Energietransitie" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Energietransitie</p>
-          <h3><a href="#">Netverbetering 10-20 kV Bemmel</a></h3>
-          <p>Realisatie van middenspanningsverbindingen en middenspanningstations
-projectomvang €25 milj.&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/energietransitie.png" alt="Energietransitie" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Energietransitie</p>
-          <h3><a href="#">Netverbetering 10-20 kV Wijchen</a></h3>
-          <p>Realisatie van middenspanningsverbindingen en middenspanningstations
-projectomvang €25 milj. | &hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/energietransitie.png" alt="Energietransitie" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Energietransitie</p>
-          <h3><a href="#">Netverbetering 10-20 kV Gendt</a></h3>
-          <p>Realisatie van middenspanningsverbindingen en middenspanningstations
-projectomvang €15 milj.&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/energietransitie.png" alt="Energietransitie" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Energietransitie</p>
-          <h3><a href="#">Netverbetering 10-20 kV Affferden</a></h3>
-          <p>Realisatie van middenspanningsverbindingen en middenspanningstations
-projectomvang €24 milj.&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/energietransitie.png" alt="Energietransitie" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Energietransitie</p>
-          <h3><a href="#">Windpark IJsselwind te Zutphen</a></h3>
-          <p>Ontwikkelen van windpark IJsselwind bestaande uit 3 windturbines. | &hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/waterketen.png" alt="Waterketen" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Waterketen</p>
-          <h3><a href="#">Renovatie verzamelput transportriool Velp-Arnhem in uiterwaarde te Velp</a></h3>
-          <p>Amoveren en nieuwbouw van verbindingsput tussen hoofdafvoer Arnhem-noord en Velp en zinkers onder IJssel | &hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="transportsystemen-lochem-zutphen.jpg" alt="Waterketen" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Waterketen</p>
-          <h3><a href="#">Transportsystemen Lochem-Zutphen</a></h3>
-          <p>Realisatie van 25 kilometer riool- en industrieelafvalwater transportleidingen, twee nieuwe gemalen en ombouw van drie gemalen | &hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/waterketen.png" alt="Waterketen" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Waterketen</p>
-          <h3><a href="#">Afvalwatertransportsysteem Borculo-Haarlo</a></h3>
-          <p>Realisatie van afvalwatertransportsysteem en bouw rioolwater gemaal&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/waterketen.png" alt="Waterketen" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Waterketen</p>
-          <h3><a href="#">Industrieelwatertransportsysteem Borculo-Lochem</a></h3>
-          <p>Realisatie van industrieel afvalwatertransportsysteem en bouw afvalwatergemaal&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/waterketen.png" alt="Waterketen" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Waterketen</p>
-          <h3><a href="#">Renovatie bedrijfsgebouw RWZI Lichtenvoorde</a></h3>
-          <p>Renovatie en uitbreiding van bedrijfsgebouw van RWZI Lichtenvoorde&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/waterketen.png" alt="Waterketen" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Waterketen</p>
-          <h3><a href="#">Verwijderen AC-transportsysteem Lochem-Zutphen</a></h3>
-          <p>Verwijderen van Asbestcement 800mm transportleiding uit Berkel dal tussen Lochem en Zutphen&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/waterketen.png" alt="Waterketen" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Waterketen</p>
-          <h3><a href="#">Ringleiding Winterswijk West</a></h3>
-          <p>Realisatie van afvalwater transportleidingen en 2 rioolwatergemalen | &hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/waterketen.png" alt="Waterketen" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Waterketen</p>
-          <h3><a href="#">Afvalwatertransportsysteem Gendringen - Ulft</a></h3>
-          <p>Aanleg afvalwatertransportleiding en 3 gemalen&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/waterketen.png" alt="Waterketen" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Waterketen</p>
-          <h3><a href="#">Afvalwatertransportsysteem Groessen -Duiven</a></h3>
-          <p>Aanleg afvalwatertransportleiding, saneren overstort&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/waterketen.png" alt="Waterketen" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Waterketen</p>
-          <h3><a href="#">Renovatie rioolgemalen</a></h3>
-          <p>Renovatie van diverse rioolgemalen w.o. Duiven, Didam, Westervoort, etc&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/waterveiligheid.png" alt="Waterveiligheid" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Waterveiligheid</p>
-          <h3><a href="#">Hoogwaterkering Tuindorp nabij Lobith</a></h3>
-          <p>Onderzoek na hoogwaterbeschermingsopgave waterkering Tuindorp&hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="../assets/img/projecten/waterveiligheid.png" alt="Waterveiligheid" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Waterveiligheid</p>
-          <h3><a href="#">Dijkverbetering Westervoortsewijk fase 1, deel tussen Billitonkade en John Frostbrug te Arnhem</a></h3>
-          <p>Aanleg ‘harde’ hoogwaterkering in stedelijk gebied | &hellip;</p>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-thumb"><img src="gebiedsontwikkeling.png" alt="Utiliteit" loading="lazy"></div>
-        <div class="project-body">
-          <p class="project-meta">Gebiedsontwikkeling</p>
-          <h3><a href="#">FCCL BMX-accommodatie te Lichtenvoorde</a></h3>
-          <p>Realisatie van een nieuwe BMX-accommodatie voor de vereniging Fietscrossclub Lichtenvoorde.&hellip;</p>
-        </div>
-      </article>
+  <div class="project-filters">
+    <button class="filter-btn is-active" data-filter="all">Alle (45)</button>
+    <button class="filter-btn" data-filter="Watersysteem">Watersysteem (25)</button>
+    <button class="filter-btn" data-filter="Energietransitie">Energietransitie (7)</button>
+    <button class="filter-btn" data-filter="Waterketen">Waterketen (10)</button>
+    <button class="filter-btn" data-filter="Waterveiligheid">Waterveiligheid (2)</button>
+    <button class="filter-btn" data-filter="Gebiedsontwikkeling">Gebiedsontwikkeling (1)</button>
   </div>
+  <div class="tile-grid">
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Waardevolle kleine Wateren, Bovenlopen Loolee</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Waardevolle kleine Wateren, Bovenlopen Loolee</h3>
+            <p>KRW inrichtingsmaatregelen in de waardevolle kleine wateren bovenlopen Loolee: Lemselerbeek, Weerseloschebeek, Rossumerbeek, Baasdammerbeek | &hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Vechtstromen | </li><li><strong>Projectfasen:</strong> Ontwerpfase | </li><li><strong>Rol:</strong> Senior adviseur watersysteem / technisch manager | </li><li><strong>Contractvorm:</strong> nader te bepalen | </li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Integraalwatersysteem project Oude Vaart, gebied tussen Ruinen en Meppel</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Integraalwatersysteem project Oude Vaart, gebied tussen Ruinen en Meppel</h3>
+            <p>Verkenning voor programma aanpak klimaat robuust watersysteem 2100, KRW en Nationaal Bestuursakkoord Water (NBW) in samenhang met project Wold Aa | &hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Drents Overijsselse Delta | </li><li><strong>Projectfasen:</strong> Verkenningsfase | </li><li><strong>Rol:</strong> IPM technisch manager | </li><li><strong>Contractvorm:</strong> nader te bepalen | </li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Integraalwatersysteem project Wold Aa, gebied tussen Ruinen en Meppel</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Integraalwatersysteem project Wold Aa, gebied tussen Ruinen en Meppel</h3>
+            <p>Verkenning voor programma aanpak klimaat robuust watersysteem 2100, KRW en Nationaal Bestuursakkoord Water (NBW) in samenhang met project Oude Vaart | &hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Drents Overijsselse Delta | </li><li><strong>Projectfasen:</strong> Verkenningsfase | </li><li><strong>Rol:</strong> IPM technisch manager | </li><li><strong>Contractvorm:</strong> nader te bepalen | </li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Peilbesluit Mastenbroek inclusief Koekkoekspolder</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Peilbesluit Mastenbroek inclusief Koekkoekspolder</h3>
+            <p>Nieuw peil besluit voor veenweide gebied voor de oudste rationele polder van Nederland | &hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Drents Overijsselse Delta | </li><li><strong>Projectfasen:</strong> Verkenningsfase | </li><li><strong>Rol:</strong> IPM technisch manager | </li><li><strong>Contractvorm:</strong> nader te bepalen | </li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Integraalwatersysteem project restopgave Oude Diep, gebied tussen Fluitenberg - Hoogeveen</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Integraalwatersysteem project restopgave Oude Diep, gebied tussen Fluitenberg - Hoogeveen</h3>
+            <p>Pre-verkenning voor project aanpak KRW en Nationaal Bestuursakkoord Water (NBW)&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Drents Overijsselse Delta</li><li><strong>Projectfasen:</strong> Pre-verkenningsfase</li><li><strong>Rol:</strong> IPM technisch manager</li><li><strong>Contractvorm:</strong> nader te bepalen</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Integraalwatersysteem project Wapserveensche Aa, gebied tussen Diever, Wapse en Steenwijk</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Integraalwatersysteem project Wapserveensche Aa, gebied tussen Diever, Wapse en Steenwijk</h3>
+            <p>KRW, 2,5 km 7 meter brede natuurvriendelijke oever, vier vispassages, baggerwerkzaamheden, herstel oeverbescherming.&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Drents Overijsselse Delta</li><li><strong>Projectfasen:</strong> Planuitwerking</li><li><strong>Rol:</strong> IPM technisch manager</li><li><strong>Contractvorm:</strong> Samenwerkingsovereenkomst ingenieursdiensten</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Integraalwatersysteem project Boerenveensche plassen, gebied tussen Pesse, Gijsselte en Ruinen</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Integraalwatersysteem project Boerenveensche plassen, gebied tussen Pesse, Gijsselte en Ruinen</h3>
+            <p>Verbetering van watersysteem tbv Nationaal Bestuursakkoord Water (NBW) ontwerp en aanleg van waterbergingen, automatische-, stuwen, duikers.&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Drents Overijsselse Delta</li><li><strong>Projectfasen:</strong> Planuitwerking / Realisatie</li><li><strong>Rol:</strong> IPM technisch manager</li><li><strong>Contractvorm:</strong> Samenwerkingsovereenkomst ingenieursdiensten / RAW bestek t.b.v. realisatie</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Integraalwatersysteem project Ruiner AA, gebied tussen Spier, Wijster en Pesse</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Integraalwatersysteem project Ruiner AA, gebied tussen Spier, Wijster en Pesse</h3>
+            <p>Verbetering van watersysteem tbv Nationaal Bestuursakkoord Water (NBW) ontwerp en aanleg van waterbergingen, automatische-, stuwen, duikers.&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Drents Overijsselse Delta</li><li><strong>Projectfasen:</strong> Planuitwerking / Realisatie</li><li><strong>Rol:</strong> IPM technisch manager</li><li><strong>Contractvorm:</strong> Samenwerkingsovereenkomst ingenieursdiensten / RAW bestek t.b.v. realisatie</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Integraalwatersysteem project Domeinweg, omgeving Fluitenberg</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Integraalwatersysteem project Domeinweg, omgeving Fluitenberg</h3>
+            <p>Verbetering van watersysteem tbv Nationaal Bestuursakkoord Water (NBW) ontwerp en aanleg van waterbergingen, automatische-, stuwen, duikers. | &hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Drents Overijsselse Delta | </li><li><strong>Projectfasen:</strong> Planuitwerking / Realisatie | </li><li><strong>Rol:</strong> IPM technisch manager | </li><li><strong>Contractvorm:</strong> Samenwerkingsovereenkomst ingenieursdiensten / RAW bestek t.b.v. realisatie | </li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Herinrichting Groenlose slinge deel RWZI-Winterswijk – N18</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Herinrichting Groenlose slinge deel RWZI-Winterswijk – N18</h3>
+            <p>KRW, beekherstel, waterbodem verhoging, vispasseerbaar maken, profiel aanpassing, vergoten biodiversiteit vergoten&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Verkenning</li><li><strong>Rol:</strong> IPM projectmanager</li><li><strong>Contractvorm:</strong> Portfolio/ raamovereenkomst</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Natuurlijke nazuivering RWZI Winterswijk</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Natuurlijke nazuivering RWZI Winterswijk</h3>
+            <p>KRW, waterkwaliteit verbetering door middel van natuurlijke nazuivering van effluent RWZI Winterswijk&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Verkenning</li><li><strong>Rol:</strong> IPM projectmanager</li><li><strong>Contractvorm:</strong> Portfolio/ raamovereenkomst</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Beurzerbeek bovenlopen deel Walienseweg  - Greuneweg te Winterswijk</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Beurzerbeek bovenlopen deel Walienseweg  - Greuneweg te Winterswijk</h3>
+            <p>KRW, beekherstel, waterbodem verhoging, vispasseerbaar maken, profiel aanpassing, vergoten biodiversiteit vergoten | &hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel | </li><li><strong>Projectfasen:</strong> Verkenning | </li><li><strong>Rol:</strong> IPM projectmanager | </li><li><strong>Contractvorm:</strong> Portfolio/ raamovereenkomst | </li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Berenschotbrug – stuw Miste te Winterswijk</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Berenschotbrug – stuw Miste te Winterswijk</h3>
+            <p>Beekherstel, waterbodem verhoging, vispasseerbaar maken, profiel aanpassing, vergoten biodiversiteit vergoten&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Verkenning
+Planuitwerking</li><li><strong>Rol:</strong> IPM projectmanager</li><li><strong>Contractvorm:</strong> Portfolio/ raamovereenkomst</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Osinkbeek, Bemersbeek en Schippersbeek te Winterswijk</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Osinkbeek, Bemersbeek en Schippersbeek te Winterswijk</h3>
+            <p>Beekherstel, water vasthouden, vergoten biodiversiteit vergoten&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Verkenning</li><li><strong>Rol:</strong> IPM projectmanager</li><li><strong>Contractvorm:</strong> Portfolio/ raamovereenkomst</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="vispassage-doesburg.jpg" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Vispassage Doesburg</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Vispassage Doesburg</h3>
+            <p>Een van de grootse vispassage van Nederland, vergoten belevingswaarde, recreatie, aanleg zwaluwwand, herinrichting omgeving | &hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel | </li><li><strong>Projectfasen:</strong> Verkenning
+Planuitwerking
+Realisatie | </li><li><strong>Rol:</strong> Integraal projectmanager | </li><li><strong>Contractvorm:</strong> Bouwteam | </li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Renovatie stuw Doesburg</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Renovatie stuw Doesburg</h3>
+            <p>Groot onderhoud aan bouwkundig en civiel onderdelen van stuw Doesburg&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Planuitwerking
+Realisatie</li><li><strong>Rol:</strong> Integraal projectmanager</li><li><strong>Contractvorm:</strong> Design en Construct</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Optimalisatie watersysteem Lichtenvoorde</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Optimalisatie watersysteem Lichtenvoorde</h3>
+            <p>Aanleg wateropvang en aanpassing watersysteem ter voorkoming wateroverlast in stedelijk gebied met uitgebreid burgerparticipatie proces | &hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel / Gemeente Oost Gelre | </li><li><strong>Projectfasen:</strong> Verkenning
+Planuitwerking | </li><li><strong>Rol:</strong> Integraal projectmanager | </li><li><strong>Contractvorm:</strong> RAW | </li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Vispassage Erfkamelingschap</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Vispassage Erfkamelingschap</h3>
+            <p>Aanleg technische vispassage en verbeteren peilbeheer Rijnstrangen gebied&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Verkenning
+Planuitwerking
+Realisatie</li><li><strong>Rol:</strong> Integraal projectmanager</li><li><strong>Contractvorm:</strong> Bouwteam</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Verbeteren watersysteem Arnhem Presikhaaf en Velp</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Verbeteren watersysteem Arnhem Presikhaaf en Velp</h3>
+            <p>Verbeteren watersysteem, verminderen wateroverlast, herinrichting watersysteem, vervangen duikers, bouw (tussen-) gemalen, nieuwe duiker onder A348&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Verkenning
+Planuitwerking
+Realisatie</li><li><strong>Rol:</strong> Integraal projectleider</li><li><strong>Contractvorm:</strong> RAW</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Renovatie gemaal Bevermeer te Angerlo</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Renovatie gemaal Bevermeer te Angerlo</h3>
+            <p>Opwaardering en renovatie, nieuwe betonnen slakhuispompen, elektrificatie, renovatie afsluit middelen&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Planuitwerking
+Realisatie</li><li><strong>Rol:</strong> Projectleider civiel</li><li><strong>Contractvorm:</strong> RAW</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Herinrichting Whemerbeek en aanleg retentie Eelink deel Bataafseweg – Eelinkstraat te Winterswijk</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Herinrichting Whemerbeek en aanleg retentie Eelink deel Bataafseweg – Eelinkstraat te Winterswijk</h3>
+            <p>Integrale herinrichting beek, vispasseerbaar maken, watervast houden, vergroten biodiversiteit, recreatie | &hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel / Gemeente Winterswijk | </li><li><strong>Projectfasen:</strong> Planuitwerking
+Realisatie | </li><li><strong>Rol:</strong> Integraal projectmanager | </li><li><strong>Contractvorm:</strong> RAW | </li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Integrale herinrichting Wehmerbeek deel Singelweg – Burgermeester van Nispenstraat te Winterswijk</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Integrale herinrichting Wehmerbeek deel Singelweg – Burgermeester van Nispenstraat te Winterswijk</h3>
+            <p>Herinrichting beek, vispasseerbaar maken, watervast houden, vergroten biodiversiteit, recreatie, fietsverbinding | &hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel / Gemeente Winterswijk | </li><li><strong>Projectfasen:</strong> Planuitwerking
+Realisatie | </li><li><strong>Rol:</strong> Integraal projectmanager | </li><li><strong>Contractvorm:</strong> Design en Construct | </li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Aanleg Waterretentie SKB te Winterswijk</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Aanleg Waterretentie SKB te Winterswijk</h3>
+            <p>Aanleg waterretentie tbv stedelijk water nabij Streekziekenhuis Koning Beatrix te Winterswijk inclusief aanpassingen in aan- en afvoerend watersysteem&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Verkenning
+Planuitwerking
+Realisatie</li><li><strong>Rol:</strong> Integraal projectmanager</li><li><strong>Contractvorm:</strong> RAW</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Waterretentie Sibbinkweg te Winterswijk</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Waterretentie Sibbinkweg te Winterswijk</h3>
+            <p>Aanleg waterretentie tbv stedelijk water aan de Sibbinkweg te Winterswijk inclusief aanpassingen in aan- en afvoerend watersysteem&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Verkenning
+Planuitwerking
+Realisatie</li><li><strong>Rol:</strong> Integraal projectmanager</li><li><strong>Contractvorm:</strong> RAW</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Watersysteem">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#2b97d9">
+            <img src="watersysteem.png" alt="Watersysteem" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#2b97d9">Watersysteem</span>
+              <span class="tile-titel">Integraal meetnet watersysteem</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#2b97d9">
+            <h3>Integraal meetnet watersysteem</h3>
+            <p>Gebied dekkend meetnet bestaande uit 55 debietmeet locaties in openwater met telemetrie&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Verkenning
+Planuitwerking
+Realisatie</li><li><strong>Rol:</strong> Integraal projectleider</li><li><strong>Contractvorm:</strong> Design en Construct</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Energietransitie">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#ff8000">
+            <img src="windpark-duiven.jpg" alt="Energietransitie" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#ff8000">Energietransitie</span>
+              <span class="tile-titel">Windpark Duiven te Duiven</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#ff8000">
+            <h3>Windpark Duiven te Duiven</h3>
+            <p>Ontwikkelen van windpark Duiven bestaande uit 2 windturbines met tip hoogte van 200 meter. | &hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel | </li><li><strong>Projectfasen:</strong> Planuitwerking
+Realisatie | </li><li><strong>Rol:</strong> IPM projectmanager | </li><li><strong>Contractvorm:</strong> Fidic Yellow book | </li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Energietransitie">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#ff8000">
+            <img src="energietransitie.png" alt="Energietransitie" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#ff8000">Energietransitie</span>
+              <span class="tile-titel">Netverbetering 10-20 kV Duiven en Westervoort</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#ff8000">
+            <h3>Netverbetering 10-20 kV Duiven en Westervoort</h3>
+            <p>Realisatie van middenspanningsverbindingen en middenspanningstations, projectomvang €10 milj.&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Liander</li><li><strong>Projectfasen:</strong> Uitvoeringsontwerp
+Realisatie</li><li><strong>Rol:</strong> IPM projectmanager</li><li><strong>Contractvorm:</strong> Bouwteam
+Uitvoeringsovereenkomst ‘RAW’ UAV 2012</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Energietransitie">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#ff8000">
+            <img src="energietransitie.png" alt="Energietransitie" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#ff8000">Energietransitie</span>
+              <span class="tile-titel">Netverbetering 10-20 kV Bemmel</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#ff8000">
+            <h3>Netverbetering 10-20 kV Bemmel</h3>
+            <p>Realisatie van middenspanningsverbindingen en middenspanningstations
+projectomvang €25 milj.&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Liander</li><li><strong>Projectfasen:</strong> Planuitwerking
+Realisatie Q1 2025</li><li><strong>Rol:</strong> IPM projectmanager</li><li><strong>Contractvorm:</strong> Bouwteam
+Uitvoeringsovereenkomst ‘RAW’ UAV 2012</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Energietransitie">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#ff8000">
+            <img src="energietransitie.png" alt="Energietransitie" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#ff8000">Energietransitie</span>
+              <span class="tile-titel">Netverbetering 10-20 kV Wijchen</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#ff8000">
+            <h3>Netverbetering 10-20 kV Wijchen</h3>
+            <p>Realisatie van middenspanningsverbindingen en middenspanningstations
+projectomvang €25 milj. | &hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Liander | </li><li><strong>Projectfasen:</strong> Planuitwerking
+Realisatie start Q1 2025 | </li><li><strong>Rol:</strong> IPM projectmanager | </li><li><strong>Contractvorm:</strong> Bouwteam
+Uitvoeringsovereenkomst ‘RAW’ UAV 2012 | </li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Energietransitie">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#ff8000">
+            <img src="energietransitie.png" alt="Energietransitie" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#ff8000">Energietransitie</span>
+              <span class="tile-titel">Netverbetering 10-20 kV Gendt</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#ff8000">
+            <h3>Netverbetering 10-20 kV Gendt</h3>
+            <p>Realisatie van middenspanningsverbindingen en middenspanningstations
+projectomvang €15 milj.&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Liander</li><li><strong>Projectfasen:</strong> Planuitwerking
+Realisatie start Q1 2025</li><li><strong>Rol:</strong> IPM projectmanager</li><li><strong>Contractvorm:</strong> Bouwteam
+Uitvoeringsovereenkomst ‘RAW’ UAV 2012</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Energietransitie">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#ff8000">
+            <img src="energietransitie.png" alt="Energietransitie" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#ff8000">Energietransitie</span>
+              <span class="tile-titel">Netverbetering 10-20 kV Affferden</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#ff8000">
+            <h3>Netverbetering 10-20 kV Affferden</h3>
+            <p>Realisatie van middenspanningsverbindingen en middenspanningstations
+projectomvang €24 milj.&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Liander</li><li><strong>Projectfasen:</strong> Planuitwerking
+Realisatie start Q1 2026</li><li><strong>Rol:</strong> IPM projectmanager</li><li><strong>Contractvorm:</strong> Bouwteam
+Uitvoeringsovereenkomst ‘RAW’ UAV 2012</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Energietransitie">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#ff8000">
+            <img src="energietransitie.png" alt="Energietransitie" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#ff8000">Energietransitie</span>
+              <span class="tile-titel">Windpark IJsselwind te Zutphen</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#ff8000">
+            <h3>Windpark IJsselwind te Zutphen</h3>
+            <p>Ontwikkelen van windpark IJsselwind bestaande uit 3 windturbines. | &hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel / energiecoöperatie IJsselwind | </li><li><strong>Projectfasen:</strong> Verkenning 
+Planuitwerking (on hold, wachtende op uitspraak Raad van State) | </li><li><strong>Rol:</strong> IPM projectmanager | </li><li><strong>Contractvorm:</strong> - | </li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Waterketen">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#41d92c">
+            <img src="waterketen.png" alt="Waterketen" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#41d92c">Waterketen</span>
+              <span class="tile-titel">Renovatie verzamelput transportriool Velp-Arnhem in uiterwaarde te Velp</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#41d92c">
+            <h3>Renovatie verzamelput transportriool Velp-Arnhem in uiterwaarde te Velp</h3>
+            <p>Amoveren en nieuwbouw van verbindingsput tussen hoofdafvoer Arnhem-noord en Velp en zinkers onder IJssel | &hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel | </li><li><strong>Projectfasen:</strong> Verkenning
+Planuitwerking
+Realisatie | </li><li><strong>Rol:</strong> Integraal projectmanager | </li><li><strong>Contractvorm:</strong> Bouwteam | </li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Waterketen">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#41d92c">
+            <img src="transportsystemen-lochem-zutphen.jpg" alt="Waterketen" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#41d92c">Waterketen</span>
+              <span class="tile-titel">Transportsystemen Lochem-Zutphen</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#41d92c">
+            <h3>Transportsystemen Lochem-Zutphen</h3>
+            <p>Realisatie van 25 kilometer riool- en industrieelafvalwater transportleidingen, twee nieuwe gemalen en ombouw van drie gemalen | &hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel | </li><li><strong>Projectfasen:</strong> Verkenning
+Planuitwerking
+Realisatie | </li><li><strong>Rol:</strong> IPM projectmanager | </li><li><strong>Contractvorm:</strong> Design en Construct | </li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Waterketen">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#41d92c">
+            <img src="waterketen.png" alt="Waterketen" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#41d92c">Waterketen</span>
+              <span class="tile-titel">Afvalwatertransportsysteem Borculo-Haarlo</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#41d92c">
+            <h3>Afvalwatertransportsysteem Borculo-Haarlo</h3>
+            <p>Realisatie van afvalwatertransportsysteem en bouw rioolwater gemaal&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Verkenning
+Planuitwerking
+Realisatie</li><li><strong>Rol:</strong> Integraal projectmanager</li><li><strong>Contractvorm:</strong> Design en Construct</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Waterketen">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#41d92c">
+            <img src="waterketen.png" alt="Waterketen" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#41d92c">Waterketen</span>
+              <span class="tile-titel">Industrieelwatertransportsysteem Borculo-Lochem</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#41d92c">
+            <h3>Industrieelwatertransportsysteem Borculo-Lochem</h3>
+            <p>Realisatie van industrieel afvalwatertransportsysteem en bouw afvalwatergemaal&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Verkenning
+Planuitwerking
+Realisatie</li><li><strong>Rol:</strong> Integraal projectmanager</li><li><strong>Contractvorm:</strong> Design en Construct</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Waterketen">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#41d92c">
+            <img src="waterketen.png" alt="Waterketen" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#41d92c">Waterketen</span>
+              <span class="tile-titel">Renovatie bedrijfsgebouw RWZI Lichtenvoorde</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#41d92c">
+            <h3>Renovatie bedrijfsgebouw RWZI Lichtenvoorde</h3>
+            <p>Renovatie en uitbreiding van bedrijfsgebouw van RWZI Lichtenvoorde&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Verkenning
+Planuitwerking
+Realisatie</li><li><strong>Rol:</strong> IPM projectmanager</li><li><strong>Contractvorm:</strong> Design en Construct</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Waterketen">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#41d92c">
+            <img src="waterketen.png" alt="Waterketen" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#41d92c">Waterketen</span>
+              <span class="tile-titel">Verwijderen AC-transportsysteem Lochem-Zutphen</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#41d92c">
+            <h3>Verwijderen AC-transportsysteem Lochem-Zutphen</h3>
+            <p>Verwijderen van Asbestcement 800mm transportleiding uit Berkel dal tussen Lochem en Zutphen&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Verkenning
+Planuitwerking
+Realisatie</li><li><strong>Rol:</strong> IPM projectmanager</li><li><strong>Contractvorm:</strong> Design en Construct</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Waterketen">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#41d92c">
+            <img src="waterketen.png" alt="Waterketen" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#41d92c">Waterketen</span>
+              <span class="tile-titel">Ringleiding Winterswijk West</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#41d92c">
+            <h3>Ringleiding Winterswijk West</h3>
+            <p>Realisatie van afvalwater transportleidingen en 2 rioolwatergemalen | &hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel | </li><li><strong>Projectfasen:</strong> Verkenning
+Planuitwerking
+Realisatie | </li><li><strong>Rol:</strong> Integraal projectmanager | </li><li><strong>Contractvorm:</strong> Design en Construct | </li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Waterketen">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#41d92c">
+            <img src="waterketen.png" alt="Waterketen" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#41d92c">Waterketen</span>
+              <span class="tile-titel">Afvalwatertransportsysteem Gendringen - Ulft</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#41d92c">
+            <h3>Afvalwatertransportsysteem Gendringen - Ulft</h3>
+            <p>Aanleg afvalwatertransportleiding en 3 gemalen&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Verkenning
+Planuitwerking
+Realisatie</li><li><strong>Rol:</strong> Integraal projectleider</li><li><strong>Contractvorm:</strong> RAW</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Waterketen">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#41d92c">
+            <img src="waterketen.png" alt="Waterketen" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#41d92c">Waterketen</span>
+              <span class="tile-titel">Afvalwatertransportsysteem Groessen -Duiven</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#41d92c">
+            <h3>Afvalwatertransportsysteem Groessen -Duiven</h3>
+            <p>Aanleg afvalwatertransportleiding, saneren overstort&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Verkenning
+Planuitwerking
+Realisatie</li><li><strong>Rol:</strong> Integraal projectleider</li><li><strong>Contractvorm:</strong> RAW</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Waterketen">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#41d92c">
+            <img src="waterketen.png" alt="Waterketen" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#41d92c">Waterketen</span>
+              <span class="tile-titel">Renovatie rioolgemalen</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#41d92c">
+            <h3>Renovatie rioolgemalen</h3>
+            <p>Renovatie van diverse rioolgemalen w.o. Duiven, Didam, Westervoort, etc&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Planuitwerking
+Realisatie</li><li><strong>Rol:</strong> Integraal projectleider / projectleider civiel</li><li><strong>Contractvorm:</strong> RAW</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Waterveiligheid">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#001f99">
+            <img src="waterveiligheid.png" alt="Waterveiligheid" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#001f99">Waterveiligheid</span>
+              <span class="tile-titel">Hoogwaterkering Tuindorp nabij Lobith</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#001f99">
+            <h3>Hoogwaterkering Tuindorp nabij Lobith</h3>
+            <p>Onderzoek na hoogwaterbeschermingsopgave waterkering Tuindorp&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel</li><li><strong>Projectfasen:</strong> Verkenning</li><li><strong>Rol:</strong> IPM projectmanager</li><li><strong>Contractvorm:</strong> Advies opdracht</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Waterveiligheid">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#001f99">
+            <img src="waterveiligheid.png" alt="Waterveiligheid" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#001f99">Waterveiligheid</span>
+              <span class="tile-titel">Dijkverbetering Westervoortsewijk fase 1, deel tussen Billitonkade en John Frostbrug te Arnhem</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#001f99">
+            <h3>Dijkverbetering Westervoortsewijk fase 1, deel tussen Billitonkade en John Frostbrug te Arnhem</h3>
+            <p>Aanleg ‘harde’ hoogwaterkering in stedelijk gebied | &hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Waterschap Rijn en IJssel | </li><li><strong>Projectfasen:</strong> Realisatie | </li><li><strong>Rol:</strong> Projectleider civiel | </li><li><strong>Contractvorm:</strong> RAW | </li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-tile" data-cat="Gebiedsontwikkeling">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" style="border-top-color:#84db2d">
+            <img src="gebiedsontwikkeling.png" alt="Gebiedsontwikkeling" loading="lazy">
+            <div class="tile-label"><span class="tile-cat" style="color:#84db2d">Gebiedsontwikkeling</span>
+              <span class="tile-titel">FCCL BMX-accommodatie te Lichtenvoorde</span></div>
+          </div>
+          <div class="flip-face flip-back" style="border-top-color:#84db2d">
+            <h3>FCCL BMX-accommodatie te Lichtenvoorde</h3>
+            <p>Realisatie van een nieuwe BMX-accommodatie voor de vereniging Fietscrossclub Lichtenvoorde.&hellip;</p>
+            <ul class="tile-info"><li><strong>Opdrachtgever:</strong> Fietscrossclub Lichtenvoorde / gemeente Oost Gelre</li><li><strong>Projectfasen:</strong> Verkenning / Planuitwerking / Realisatie</li><li><strong>Rol:</strong> Integraal projectmanager (vrijwilligerswerk)</li><li><strong>Contractvorm:</strong> Eigen beheer</li></ul>
+            <span class="btn btn--outline tile-meer">Lees meer &rarr;</span>
+          </div>
+        </div>
+      </div>
+  </div>
+  <p class="tile-hint">Klik op een tegel om deze om te draaien en de projectgegevens te bekijken.</p>
 </div>
 </main>
 
@@ -405,30 +816,31 @@ projectomvang €24 milj.&hellip;</p>
   <div class="diespe-stripes" aria-hidden="true"></div>
   <div class="container">
     <div class="footer-grid">
-      <div>
-        <h4>DIESPE Omgevingsprojecten</h4>
-        <p>Partner in duurzame omgevingsprojecten. Project-, Technisch- en Omgevingsmanagement van omgevings- en energieprojecten.</p>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p>Mercurius 19<br>7131 HS Lichtenvoorde</p>
-        <p><a href="tel:+31653142395">+31 653 14 23 95</a></p>
-      </div>
-      <div>
-        <h4>Quick links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projecten.html">Projecten</a></li>
-          <li><a href="index.html#over">Contact</a></li>
-        </ul>
-      </div>
+      <div><h4>DIESPE Omgevingsprojecten</h4><p>Partner in duurzame omgevingsprojecten.</p></div>
+      <div><h4>Contact</h4><p>Mercurius 19<br>7131 HS Lichtenvoorde</p><p><a href="tel:+31653142395">+31 653 14 23 95</a></p></div>
+      <div><h4>Quick links</h4><ul><li><a href="index.html">Home</a></li><li><a href="projecten.html">Projecten</a></li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2025 DIESPE Omgevingsprojecten</span>
-      <span>Algemene voorwaarden: DNR 2011</span>
-    </div>
+    <div class="footer-bottom"><span>&copy; 2025 DIESPE Omgevingsprojecten</span><span>Algemene voorwaarden: DNR 2011</span></div>
   </div>
 </footer>
 
+<script>
+document.querySelectorAll('.flip-tile').forEach(function (tile) {
+  tile.addEventListener('click', function (e) {
+    if (e.target.closest('a')) return;
+    tile.classList.toggle('is-flipped');
+  });
+});
+document.querySelectorAll('.filter-btn').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('is-active'); });
+    btn.classList.add('is-active');
+    var f = btn.dataset.filter;
+    document.querySelectorAll('.flip-tile').forEach(function (tile) {
+      tile.style.display = (f === 'all' || tile.dataset.cat === f) ? '' : 'none';
+    });
+  });
+});
+</script>
 </body>
 </html>

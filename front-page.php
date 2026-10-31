@@ -47,8 +47,10 @@ get_header();
 		<p class="section-intro"><?php esc_html_e( 'Van initiëring tot oplevering: DIESPE verbindt denkkracht en uitvoering in de gebouwde en levende omgeving.', 'diespe' ); ?></p>
 		<div class="grid-3">
 			<div class="card">
-				<span class="card-icon" aria-hidden="true">&#9851;</span>
-				<h3><?php esc_html_e( 'Project- en technischmanagement', 'diespe' ); ?></h3>
+				<div class="card-header">
+					<span class="card-icon" aria-hidden="true">&#9851;</span>
+					<h3><?php esc_html_e( 'Project- en technischmanagement', 'diespe' ); ?></h3>
+				</div>
 				<p><?php esc_html_e( 'Regie over het hele traject: van planning en budget tot kwaliteit en technisch ontwerp.', 'diespe' ); ?></p>
 				<ul>
 					<li><?php esc_html_e( 'IPM-rollen: projectmanager en technisch manager', 'diespe' ); ?></li>
@@ -57,8 +59,10 @@ get_header();
 				</ul>
 			</div>
 			<div class="card">
-				<span class="card-icon" aria-hidden="true">&#9881;</span>
-				<h3><?php esc_html_e( 'Integraal ontwerpleiderschap', 'diespe' ); ?></h3>
+				<div class="card-header">
+					<span class="card-icon" aria-hidden="true">&#9881;</span>
+					<h3><?php esc_html_e( 'Integraal ontwerpleiderschap', 'diespe' ); ?></h3>
+				</div>
 				<p><?php esc_html_e( 'Vertalen van doelen naar technisch haalbaar ontwerp en uitvoering, met oog voor duurzaamheid.', 'diespe' ); ?></p>
 				<ul>
 					<li><?php esc_html_e( 'KRW- en NBW-doelen vertalen naar maatregelen', 'diespe' ); ?></li>
@@ -67,8 +71,10 @@ get_header();
 				</ul>
 			</div>
 			<div class="card">
-				<span class="card-icon" aria-hidden="true">&#127795;</span>
-				<h3><?php esc_html_e( 'Omgevingsgericht werken', 'diespe' ); ?></h3>
+				<div class="card-header">
+					<span class="card-icon" aria-hidden="true">&#127795;</span>
+					<h3><?php esc_html_e( 'Omgevingsgericht werken', 'diespe' ); ?></h3>
+				</div>
 				<p><?php esc_html_e( 'Samenwerking, vertrouwen en het versterken van elkaars krachten — binnen en buiten het project.', 'diespe' ); ?></p>
 				<ul>
 					<li><?php esc_html_e( 'Draagvlak en betrokkenheid van belanghebbenden', 'diespe' ); ?></li>

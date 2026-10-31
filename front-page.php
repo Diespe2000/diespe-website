@@ -19,9 +19,9 @@ $werkvelden_intro = diespe_home_text( 'werkvelden_intro', __( 'Van initiëring t
 $kaarten = array(
 	array(
 		'icon'    => '&#9851;',
-		'titel'   => diespe_home_text( 'kaart1_titel', __( 'Project- en technischmanagement', 'diespe' ) ),
-		'tekst'   => diespe_home_text( 'kaart1_tekst', __( 'Regie over het hele traject: van planning en budget tot kwaliteit en technisch ontwerp.', 'diespe' ) ),
-		'punten'  => diespe_home_text( 'kaart1_punten', __( "IPM-rollen: projectmanager en technisch manager\nProcesregie en bestuurlijke besluitvorming\nRisicomanagement, inkoop en contracteren", 'diespe' ) ),
+		'titel'   => diespe_home_text( 'kaart1_titel', __( 'Management', 'diespe' ) ),
+		'tekst'   => diespe_home_text( 'kaart1_tekst', __( 'Leidinggeven aan teams van professionals: integrale projectteams en IPM-teams, van initiatief tot realisatie.', 'diespe' ) ),
+		'punten'  => diespe_home_text( 'kaart1_punten', __( "Leidinggeven aan teams van professionals, integrale projectteams, IPM-teams\nProcesregie en bestuurlijke besluitvorming\nRisicomanagement, inkoop en contracteren", 'diespe' ) ),
 		'voorbeeld' => diespe_home_text( 'kaart1_voorbeeld', __( 'Zoals: Vispassage Doesburg — één van Nederlands grootste vispassages, van verkenning tot realisatie.', 'diespe' ) ),
 	),
 	array(

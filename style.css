@@ -681,3 +681,18 @@ button[type="submit"], .wp-block-search__button, .search-submit { border: 0; cur
   border-top-color: var(--diespe-blue);
   background: linear-gradient(180deg, var(--diespe-bg-alt) 0%, #fff 40%);
 }
+
+/* Knoppen in titelkleur (Over DIESPE) */
+.btn--kleur1 { background: var(--diespe-blue); border-color: var(--diespe-blue); }
+.btn--kleur1:hover, .btn--kleur1:focus { background: var(--diespe-orange); border-color: var(--diespe-orange); }
+.btn--kleur2 { background: var(--diespe-green); border-color: var(--diespe-green); }
+.btn--kleur2:hover, .btn--kleur2:focus { background: var(--diespe-orange); border-color: var(--diespe-orange); }
+.btn--kleur3 { background: var(--diespe-blue-light); border-color: var(--diespe-blue-light); }
+.btn--kleur3:hover, .btn--kleur3:focus { background: var(--diespe-orange); border-color: var(--diespe-orange); }
+
+/* Kaarten gelijk hoog: knop onderaan vastpunten */
+.card { display: flex; flex-direction: column; }
+.card > :last-child, .card > .card-more { margin-top: auto; }
+.card ul { margin-bottom: 0; }
+.card p:last-of-type { margin-bottom: 0; }
+.card .card-more { align-self: flex-start; margin-top: 16px; }

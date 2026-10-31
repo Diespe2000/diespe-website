@@ -21,21 +21,21 @@ $kaarten = array(
 		'icon'    => '&#9851;',
 		'titel'   => diespe_home_text( 'kaart1_titel', __( 'Management', 'diespe' ) ),
 		'tekst'   => diespe_home_text( 'kaart1_tekst', __( 'Leidinggeven aan teams van professionals: integrale projectteams en IPM-teams, van initiatief tot realisatie.', 'diespe' ) ),
-		'punten'  => diespe_home_text( 'kaart1_punten', __( "Leidinggeven aan teams van professionals, integrale projectteams, IPM-teams\nProcesregie en bestuurlijke besluitvorming\nRisicomanagement, inkoop en contracteren", 'diespe' ) ),
+		'punten'  => diespe_home_text( 'kaart1_punten', __( "Leidinggeven aan teams van professionals, integrale projectteams, IPM-teams\nTeamleden in hun kracht zetten\nProcesregie en bestuurlijke besluitvorming\nRisicomanagement, inkoop en contracteren", 'diespe' ) ),
 		'voorbeeld' => diespe_home_text( 'kaart1_voorbeeld', __( 'Zoals: Vispassage Doesburg — één van Nederlands grootste vispassages, van verkenning tot realisatie.', 'diespe' ) ),
 	),
 	array(
 		'icon'    => '&#9881;',
 		'titel'   => diespe_home_text( 'kaart2_titel', __( 'Integrale ontwerpleiding', 'diespe' ) ),
 		'tekst'   => diespe_home_text( 'kaart2_tekst', __( 'Vertalen van beleidsdoelen en opgaven naar integrale oplossingen: realiseerbaar, betaalbaar en acceptabel, met oog voor detail en duurzaamheid.', 'diespe' ) ),
-		'punten'  => diespe_home_text( 'kaart2_punten', __( "Beleidsdoelen en opgaven vertalen naar integrale, realiseerbare oplossingen\nOntwerpfasering: verkenning, planuitwerking, realiseerbaar ontwerp\nSysteembenadering, systemengineering en passende contractvormen", 'diespe' ) ),
+		'punten'  => diespe_home_text( 'kaart2_punten', __( "Beleidsdoelen en opgaven vertalen naar integrale, realiseerbare oplossingen\nOntwerpfasering: verkenning, planuitwerking, realiseerbaar ontwerp\nSysteembenadering en passende contractvormen", 'diespe' ) ),
 		'voorbeeld' => diespe_home_text( 'kaart2_voorbeeld', __( 'Zoals: Waardevolle Kleine Wateren, Bovenlopen Loolee — KRW-doelen vertaald naar inrichtingsmaatregelen voor vier beken.', 'diespe' ) ),
 	),
 	array(
 		'icon'    => '&#127795;',
 		'titel'   => diespe_home_text( 'kaart3_titel', __( 'Omgevingsgericht werken', 'diespe' ) ),
 		'tekst'   => diespe_home_text( 'kaart3_tekst', __( 'Samenwerking, vertrouwen en het versterken van elkaars krachten — binnen en buiten het project.', 'diespe' ) ),
-		'punten'  => diespe_home_text( 'kaart3_punten', __( "Draagvlak creëren en betrokkenheid van belanghebbenden\nBelangen balanceren en win-win oplossingen vinden\nGebiedsontwikkeling met maatschappelijke meerwaarde", 'diespe' ) ),
+		'punten'  => diespe_home_text( 'kaart3_punten', __( "Omgevingsbewust werken met oog voor belangen\nDraagvlak creëren en betrokkenheid van belanghebbenden\nBelangen balanceren en win-win oplossingen vinden\nGebiedsontwikkeling met maatschappelijke meerwaarde", 'diespe' ) ),
 		'voorbeeld' => diespe_home_text( 'kaart3_voorbeeld', __( 'Zoals: Optimalisatie watersysteem Lichtenvoorde — wateroverlast aangepakt met een uitgebreid burgerparticipatietraject.', 'diespe' ) ),
 	),
 );
@@ -168,7 +168,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Van vispassage Doesburg tot
 				</div>
 				<p><?php echo esc_html( $over_tekst1 ); ?></p>
 				<p><?php echo esc_html( $over_tekst2 ); ?></p>
-				<a class="btn card-more" href="<?php echo esc_url( home_url( '/over-diederik-speksnijder/' ) ); ?>"><?php esc_html_e( 'Meer over Diederik', 'diespe' ); ?></a>
+				<a class="btn btn--kleur1 card-more" href="<?php echo esc_url( home_url( '/over-diederik-speksnijder/' ) ); ?>"><?php esc_html_e( 'Meer over Diederik', 'diespe' ); ?></a>
 			</div>
 			<div class="card">
 				<div class="card-header">
@@ -179,9 +179,11 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Van vispassage Doesburg tot
 					<li><?php esc_html_e( 'Eerst denken, dan doen', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Denkt in kansen en oplossingen', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Verbindt specialisten en stakeholders', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Omgevingsgericht werken, oog voor belang van stakeholders', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Integrale benadering, innovatieve methoden', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Maatschappelijke meerwaarde als uitgangspunt', 'diespe' ); ?></li>
 				</ul>
+				<a class="btn btn--kleur2 card-more" href="<?php echo esc_url( home_url( '/werkvelden/' ) ); ?>"><?php esc_html_e( 'Werkvelden', 'diespe' ); ?></a>
 			</div>
 			<div class="card">
 				<div class="card-header">
@@ -193,9 +195,11 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Van vispassage Doesburg tot
 					<li><?php esc_html_e( 'Energietransitie', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Waterketen', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Waterveiligheid', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Utiliteit en natuurherstel', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Utiliteit', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Natuurherstel', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Gebiedsontwikkeling', 'diespe' ); ?></li>
 				</ul>
-				<a class="btn btn--outline card-more" href="<?php echo esc_url( get_post_type_archive_link( 'diespe_project' ) ); ?>"><?php esc_html_e( 'Meer projecten', 'diespe' ); ?></a>
+				<a class="btn btn--kleur3 card-more" href="<?php echo esc_url( get_post_type_archive_link( 'diespe_project' ) ); ?>"><?php esc_html_e( 'Meer projecten', 'diespe' ); ?></a>
 			</div>
 		</div>
 		<p class="section-intro" style="margin-top:44px; margin-bottom:0;"><?php esc_html_e( 'We voeren onze diensten en werkzaamheden uit volgens De Nieuwe Regeling 2011 (DNR 2011), herziening juli 2013.', 'diespe' ); ?></p>

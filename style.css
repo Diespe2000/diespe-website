@@ -675,3 +675,9 @@ button[type="submit"], .wp-block-search__button, .search-submit { border: 0; cur
   border-radius: 6px;
 }
 :focus { outline-color: var(--diespe-blue-light); }
+
+/* Over DIESPE: accent voor de Diederik-kaart */
+.card--diederik {
+  border-top-color: var(--diespe-blue);
+  background: linear-gradient(180deg, var(--diespe-bg-alt) 0%, #fff 40%);
+}

@@ -40,10 +40,10 @@ $kaarten = array(
 	),
 );
 
-$over_intro = diespe_home_text( 'over_intro', __( 'Betrokken en proactief, met een pragmatische "eerst denken, dan doen"-aanpak. Expertise in het organiseren en coördineren van complexe omgevingsprojecten binnen de grond-, weg- en waterbouwsector.', 'diespe' ) );
+$over_intro = diespe_home_text( 'over_intro', __( 'DIESPE is Diederik Speksnijder: betrokken, proactief en met een pragmatische "eerst denken, dan doen"-aanpak. Al meer dan 25 jaar het gezicht achter duurzame omgevingsprojecten in de grond-, weg- en waterbouwsector.', 'diespe' ) );
 $over_naam  = diespe_home_text( 'over_naam', __( 'Diederik Speksnijder', 'diespe' ) );
-$over_tekst1 = diespe_home_text( 'over_tekst1', __( 'Flexibel in verschillende IPM-rollen, met een voorkeur voor technisch manager, projectmanager of omgevingsmanager. De kracht ligt in het verbinden van specialisten en stakeholders om gezamenlijke doelen te bereiken en maatschappelijke meerwaarde te creëren.', 'diespe' ) );
-$over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Met focus op duurzame en efficiënte oplossingen draagt DIESPE bij aan technisch solide projecten die voldoen aan de behoeften van de gemeenschap.', 'diespe' ) );
+$over_tekst1 = diespe_home_text( 'over_tekst1', __( 'Als ervaren projectmanager, technisch manager en omgevingsmanager verbindt Diederik specialisten en stakeholders om gezamenlijke doelen te bereiken. Hij denkt in kansen, balanceert belangen en vindt win-win-oplossingen — van initiatief tot realisatie.', 'diespe' ) );
+$over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Van vispassage Doesburg tot windpark Duiven: mee de focus op duurzame, efficiënte oplossingen realiseert hij technisch solide projecten met maatschappelijke meerwaarde.', 'diespe' ) );
 ?>
 
 <section class="hero">
@@ -160,20 +160,42 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Met focus op duurzame en ef
 	<div class="container">
 		<h2 class="section-title"><?php esc_html_e( 'Over DIESPE', 'diespe' ); ?></h2>
 		<p class="section-intro"><?php echo esc_html( $over_intro ); ?></p>
-		<div class="contact-grid">
-			<div>
-				<h3><?php echo esc_html( $over_naam ); ?></h3>
+		<div class="grid-3">
+			<div class="card card--diederik">
+				<div class="card-header">
+					<span class="card-icon" aria-hidden="true">&#128100;</span>
+					<h3><?php echo esc_html( $over_naam ); ?></h3>
+				</div>
 				<p><?php echo esc_html( $over_tekst1 ); ?></p>
 				<p><?php echo esc_html( $over_tekst2 ); ?></p>
-				<a class="btn" href="<?php echo esc_url( home_url( '/over-diederik-speksnijder/' ) ); ?>"><?php esc_html_e( 'Meer over Diederik', 'diespe' ); ?></a>
+				<a class="btn card-more" href="<?php echo esc_url( home_url( '/over-diederik-speksnijder/' ) ); ?>"><?php esc_html_e( 'Meer over Diederik', 'diespe' ); ?></a>
 			</div>
 			<div class="card">
-				<h3><?php esc_html_e( 'Waarom DIESPE?', 'diespe' ); ?></h3>
+				<div class="card-header">
+					<span class="card-icon" aria-hidden="true">&#9733;</span>
+					<h3><?php esc_html_e( 'Kernkwaliteiten', 'diespe' ); ?></h3>
+				</div>
 				<ul>
 					<li><?php esc_html_e( 'Eerst denken, dan doen', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Denkt in kansen en oplossingen', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Verbindt specialisten en stakeholders', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Integrale benadering, innovatieve methoden', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Maatschappelijke meerwaarde als uitgangspunt', 'diespe' ); ?></li>
 				</ul>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<span class="card-icon" aria-hidden="true">&#127757;</span>
+					<h3><?php esc_html_e( 'Werkgebieden', 'diespe' ); ?></h3>
+				</div>
+				<ul>
+					<li><?php esc_html_e( 'Watersysteem', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Energietransitie', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Waterketen', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Waterveiligheid', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Utiliteit en natuurherstel', 'diespe' ); ?></li>
+				</ul>
+				<a class="btn btn--outline card-more" href="<?php echo esc_url( get_post_type_archive_link( 'diespe_project' ) ); ?>"><?php esc_html_e( 'Meer projecten', 'diespe' ); ?></a>
 			</div>
 		</div>
 		<p class="section-intro" style="margin-top:44px; margin-bottom:0;"><?php esc_html_e( 'We voeren onze diensten en werkzaamheden uit volgens De Nieuwe Regeling 2011 (DNR 2011), herziening juli 2013.', 'diespe' ); ?></p>

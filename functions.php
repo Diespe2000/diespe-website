@@ -164,6 +164,7 @@ function diespe_customize_register( $wp_customize ) {
 		'diespe_email'    => __( 'E-mailadres', 'diespe' ),
 		'diespe_address'  => __( 'Adres (straat en nr.)', 'diespe' ),
 		'diespe_postal'   => __( 'Postcode en plaats', 'diespe' ),
+		'diespe_kvk'      => __( 'KvK-nummer', 'diespe' ),
 		'diespe_tagline'  => __( 'Payoff', 'diespe' ),
 	);
 
@@ -260,6 +261,9 @@ function diespe_contact_form_shortcode() {
 	if ( isset( $_POST['diespe_contact'] ) && wp_verify_nonce( $_POST['diespe_contact_nonce'] ?? '', 'diespe_contact' ) ) {
 		if ( ! empty( $_POST['diespe_website'] ) ) {
 			$verzonden = true; // honeypot: bots zien succes, mensen merken niets.
+		} elseif ( isset( $_POST['diespe_tijd'] ) && ( time() - (int) $_POST['diespe_tijd'] ) < 5 ) {
+			// Te snel verzonden: vrijwel zeker een bot.
+			$verzonden = true;
 		} else {
 			$naam    = sanitize_text_field( wp_unslash( $_POST['diespe_naam'] ?? '' ) );
 			$email   = sanitize_email( wp_unslash( $_POST['diespe_email'] ?? '' ) );
@@ -293,6 +297,7 @@ function diespe_contact_form_shortcode() {
 			<?php endif; ?>
 			<form method="post" class="form-grid">
 				<?php wp_nonce_field( 'diespe_contact', 'diespe_contact_nonce' ); ?>
+				<input type="hidden" name="diespe_tijd" value="<?php echo esc_attr( time() ); ?>">
 				<div>
 					<label for="diespe_naam"><?php esc_html_e( 'Naam', 'diespe' ); ?> *</label>
 					<input type="text" id="diespe_naam" name="diespe_naam" required value="<?php echo esc_attr( sanitize_text_field( wp_unslash( $_POST['diespe_naam'] ?? '' ) ) ); ?>">

@@ -33,6 +33,10 @@ $postal = get_theme_mod( 'diespe_postal', '7131 HS Lichtenvoorde' );
 				<p><strong><?php esc_html_e( 'E-mail', 'diespe' ); ?></strong><br>
 				<a href="mailto:<?php echo esc_attr( antispambot( $email ) ); ?>"><?php echo esc_html( antispambot( $email ) ); ?></a></p>
 			<?php endif; ?>
+			<?php $kvk = get_theme_mod( 'diespe_kvk', '94509832' ); ?>
+			<?php if ( $kvk ) : ?>
+				<p><strong><?php esc_html_e( 'KvK', 'diespe' ); ?></strong><br><?php echo esc_html( $kvk ); ?></p>
+			<?php endif; ?>
 		</div>
 
 		<div>

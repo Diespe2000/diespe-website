@@ -42,7 +42,7 @@ $postal  = get_theme_mod( 'diespe_postal', '7131 HS Lichtenvoorde' );
 		</div>
 		<div class="footer-bottom">
 			<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> DIESPE Omgevingsprojecten</span>
-			<span><?php esc_html_e( 'Algemene voorwaarden: DNR 2011', 'diespe' ); ?></span>
+			<span><?php esc_html_e( 'Algemene voorwaarden: DNR 2011', 'diespe' ); ?> &nbsp;&middot;&nbsp; <?php $kvk = get_theme_mod( 'diespe_kvk', '94509832' ); if ( $kvk ) : ?>KvK <?php echo esc_html( $kvk ); ?><?php endif; ?></span>
 		</div>
 	</div>
 </footer>

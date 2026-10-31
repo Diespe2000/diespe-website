@@ -10,7 +10,7 @@
   html { scroll-behavior: auto; }
 </style>
 </head>
-<body class="home">
+<body class="home" id="top">
 <a class="skip-link screen-reader-text" href="#content">Ga naar de inhoud</a>
 
 <header class="site-header" role="banner">
@@ -24,11 +24,10 @@
     </button>
     <nav id="primary-nav" class="main-nav" role="navigation" aria-label="Hoofdmenu">
       <ul>
-        <li class="current-menu-item"><a href="#">Home</a></li>
-        <li><a href="#">Werkvelden</a></li>
-        <li><a href="#">Projecten</a></li>
-        <li><a href="#">Nieuws</a></li>
-        <li><a href="#">Contact</a></li>
+        <li class="current-menu-item"><a href="#top">Home</a></li>
+        <li><a href="#werkvelden">Werkvelden</a></li>
+        <li><a href="#projecten">Projecten</a></li>
+        <li><a href="#over">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -187,31 +186,6 @@
   </div>
 </section>
 
-<section class="section section--alt" id="nieuws">
-  <div class="container">
-    <h2 class="section-title">Nieuws</h2>
-    <article class="post-card">
-      <div class="post-date" aria-hidden="true">
-        <span class="day">14</span>
-        <span class="month">mei</span>
-      </div>
-      <div>
-        <h3><a href="#">Start participatietraject zonneweide</a></h3>
-        <p>Samen met de omwonenden starten we met de eerste inloopavond over de plannen voor de zonneweide aan de noordkant van Groenlo.</p>
-      </div>
-    </article>
-    <article class="post-card">
-      <div class="post-date" aria-hidden="true">
-        <span class="day">02</span>
-        <span class="month">apr</span>
-      </div>
-      <div>
-        <h3><a href="#">Omgevingswet in de praktijk</a></h3>
-        <p>Wat betekent de Omgevingswet voor uw project? Een korte toelichting op de belangrijkste veranderingen voor opdrachtgevers.</p>
-      </div>
-    </article>
-  </div>
-</section>
 
 </main>
 
@@ -231,10 +205,9 @@
       <div>
         <h4>Quick links</h4>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Projecten</a></li>
-          <li><a href="#">Nieuws</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#projecten">Projecten</a></li>
+            <li><a href="#over">Contact</a></li>
         </ul>
       </div>
     </div>

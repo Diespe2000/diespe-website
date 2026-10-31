@@ -206,23 +206,6 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Van vispassage Doesburg tot
 	</div>
 </section>
 
-<section class="section section--alt" id="nieuws">
-	<div class="container">
-		<h2 class="section-title"><?php esc_html_e( 'Nieuws', 'diespe' ); ?></h2>
-		<?php
-		$posts = new WP_Query( array( 'posts_per_page' => 3 ) );
-		if ( $posts->have_posts() ) :
-			while ( $posts->have_posts() ) :
-				$posts->the_post();
-				get_template_part( 'template-parts/post', 'card' );
-			endwhile;
-			wp_reset_postdata();
-		else :
-			?>
-			<p style="text-align:center;"><?php esc_html_e( 'Nog geen berichten geplaatst.', 'diespe' ); ?></p>
-		<?php endif; ?>
-	</div>
-</section>
 
 <?php
 get_footer();

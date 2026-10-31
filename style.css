@@ -235,9 +235,13 @@ p { margin: 0 0 1.2em; }
   background:
     linear-gradient(115deg, rgba(0, 31, 153, 0.94), rgba(43, 151, 217, 0.82));
   color: #fff;
-  padding: 56px 0;
+  padding: 34px 0;
   overflow: hidden;
 }
+
+.hero h1 { font-size: 2rem; margin-bottom: 0.25em; }
+.hero p { font-size: 1.02rem; margin-bottom: 0.9em; }
+.hero .btn { padding: 11px 22px; font-size: 0.95rem; }
 
 .hero::after {
   content: "";
@@ -282,7 +286,7 @@ p { margin: 0 0 1.2em; }
 
 /* Werkgebieden-balk direct onder de hero */
 .workfields-strip {
-  padding: 22px 0;
+  padding: 12px 0;
   background: var(--diespe-blue);
   color: #fff;
 }
@@ -292,25 +296,28 @@ p { margin: 0 0 1.2em; }
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 36px;
+  gap: 6px 32px;
   justify-content: center;
   font-weight: 700;
+  font-size: 0.95rem;
   letter-spacing: 0.02em;
 }
-.workfields-list li { position: relative; padding-left: 18px; }
+.workfields-list li { position: relative; padding-left: 16px; }
 .workfields-list li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.45em;
-  width: 9px;
-  height: 9px;
+  top: 0.4em;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: var(--diespe-orange);
 }
 .workfields-list li:nth-child(2)::before { background: var(--diespe-green); }
 .workfields-list li:nth-child(3)::before { background: var(--diespe-blue-light); }
 .workfields-list li:nth-child(4)::before { background: #fff; }
+.workfields-list li:nth-child(5)::before { background: var(--diespe-orange); }
+.workfields-list li:nth-child(6)::before { background: var(--diespe-green); }
 
 /* =Secties
 -------------------------------------------------------------- */

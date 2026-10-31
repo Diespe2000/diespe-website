@@ -10,25 +10,24 @@ get_header();
 
 <section class="hero">
 	<div class="container">
-		<h1><?php esc_html_e( 'Partner in duurzame omgevingsprojecten', 'diespe' ); ?></h1>
+		<h1><?php esc_html_e( 'DIESPE: Uw partner in projecten', 'diespe' ); ?></h1>
 		<p>
-			<?php esc_html_e( 'DIESPE Management & Advies is gespecialiseerd in Project-, Technisch- en Omgevingsmanagement van omgevings- en energieprojecten. Eerst denken, dan doen.', 'diespe' ); ?>
+			<?php esc_html_e( 'Pragmatische aanpak, oog voor belangen, resultaatgericht en samenwerking. Van initiatief via verkenning en planuitwerking tot realisatie.', 'diespe' ); ?>
 		</p>
-		<?php if ( get_theme_mod( 'diespe_tagline' ) ) : ?>
-			<p><em><?php echo esc_html( get_theme_mod( 'diespe_tagline' ) ); ?></em></p>
-		<?php endif; ?>
-		<a class="btn btn--accent" href="#werkvelden"><?php esc_html_e( 'Lees verder', 'diespe' ); ?></a>
-		<a class="btn btn--white" href="#projecten"><?php esc_html_e( 'Bekijk meer', 'diespe' ); ?></a>
+		<a class="btn btn--accent" href="<?php echo esc_url( home_url( '/over-diederik-speksnijder/' ) ); ?>"><?php esc_html_e( 'Maak kennis', 'diespe' ); ?></a>
+		<a class="btn btn--white" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Contact', 'diespe' ); ?></a>
 	</div>
 </section>
 
 <section class="section workfields-strip" id="werkgebieden">
 	<div class="container">
 		<ul class="workfields-list">
-			<li><?php esc_html_e( 'Watersysteem projecten', 'diespe' ); ?></li>
-			<li><?php esc_html_e( 'Energietransitie projecten', 'diespe' ); ?></li>
-			<li><?php esc_html_e( 'Waterketen projecten', 'diespe' ); ?></li>
+			<li><?php esc_html_e( 'Watersysteem', 'diespe' ); ?></li>
+			<li><?php esc_html_e( 'Energietransitie', 'diespe' ); ?></li>
+			<li><?php esc_html_e( 'Waterketen', 'diespe' ); ?></li>
 			<li><?php esc_html_e( 'Waterveiligheid', 'diespe' ); ?></li>
+			<li><?php esc_html_e( 'Utiliteit', 'diespe' ); ?></li>
+			<li><?php esc_html_e( 'Natuurherstel', 'diespe' ); ?></li>
 		</ul>
 	</div>
 </section>

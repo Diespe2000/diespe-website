@@ -511,6 +511,24 @@ input:focus, textarea:focus, select:focus {
 
 button[type="submit"], .wp-block-search__button, .search-submit { border: 0; cursor: pointer; }
 
+/* =Contactformulier
+-------------------------------------------------------------- */
+.diespe-contactform .form-grid { gap: 14px; }
+
+.diespe-notice {
+  padding: 14px 18px;
+  border-radius: var(--diespe-radius);
+  font-weight: 600;
+}
+.diespe-notice--success {
+  background: var(--diespe-green);
+  color: #fff;
+}
+.diespe-notice--error {
+  background: var(--diespe-orange);
+  color: #fff;
+}
+
 /* =Footer
 -------------------------------------------------------------- */
 .site-footer {

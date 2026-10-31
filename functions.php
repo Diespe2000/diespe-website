@@ -179,6 +179,100 @@ function diespe_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'diespe_customize_register' );
 
 /**
+ * Contactformulier: weergave (shortcode [diespe_contactformulier]).
+ */
+function diespe_contact_form_shortcode() {
+	if ( shortcode_exists( 'contact-form-7' ) && defined( 'WPCF7_VERSION' ) ) {
+		return ''; // CF7 is actief: pagina toont via filter de CF7-shortcode.
+	}
+
+	$verzonden = false;
+	$fout      = '';
+
+	if ( isset( $_POST['diespe_contact'] ) && wp_verify_nonce( $_POST['diespe_contact_nonce'] ?? '', 'diespe_contact' ) ) {
+		if ( ! empty( $_POST['diespe_website'] ) ) {
+			$verzonden = true; // honeypot: bots zien succes, mensen merken niets.
+		} else {
+			$naam    = sanitize_text_field( wp_unslash( $_POST['diespe_naam'] ?? '' ) );
+			$email   = sanitize_email( wp_unslash( $_POST['diespe_email'] ?? '' ) );
+			$boodschap = sanitize_textarea_field( wp_unslash( $_POST['diespe_boodschap'] ?? '' ) );
+
+			if ( ! $naam || ! $boodschap || ! is_email( $email ) ) {
+				$fout = __( 'Vul a.u.b. uw naam, een geldig e-mailadres en een boodschap in.', 'diespe' );
+			} else {
+				$naar   = get_theme_mod( 'diespe_email' ) ?: get_option( 'admin_email' );
+				$onderwerp = sprintf( '[%s] Contactverzoek via website', get_bloginfo( 'name' ) );
+				$body   = "Naam: {$naam}\nE-mail: {$email}\n\nBoodschap:\n{$boodschap}";
+				$headers = array( 'Reply-To: ' . $email );
+
+				if ( wp_mail( $naar, $onderwerp, $body, $headers ) ) {
+					$verzonden = true;
+				} else {
+					$fout = __( 'Het versturen is mislukt. Probeer het later opnieuw of bel ons rechtstreeks.', 'diespe' );
+				}
+			}
+		}
+	}
+
+	ob_start();
+	?>
+	<div class="diespe-contactform">
+		<?php if ( $verzonden ) : ?>
+			<p class="diespe-notice diespe-notice--success"><?php esc_html_e( 'Bedankt! Uw bericht is verzonden. Ik neem zo snel mogelijk contact met u op.', 'diespe' ); ?></p>
+		<?php else : ?>
+			<?php if ( $fout ) : ?>
+				<p class="diespe-notice diespe-notice--error"><?php echo esc_html( $fout ); ?></p>
+			<?php endif; ?>
+			<form method="post" class="form-grid">
+				<?php wp_nonce_field( 'diespe_contact', 'diespe_contact_nonce' ); ?>
+				<div>
+					<label for="diespe_naam"><?php esc_html_e( 'Naam', 'diespe' ); ?> *</label>
+					<input type="text" id="diespe_naam" name="diespe_naam" required value="<?php echo esc_attr( sanitize_text_field( wp_unslash( $_POST['diespe_naam'] ?? '' ) ) ); ?>">
+				</div>
+				<div>
+					<label for="diespe_email"><?php esc_html_e( 'E-mailadres', 'diespe' ); ?> *</label>
+					<input type="email" id="diespe_email" name="diespe_email" required value="<?php echo esc_attr( sanitize_email( wp_unslash( $_POST['diespe_email'] ?? '' ) ) ); ?>">
+				</div>
+				<div>
+					<label for="diespe_boodschap"><?php esc_html_e( 'Uw boodschap', 'diespe' ); ?> *</label>
+					<textarea id="diespe_boodschap" name="diespe_boodschap" rows="6" required><?php echo esc_textarea( sanitize_textarea_field( wp_unslash( $_POST['diespe_boodschap'] ?? '' ) ) ); ?></textarea>
+				</div>
+				<p style="position:absolute; left:-9999px;" aria-hidden="true">
+					<label><?php esc_html_e( 'Vul dit veld niet in', 'diespe' ); ?>
+						<input type="text" name="diespe_website" tabindex="-1" autocomplete="off">
+					</label>
+				</p>
+				<div>
+					<button type="submit" name="diespe_contact" value="1" class="btn"><?php esc_html_e( 'Verstuur bericht', 'diespe' ); ?></button>
+				</div>
+			</form>
+		<?php endif; ?>
+	</div>
+	<?php
+	return ob_get_clean();
+}
+add_shortcode( 'diespe_contactformulier', 'diespe_contact_form_shortcode' );
+
+/**
+ * Contactformulier: automatisch CF7-shortcode tonen indien actief.
+ */
+function diespe_cf7_form( $content ) {
+	if ( false !== strpos( $content, '[diespe_contactformulier]' ) && defined( 'WPCF7_VERSION' ) ) {
+		$cf7_posts = get_posts( array(
+			'post_type'      => 'wpcf7_contact_form',
+			'posts_per_page' => 1,
+			'orderby'        => 'ID',
+			'order'          => 'ASC',
+		) );
+		if ( $cf7_posts ) {
+				$content = str_replace( '[diespe_contactformulier]', '[contact-form-7 id="' . $cf7_posts[0]->ID . '"]', $content );
+		}
+	}
+	return $content;
+}
+add_filter( 'the_content', 'diespe_cf7_form' );
+
+/**
  * Zoekformulier.
  */
 function diespe_search_form( $form ) {

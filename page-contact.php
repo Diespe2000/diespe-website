@@ -36,6 +36,7 @@ $postal = get_theme_mod( 'diespe_postal', '7131 HS Lichtenvoorde' );
 		</div>
 
 		<div>
+			<h2><?php esc_html_e( 'Stuur een bericht', 'diespe' ); ?></h2>
 			<?php
 			while ( have_posts() ) :
 				the_post();
@@ -43,7 +44,24 @@ $postal = get_theme_mod( 'diespe_postal', '7131 HS Lichtenvoorde' );
 				<div class="entry-content">
 					<?php the_content(); ?>
 				</div>
-			<?php endwhile; ?>
+				<?php endwhile; ?>
+			<?php
+			if ( defined( 'WPCF7_VERSION' ) ) {
+				$cf7_posts = get_posts( array(
+					'post_type'      => 'wpcf7_contact_form',
+					'posts_per_page' => 1,
+					'orderby'        => 'ID',
+					'order'          => 'ASC',
+				) );
+				if ( $cf7_posts ) {
+						echo do_shortcode( '[contact-form-7 id="' . $cf7_posts[0]->ID . '"]' );
+				} else {
+					echo '<p>' . esc_html__( 'Maak eerst een formulier aan via Contact → Contactformulieren.', 'diespe' ) . '</p>';
+				}
+			} else {
+				echo do_shortcode( '[diespe_contactformulier]' );
+			}
+			?>
 		</div>
 	</div>
 </div>

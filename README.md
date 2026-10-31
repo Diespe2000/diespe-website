@@ -42,6 +42,24 @@ inhoudelijke content van DIESPE:
 de importeur bij eerste gebruik), upload beide bestanden en vink "Download and import
 file attachments" niet aan (alle content is tekst). Importeer eerst
 `diespe-pages.xml`, daarna `diespe-portfolio.xml`.
+
+**Projectcategorieën:** Watersysteem, Energietransitie, Waterketen, Waterveiligheid,
+Utiliteit, Natuurherstel, Overige — dezelfde namen als de werkgebieden-balk op de
+homepage. Wijs projecten handmatig toe aan Utiliteit/Natuurherstel zodra van
+toepassing.
+
+## Contactformulier
+
+De contactpagina toont **automatisch** een formulier:
+
+- **Zonder plugin**: een ingebouwd formulier (shortcode `[diespe_contactformulier]`)
+  met honeypot- en nonce-spambescherming. Verstuurde berichten gaan naar het
+  e-mailadres uit de Customizer (**Contactgegevens → E-mailadres*) of anders het
+  beheerdersadres.
+- **Met Contact Form 7**: na activering van de plugin CF7 (Plugins → Nieuwe → "Contact
+  Form 7") en aanmaken van een formulier (Contact → Contactformulieren) toont de
+  contactpagina automatisch het eerste CF7-formulier; het ingebouwde formulier
+  schakelt zichzelf uit.
 - **Strepen**: de kenmerkende 4-kleurige streep (oranje, groen, lichtblauw, donkerblauw)
   komt terug onder de header, in de hero en boven de footer.
 - **Logo**: bij gebrek aan een geüpload logo toont het thema een gestapeld woordmerk

@@ -70,6 +70,18 @@ Alle inhoudelijke teksten op de homepage zijn **zonder code aan te passen** via
 Laat je een veld leeg, dan geldt de ingebouwde standaardtekst. De Customizer toont
 live een voorvertoning naast het aanpassen.
 
+## Projecten toevoegen
+
+Nieuwe projecten voeg je in WordPress toe via **Projecten → Nieuw project**:
+
+1. **Titel + omschrijving** invullen (Gutenberg)
+2. **Projectgegevens**-box: opdrachtgever, projectfasen, rol en contractvorm — deze verschijnen op de tegel-achterkant en de projectpagina
+3. **Projecttype** (rechts) aanvinken: Watersysteem, Energietransitie, Waterketen, Waterveiligheid, Gebiedsontwikkeling of Natuurherstel
+4. **Uitgelichte afbeelding**: eigen projectfoto uploaden; zonder foto toont de tegel automatisch de categorie-illustratie
+5. Publiceren — de tegel verschijnt direct in het projectenoverzicht (nieuwste bovenaan, de drie showcase-projecten op de homepage blijven apart ingesteld)
+
+Het overzicht is een naadloos tegelmozaiek met filterknoppen per categorie; tegels draaien bij een klik om met de projectgegevens.
+
 ## Contactformulier
 
 De contactpagina toont **automatisch** een formulier:

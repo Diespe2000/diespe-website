@@ -44,6 +44,9 @@ function diespe_scripts() {
 	wp_enqueue_style( 'diespe-fonts', get_template_directory_uri() . '/assets/css/fonts.css', array(), DIESPE_VERSION );
 	wp_enqueue_style( 'diespe-style', get_stylesheet_uri(), array( 'diespe-fonts' ), DIESPE_VERSION );
 	wp_enqueue_script( 'diespe-nav', get_template_directory_uri() . '/assets/js/nav.js', array(), DIESPE_VERSION, true );
+	if ( is_post_type_archive( 'diespe_project' ) || is_tax( 'diespe_projecttype' ) ) {
+		wp_enqueue_script( 'diespe-projecten', get_template_directory_uri() . '/assets/js/projecten.js', array(), DIESPE_VERSION, true );
+	}
 }
 
 /**
@@ -377,3 +380,53 @@ function diespe_search_projecten( $query ) {
 	}
 }
 add_action( 'pre_get_posts', 'diespe_search_projecten' );
+
+/**
+ * Projectvelden (opdrachtgever, fasen, rol, contractvorm) als meta boxes.
+ */
+function diespe_project_meta_boxes() {
+	add_meta_box( 'diespe_project_velden', __( 'Projectgegevens', 'diespe' ), 'diespe_project_meta_box', 'diespe_project', 'normal', 'default' );
+}
+add_action( 'add_meta_boxes', 'diespe_project_meta_boxes' );
+
+/**
+ * Meta box-inhoud.
+ *
+ * @param WP_Post $post Post.
+ */
+function diespe_project_meta_box( $post ) {
+	wp_nonce_field( 'diespe_project_meta', 'diespe_project_meta_nonce' );
+	$velden = array(
+		'diespe_opdrachtgever' => __( 'Opdrachtgever', 'diespe' ),
+		'diespe_fasen'         => __( 'Projectfasen', 'diespe' ),
+		'diespe_rol'           => __( 'Rol', 'diespe' ),
+		'diespe_contract'      => __( 'Contractvorm', 'diespe' ),
+	);
+	echo '<table class="form-table">';
+	foreach ( $velden as $key => $label ) {
+		$waarde = get_post_meta( $post->ID, $key, true );
+		echo '<tr><th><label for="' . esc_attr( $key ) . '">' . esc_html( $label ) . '</label></th>';
+		echo '<td><input type="text" id="' . esc_attr( $key ) . '" name="' . esc_attr( $key ) . '" value="' . esc_attr( $waarde ) . '" class="regular-text"></td></tr>';
+	}
+	echo '</table>';
+}
+
+/**
+ * Meta box opslaan.
+ *
+ * @param int $post_id Post ID.
+ */
+function diespe_project_meta_save( $post_id ) {
+	if ( ! isset( $_POST['diespe_project_meta_nonce'] ) || ! wp_verify_nonce( $_POST['diespe_project_meta_nonce'], 'diespe_project_meta' ) ) {
+		return;
+	}
+	if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		return;
+	}
+	foreach ( array( 'diespe_opdrachtgever', 'diespe_fasen', 'diespe_rol', 'diespe_contract' ) as $key ) {
+		if ( isset( $_POST[ $key ] ) ) {
+			update_post_meta( $post_id, $key, sanitize_text_field( wp_unslash( $_POST[ $key ] ) ) );
+		}
+	}
+}
+add_action( 'save_post_diespe_project', 'diespe_project_meta_save' );

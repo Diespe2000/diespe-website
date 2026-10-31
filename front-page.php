@@ -28,14 +28,14 @@ $kaarten = array(
 		'icon'    => '&#9881;',
 		'titel'   => diespe_home_text( 'kaart2_titel', __( 'Integrale ontwerpleiding', 'diespe' ) ),
 		'tekst'   => diespe_home_text( 'kaart2_tekst', __( 'Vertalen van beleidsdoelen en opgaven naar integrale oplossingen: realiseerbaar, betaalbaar en acceptabel, met oog voor detail en duurzaamheid.', 'diespe' ) ),
-		'punten'  => diespe_home_text( 'kaart2_punten', __( "Beleidsdoelen en opgaven (o.a. waterkwaliteit, klimaat) vertalen naar maatregelen\nOntwerpfasering: verkenning met alternatievenstudies, planuitwerking, realiseerbaar ontwerp\nSysteembenadering en systemengineering (SE)\nPassende contractvormen: 2-fase, bouwteam, raamovereenkomsten, RAW, geïntegreerde contracten", 'diespe' ) ),
+		'punten'  => diespe_home_text( 'kaart2_punten', __( "Beleidsdoelen en opgaven vertalen naar integrale, realiseerbare oplossingen\nOntwerpfasering: verkenning, planuitwerking, realiseerbaar ontwerp\nSysteembenadering, systemengineering en passende contractvormen", 'diespe' ) ),
 		'voorbeeld' => diespe_home_text( 'kaart2_voorbeeld', __( 'Zoals: Waardevolle Kleine Wateren, Bovenlopen Loolee — KRW-doelen vertaald naar inrichtingsmaatregelen voor vier beken.', 'diespe' ) ),
 	),
 	array(
 		'icon'    => '&#127795;',
 		'titel'   => diespe_home_text( 'kaart3_titel', __( 'Omgevingsgericht werken', 'diespe' ) ),
 		'tekst'   => diespe_home_text( 'kaart3_tekst', __( 'Samenwerking, vertrouwen en het versterken van elkaars krachten — binnen en buiten het project.', 'diespe' ) ),
-		'punten'  => diespe_home_text( 'kaart3_punten', __( "Draagvlak en betrokkenheid van belanghebbenden\nBelangen balanceren, win-win oplossingen vinden\nGebiedsontwikkeling en maatschappelijke meerwaarde", 'diespe' ) ),
+		'punten'  => diespe_home_text( 'kaart3_punten', __( "Draagvlak creëren en betrokkenheid van belanghebbenden\nBelangen balanceren en win-win oplossingen vinden\nGebiedsontwikkeling met maatschappelijke meerwaarde", 'diespe' ) ),
 		'voorbeeld' => diespe_home_text( 'kaart3_voorbeeld', __( 'Zoals: Optimalisatie watersysteem Lichtenvoorde — wateroverlast aangepakt met een uitgebreid burgerparticipatietraject.', 'diespe' ) ),
 	),
 );

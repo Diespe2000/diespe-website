@@ -9,13 +9,22 @@ get_header();
 ?>
 
 <section class="hero">
-	<div class="container">
-		<h1><?php esc_html_e( 'DIESPE: Uw partner in projecten', 'diespe' ); ?></h1>
-		<p>
-			<?php esc_html_e( 'Kansen benutten en denken in oplossingen: voor elke uitdaging is een kans om op te lossen. Met een out-of-the-box aanpak en pragmatische aanpak, van initiatief tot realisatie.', 'diespe' ); ?>
-		</p>
-		<a class="btn btn--accent" href="<?php echo esc_url( home_url( '/over-diederik-speksnijder/' ) ); ?>"><?php esc_html_e( 'Maak kennis', 'diespe' ); ?></a>
-		<a class="btn btn--white" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Contact', 'diespe' ); ?></a>
+	<div class="container hero-inner">
+		<div class="hero-text">
+			<h1><?php esc_html_e( 'DIESPE: Uw partner in projecten', 'diespe' ); ?></h1>
+			<p>
+				<?php esc_html_e( 'Kansen benutten en denken in oplossingen: voor elke uitdaging is een kans om iets moois te realiseren. Met een out-of-the-box kijk en een pragmatische aanpak, van initiatief tot realisatie.', 'diespe' ); ?>
+			</p>
+			<a class="btn btn--accent" href="<?php echo esc_url( home_url( '/over-diederik-speksnijder/' ) ); ?>"><?php esc_html_e( 'Maak kennis', 'diespe' ); ?></a>
+			<a class="btn btn--white" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Contact', 'diespe' ); ?></a>
+		</div>
+		<div class="hero-visual" aria-hidden="true">
+			<?php if ( get_theme_mod( 'diespe_hero_afbeelding' ) ) : ?>
+				<img src="<?php echo esc_url( get_theme_mod( 'diespe_hero_afbeelding' ) ); ?>" alt="">
+			<?php else : ?>
+				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/hero-visual.png' ); ?>" alt="">
+			<?php endif; ?>
+		</div>
 	</div>
 </section>
 

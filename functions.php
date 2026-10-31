@@ -175,6 +175,15 @@ function diespe_customize_register( $wp_customize ) {
 			'type'    => 'text',
 		) );
 	}
+
+	$wp_customize->add_setting( 'diespe_hero_afbeelding', array(
+		'default'           => '',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'diespe_hero_afbeelding', array(
+		'label'   => __( 'Hero-afbeelding (ronde uitsnede)', 'diespe' ),
+		'section' => 'diespe_contact',
+	) ) );
 }
 add_action( 'customize_register', 'diespe_customize_register' );
 

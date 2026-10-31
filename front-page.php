@@ -168,6 +168,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Met de focus op duurzame, e
 				</div>
 				<p><?php echo esc_html( $over_tekst1 ); ?></p>
 				<p><?php echo esc_html( $over_tekst2 ); ?></p>
+				<p><?php esc_html_e( 'DIESPE werkt samen met een grote groep specialisten om zo kenniselementen op te vullen en de opdrachtgever een hoge dienstverlening te bieden.', 'diespe' ); ?></p>
 				<a class="btn btn--kleur1 card-more" href="<?php echo esc_url( home_url( '/over-diederik-speksnijder/' ) ); ?>"><?php esc_html_e( 'Meer over Diederik', 'diespe' ); ?></a>
 			</div>
 			<div class="card">
@@ -183,7 +184,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Met de focus op duurzame, e
 					<li><?php esc_html_e( 'Integrale benadering, innovatieve methoden', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Maatschappelijke meerwaarde als uitgangspunt', 'diespe' ); ?></li>
 				</ul>
-				<a class="btn btn--kleur2 card-more" href="<?php echo esc_url( home_url( '/werkvelden/' ) ); ?>"><?php esc_html_e( 'Werkvelden', 'diespe' ); ?></a>
+				<a class="btn btn--kleur2 card-more" href="<?php echo esc_url( home_url( '/werkvelden/' ) ); ?>"><?php esc_html_e( 'Naar de werkvelden', 'diespe' ); ?></a>
 			</div>
 			<div class="card">
 				<div class="card-header">
@@ -198,10 +199,11 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Met de focus op duurzame, e
 					<li><?php esc_html_e( 'Gebiedsontwikkeling', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Natuurherstel', 'diespe' ); ?></li>
 				</ul>
-				<a class="btn btn--kleur3 card-more" href="<?php echo esc_url( get_post_type_archive_link( 'diespe_project' ) ); ?>"><?php esc_html_e( 'Meer projecten', 'diespe' ); ?></a>
+				<a class="btn btn--kleur3 card-more" href="<?php echo esc_url( get_post_type_archive_link( 'diespe_project' ) ); ?>"><?php esc_html_e( 'Bekijk de projecten', 'diespe' ); ?></a>
 			</div>
 		</div>
 		<p class="section-intro" style="margin-top:44px; margin-bottom:0;"><?php esc_html_e( 'We voeren onze diensten en werkzaamheden uit volgens De Nieuwe Regeling 2011 (DNR 2011), herziening juli 2013.', 'diespe' ); ?></p>
+		<p class="lid-van"><?php esc_html_e( 'Lid van:', 'diespe' ); ?> <strong>ZZP Nederland</strong> &nbsp;&middot;&nbsp; <strong><?php esc_html_e( 'KNW — Koninklijk Waternetwerk', 'diespe' ); ?></strong></p>
 	</div>
 </section>
 

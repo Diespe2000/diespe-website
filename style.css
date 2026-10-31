@@ -739,3 +739,15 @@ button[type="submit"], .wp-block-search__button, .search-submit { border: 0; cur
 .tile-meer { font-size: 0.8rem; padding: 7px 14px; align-self: flex-start; margin-top: auto; }
 .tile-hint { text-align: center; color: var(--diespe-muted); font-size: 0.85rem; margin-top: 26px; }
 .tile-cats { display: inline-flex; flex-wrap: wrap; gap: 4px; }
+
+/* Uniforme kaart-knoppen (Over DIESPE) */
+.card .card-more { width: 100%; text-align: center; }
+
+/* Lid van-regel */
+.lid-van {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: var(--diespe-muted);
+}
+.lid-van strong { color: var(--diespe-blue); }

@@ -19,7 +19,7 @@
   <wp:term><wp:term_id><![CDATA[11]]></wp:term_id><wp:term_taxonomy><![CDATA[diespe_projecttype]]></wp:term_taxonomy><wp:term_slug><![CDATA[energietransitie]]></wp:term_slug><wp:term_parent><![CDATA[]]></wp:term_parent><wp:term_name><![CDATA[Energietransitie]]></wp:term_name><wp:term_description><![CDATA[]]></wp:term_description></wp:term>
   <wp:term><wp:term_id><![CDATA[12]]></wp:term_id><wp:term_taxonomy><![CDATA[diespe_projecttype]]></wp:term_taxonomy><wp:term_slug><![CDATA[waterketen]]></wp:term_slug><wp:term_parent><![CDATA[]]></wp:term_parent><wp:term_name><![CDATA[Waterketen]]></wp:term_name><wp:term_description><![CDATA[]]></wp:term_description></wp:term>
   <wp:term><wp:term_id><![CDATA[13]]></wp:term_id><wp:term_taxonomy><![CDATA[diespe_projecttype]]></wp:term_taxonomy><wp:term_slug><![CDATA[waterveiligheid]]></wp:term_slug><wp:term_parent><![CDATA[]]></wp:term_parent><wp:term_name><![CDATA[Waterveiligheid]]></wp:term_name><wp:term_description><![CDATA[]]></wp:term_description></wp:term>
-  <wp:term><wp:term_id><![CDATA[14]]></wp:term_id><wp:term_taxonomy><![CDATA[diespe_projecttype]]></wp:term_taxonomy><wp:term_slug><![CDATA[overige]]></wp:term_slug><wp:term_parent><![CDATA[]]></wp:term_parent><wp:term_name><![CDATA[Overige]]></wp:term_name><wp:term_description><![CDATA[]]></wp:term_description></wp:term>
+  <wp:term><wp:term_id><![CDATA[14]]></wp:term_id><wp:term_taxonomy><![CDATA[diespe_projecttype]]></wp:term_taxonomy><wp:term_slug><![CDATA[utiliteit]]></wp:term_slug><wp:term_parent><![CDATA[]]></wp:term_parent><wp:term_name><![CDATA[Utiliteit]]></wp:term_name><wp:term_description><![CDATA[]]></wp:term_description></wp:term>
   <item>
     <title>Waardevolle kleine Wateren, Bovenlopen Loolee | </title>
     <link>https://www.diespe.nl/projecten/waardevolle-kleine-wateren-bovenlopen-loolee/</link>
@@ -1659,7 +1659,6 @@ Realisatie</li>
       <wp:meta_value><![CDATA[]]></wp:meta_value>
     </wp:postmeta>
   </item>
-  <wp:term><wp:term_id><![CDATA[20]]></wp:term_id><wp:term_taxonomy><![CDATA[diespe_projecttype]]></wp:term_taxonomy><wp:term_slug><![CDATA[utiliteit]]></wp:term_slug><wp:term_parent><![CDATA[]]></wp:term_parent><wp:term_name><![CDATA[Utiliteit]]></wp:term_name><wp:term_description><![CDATA[]]></wp:term_description></wp:term>
   <wp:term><wp:term_id><![CDATA[21]]></wp:term_id><wp:term_taxonomy><![CDATA[diespe_projecttype]]></wp:term_taxonomy><wp:term_slug><![CDATA[natuurherstel]]></wp:term_slug><wp:term_parent><![CDATA[]]></wp:term_parent><wp:term_name><![CDATA[Natuurherstel]]></wp:term_name><wp:term_description><![CDATA[]]></wp:term_description></wp:term>
 </channel>
 </rss>

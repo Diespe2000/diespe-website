@@ -10,7 +10,7 @@ $terms = get_the_term_list( get_the_ID(), 'diespe_projecttype', '', ', ' );
 $cat_slugs = wp_get_post_terms( get_the_ID(), 'diespe_projecttype', array( 'fields' => 'slugs' ) );
 $cat_slug = $cat_slugs ? $cat_slugs[0] : '';
 $fallback = '';
-foreach ( array( $cat_slug, 'utiliteit' ) as $slug ) {
+foreach ( array( $cat_slug, 'gebiedsontwikkeling' ) as $slug ) {
 	if ( $slug && file_exists( get_template_directory() . '/assets/img/projecten/' . $slug . '.png' ) ) {
 		$fallback = get_template_directory_uri() . '/assets/img/projecten/' . $slug . '.png';
 		break;

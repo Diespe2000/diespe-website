@@ -19,7 +19,7 @@
   <wp:term><wp:term_id><![CDATA[11]]></wp:term_id><wp:term_taxonomy><![CDATA[diespe_projecttype]]></wp:term_taxonomy><wp:term_slug><![CDATA[energietransitie]]></wp:term_slug><wp:term_parent><![CDATA[]]></wp:term_parent><wp:term_name><![CDATA[Energietransitie]]></wp:term_name><wp:term_description><![CDATA[]]></wp:term_description></wp:term>
   <wp:term><wp:term_id><![CDATA[12]]></wp:term_id><wp:term_taxonomy><![CDATA[diespe_projecttype]]></wp:term_taxonomy><wp:term_slug><![CDATA[waterketen]]></wp:term_slug><wp:term_parent><![CDATA[]]></wp:term_parent><wp:term_name><![CDATA[Waterketen]]></wp:term_name><wp:term_description><![CDATA[]]></wp:term_description></wp:term>
   <wp:term><wp:term_id><![CDATA[13]]></wp:term_id><wp:term_taxonomy><![CDATA[diespe_projecttype]]></wp:term_taxonomy><wp:term_slug><![CDATA[waterveiligheid]]></wp:term_slug><wp:term_parent><![CDATA[]]></wp:term_parent><wp:term_name><![CDATA[Waterveiligheid]]></wp:term_name><wp:term_description><![CDATA[]]></wp:term_description></wp:term>
-  <wp:term><wp:term_id><![CDATA[14]]></wp:term_id><wp:term_taxonomy><![CDATA[diespe_projecttype]]></wp:term_taxonomy><wp:term_slug><![CDATA[utiliteit]]></wp:term_slug><wp:term_parent><![CDATA[]]></wp:term_parent><wp:term_name><![CDATA[Utiliteit]]></wp:term_name><wp:term_description><![CDATA[]]></wp:term_description></wp:term>
+  <wp:term><wp:term_id><![CDATA[14]]></wp:term_id><wp:term_taxonomy><![CDATA[diespe_projecttype]]></wp:term_taxonomy><wp:term_slug><![CDATA[gebiedsontwikkeling]]></wp:term_slug><wp:term_parent><![CDATA[]]></wp:term_parent><wp:term_name><![CDATA[Gebiedsontwikkeling]]></wp:term_name><wp:term_description><![CDATA[]]></wp:term_description></wp:term>
   <item>
     <title>Waardevolle kleine Wateren, Bovenlopen Loolee | </title>
     <link>https://www.diespe.nl/projecten/waardevolle-kleine-wateren-bovenlopen-loolee/</link>
@@ -1702,7 +1702,7 @@ Realisatie</li>
     <wp:post_type><![CDATA[diespe_project]]></wp:post_type>
     <wp:post_password><![CDATA[]]></wp:post_password>
     <wp:is_sticky>0</wp:is_sticky>
-    <category domain="diespe_projecttype" nicename="utiliteit"><![CDATA[Utiliteit]]></category>
+    <category domain="diespe_projecttype" nicename="gebiedsontwikkeling"><![CDATA[Gebiedsontwikkeling]]></category>
     <wp:postmeta>
       <wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
       <wp:meta_value><![CDATA[]]></wp:meta_value>

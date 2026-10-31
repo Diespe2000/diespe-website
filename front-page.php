@@ -42,8 +42,8 @@ $kaarten = array(
 
 $over_intro = diespe_home_text( 'over_intro', __( 'DIESPE is Diederik Speksnijder: betrokken, proactief en met een pragmatische "eerst denken, dan doen"-aanpak. Al meer dan 25 jaar het gezicht achter duurzame omgevingsprojecten in de grond-, weg- en waterbouwsector.', 'diespe' ) );
 $over_naam  = diespe_home_text( 'over_naam', __( 'Diederik Speksnijder', 'diespe' ) );
-$over_tekst1 = diespe_home_text( 'over_tekst1', __( 'Verbindt specialisten en stakeholders, denkt in kansen en vindt win-win-oplossingen — van initiatief tot realisatie.', 'diespe' ) );
-$over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Van vispassage Doesburg tot windpark Duiven: technisch solide, duurzaam en met maatschappelijke meerwaarde.', 'diespe' ) );
+$over_tekst1 = diespe_home_text( 'over_tekst1', __( 'Als ervaren projectmanager, technisch manager en omgevingsmanager verbindt Diederik specialisten en stakeholders om gezamenlijke doelen te bereiken. Hij denkt in kansen, balanceert belangen en zet teamleden in hun kracht.', 'diespe' ) );
+$over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Van vispassage Doesburg tot windpark Duiven: met de focus op duurzame, effici&euml;nte oplossingen realiseert hij technisch solide projecten die voldoen aan de behoeften van de gemeenschap.', 'diespe' ) );
 ?>
 
 <section class="hero">
@@ -195,9 +195,8 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Van vispassage Doesburg tot
 					<li><?php esc_html_e( 'Energietransitie', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Waterketen', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Waterveiligheid', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Utiliteit', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Natuurherstel', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Gebiedsontwikkeling', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Natuurherstel', 'diespe' ); ?></li>
 				</ul>
 				<a class="btn btn--kleur3 card-more" href="<?php echo esc_url( get_post_type_archive_link( 'diespe_project' ) ); ?>"><?php esc_html_e( 'Meer projecten', 'diespe' ); ?></a>
 			</div>

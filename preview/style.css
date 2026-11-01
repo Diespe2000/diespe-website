@@ -800,3 +800,32 @@ a.logo-item:hover { opacity: 0.8; }
 
 .partners-strip { padding-top: 44px; padding-bottom: 44px; }
 .partners-strip .section-intro { margin-bottom: 22px; }
+
+/* =Sponsoring (DIESPE in de regio)
+-------------------------------------------------------------- */
+.sponsor-blok {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: #f4f6fb;
+  border: 1px solid var(--diespe-border);
+  border-radius: var(--diespe-radius);
+  padding: 36px 44px;
+}
+.sponsor-tekst { flex: 1 1 380px; }
+.sponsor-tekst h2 { margin-bottom: 10px; }
+.sponsor-tekst p { color: var(--diespe-muted); max-width: 620px; }
+.sponsor-tekst a {
+  color: var(--diespe-blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+.sponsor-tekst a:hover { color: var(--diespe-orange); }
+.sponsor-logo { flex: 0 0 auto; }
+.sponsor-logo img { max-height: 96px; width: auto; }
+@media (max-width: 700px) {
+  .sponsor-blok { padding: 26px 24px; }
+  .sponsor-logo { margin: 0 auto; }
+}

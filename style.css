@@ -785,11 +785,11 @@ button[type="submit"], .wp-block-search__button, .search-submit { border: 0; cur
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 46px;
+  height: 58px;
 }
 a.logo-item:hover { opacity: 0.8; }
 .logo-item img {
-  max-width: 150px;
+  max-width: 200px;
   max-height: 100%;
   width: auto;
   object-fit: contain;

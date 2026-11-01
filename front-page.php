@@ -260,8 +260,8 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 			<div class="card sponsor-card">
 				<div class="sponsor-visual"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/sponsor-modelspoor.jpg' ); ?>" alt="<?php echo esc_attr( 'Modulebaan met tunnel op een FREMO/FKTT Treffen' ); ?>"></div>
 				<div class="sponsor-body">
-					<div class="card-header"><span class="card-icon card-icon--groen" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/trein.svg' ); ?>" alt=""></span><h3><?php esc_html_e( 'Modelspoor: FREMO & FKTT', 'diespe' ); ?></h3></div>
-					<p><?php esc_html_e( 'Diederik is aangesloten bij FREMO en de Freundeskreis TT-Module (FKTT), en bouwt zelf aan modulebanen. Hij helpt mee met het organiseren van diverse Treffen, waar spoorwegbouw en treinbewegingen samenkomen.', 'diespe' ); ?></p>
+					<div class="card-header"><span class="card-icon card-icon--groen" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/trein.svg' ); ?>" alt=""></span><h3><?php esc_html_e( 'Modelspoor', 'diespe' ); ?></h3></div>
+					<p><?php esc_html_e( 'Diederik is lid van de Freundeskreis TT-Module (FKTT) en FREMO, en bouwt zelf aan modulebanen. Hij is ook lid van modelspoorvereniging De Seinpaal te Eibergen en helpt mee met het organiseren van diverse Treffen.', 'diespe' ); ?></p>
 					<a class="btn btn--kleur3 card-more" href="https://www.fktt-module.de/de" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk FKTT', 'diespe' ); ?></a>
 				</div>
 			</div>

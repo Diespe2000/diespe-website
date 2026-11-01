@@ -257,12 +257,12 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 					<a href="https://fccl.nl" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk het project', 'diespe' ); ?> &rarr;</a>
 				</div>
 			</div>
-			<div class="card sponsor-card sponsor-card--leeg">
-				<div class="sponsor-visual sponsor-visual--placeholder"><span aria-hidden="true">+</span></div>
+			<div class="card sponsor-card">
+				<div class="sponsor-visual sponsor-visual--placeholder"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/trein.svg' ); ?>" alt="" style="width:120px;opacity:0.3;"></div>
 				<div class="sponsor-body">
-					<h3><?php esc_html_e( 'Uw initiatief hier?', 'diespe' ); ?></h3>
-					<p><?php esc_html_e( 'Werkt u aan een sportief of maatschappelijk initiatief in de regio? DIESPE denkt graag mee over betrokkenheid en samenwerking.', 'diespe' ); ?></p>
-					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Neem contact op', 'diespe' ); ?> &rarr;</a>
+					<div class="card-header"><span class="card-icon card-icon--groen" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/trein.svg' ); ?>" alt=""></span><h3><?php esc_html_e( 'Modelspoor: FREMO & FKTT', 'diespe' ); ?></h3></div>
+					<p><?php esc_html_e( 'Diederik is aangesloten bij FREMO en de Freundeskreis TT-Module (FKTT), en bouwt zelf aan modulebanen. Hij helpt mee met het organiseren van diverse Treffen, waar spoorwegbouw en treinbewegingen samenkomen.', 'diespe' ); ?></p>
+					<a href="https://www.fremo-net.eu" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk FREMO', 'diespe' ); ?> &rarr;</a>
 				</div>
 			</div>
 		</div>

@@ -178,3 +178,17 @@ top: **Cloudflare Turnstile** (gratis, privacyvriendelijk):
 - Responsive, toegankelijk (skip link, ARIA, toetsenbordnavigatie).
 - Contactgegevens centraal beheerbaar via de Customizer.
 - Nederstalige teksten, vertaalbaar via text domain `diespe`.
+
+
+## Hoofdmenu
+
+Structuur (in WordPress in te stellen via **Weergave → Menu's**, of via de Customizer):
+
+1. **Home** — evt. weglaten (het logo linkt ook naar de homepage)
+2. **Werkvelden** — aparte pagina `/werkvelden/` (staat in de WXR-import)
+3. **Projecten** — projectenarchief `/projecten/`
+4. **Over DIESPE** — homepage-sectie `/#over`
+5. **Contact** — pagina `/contact/`
+
+De werkvelden-pagina bevat de drie disciplines (Management, Integrale ontwerpleiding,
+Omgevingsgericht werken) met uitgebreide dienstenlijsten en voorbeeldprojecten.

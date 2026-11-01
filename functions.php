@@ -291,6 +291,7 @@ function diespe_contact_form_shortcode() {
 		} else {
 			$naam    = sanitize_text_field( wp_unslash( $_POST['diespe_naam'] ?? '' ) );
 			$email   = sanitize_email( wp_unslash( $_POST['diespe_email'] ?? '' ) );
+			$telefoon = sanitize_text_field( wp_unslash( $_POST['diespe_telefoon'] ?? '' ) );
 			$boodschap = sanitize_textarea_field( wp_unslash( $_POST['diespe_boodschap'] ?? '' ) );
 
 			if ( ! $naam || ! $boodschap || ! is_email( $email ) ) {
@@ -298,7 +299,11 @@ function diespe_contact_form_shortcode() {
 			} else {
 				$naar   = get_theme_mod( 'diespe_email' ) ?: get_option( 'admin_email' );
 				$onderwerp = sprintf( '[%s] Contactverzoek via website', get_bloginfo( 'name' ) );
-				$body   = "Naam: {$naam}\nE-mail: {$email}\n\nBoodschap:\n{$boodschap}";
+				$body   = "Naam: {$naam}\nE-mail: {$email}\n";
+				if ( $telefoon ) {
+					$body  .= "Telefoon: {$telefoon}\n";
+				}
+				$body  .= "\nBoodschap:\n{$boodschap}";
 				$headers = array( 'Reply-To: ' . $email );
 
 				if ( wp_mail( $naar, $onderwerp, $body, $headers ) ) {
@@ -329,6 +334,10 @@ function diespe_contact_form_shortcode() {
 				<div>
 					<label for="diespe_email"><?php esc_html_e( 'E-mailadres', 'diespe' ); ?> *</label>
 					<input type="email" id="diespe_email" name="diespe_email" required value="<?php echo esc_attr( sanitize_email( wp_unslash( $_POST['diespe_email'] ?? '' ) ) ); ?>">
+				</div>
+				<div>
+					<label for="diespe_telefoon"><?php esc_html_e( 'Telefoonnummer', 'diespe' ); ?></label>
+					<input type="tel" id="diespe_telefoon" name="diespe_telefoon" value="<?php echo esc_attr( sanitize_text_field( wp_unslash( $_POST['diespe_telefoon'] ?? '' ) ) ); ?>">
 				</div>
 				<div>
 					<label for="diespe_boodschap"><?php esc_html_e( 'Uw boodschap', 'diespe' ); ?> *</label>

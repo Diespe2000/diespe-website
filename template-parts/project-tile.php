@@ -26,6 +26,13 @@ foreach ( array_merge( $slugs, array( 'gebiedsontwikkeling' ) ) as $slug ) {
 		break;
 	}
 }
+$onderwerp = get_post_meta( get_the_ID(), 'diespe_placeholder', true );
+if ( $onderwerp ) {
+	$bestand = get_template_directory() . '/assets/img/projecten/placeholders/' . sanitize_key( $onderwerp ) . '.png';
+	if ( file_exists( $bestand ) ) {
+		$fallback = get_template_directory_uri() . '/assets/img/projecten/placeholders/' . sanitize_key( $onderwerp ) . '.png';
+	}
+}
 ?>
 <div class="flip-tile" data-cats="<?php echo esc_attr( implode( ' ', $slugs ) ); ?>">
 	<div class="flip-inner">

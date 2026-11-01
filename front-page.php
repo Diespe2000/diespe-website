@@ -53,11 +53,11 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 			<p><?php echo esc_html( $hero_tekst ); ?></p>
 			<a class="btn btn--accent" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Maak kennis', 'diespe' ); ?></a>
 		</div>
-		<div class="hero-visual" aria-hidden="true">
+		<div class="hero-visual">
 			<?php if ( get_theme_mod( 'diespe_hero_afbeelding' ) ) : ?>
 				<img src="<?php echo esc_url( get_theme_mod( 'diespe_hero_afbeelding' ) ); ?>" alt="">
 			<?php else : ?>
-				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/hero-visual.png' ); ?>" alt="">
+				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/hero-foto.png' ); ?>" alt="<?php echo esc_attr( 'Diederik Speksnijder, oprichter van DIESPE' ); ?>">
 			<?php endif; ?>
 		</div>
 	</div>

@@ -496,3 +496,18 @@ function diespe_turnstile_ok() {
 	$data = json_decode( wp_remote_retrieve_body( $antwoord ) );
 	return ! empty( $data->success );
 }
+
+/**
+ * Toon alle projecten op het projectenarchief (geen paginering).
+ *
+ * @param WP_Query $query Query.
+ */
+function diespe_projecten_alles( $query ) {
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
+	if ( $query->is_post_type_archive( 'diespe_project' ) || $query->is_tax( 'diespe_projecttype' ) ) {
+		$query->set( 'posts_per_page', 60 );
+	}
+}
+add_action( 'pre_get_posts', 'diespe_projecten_alles' );

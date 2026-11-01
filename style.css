@@ -924,3 +924,11 @@ a.logo-item:hover { opacity: 0.8; }
 .sponsor-body .card-header { margin-bottom: 10px; }
 
 .titel-badge img, .card-icon img, .meta-icoon img { width: 60%; height: 60%; }
+
+/* Extra knop-/badge-kleuren regio-sectie */
+.btn--kleur4 { background: var(--diespe-orange); border-color: var(--diespe-orange); color: #fff; }
+.btn--kleur4:hover, .btn--kleur4:focus { background: var(--diespe-blue); border-color: var(--diespe-blue); color: #fff; }
+.card-header .card-icon--blauwlicht { background: var(--diespe-blue-light); }
+/* knoppen binnen sponsor-body erven niet de link-kleur */
+.sponsor-body a.btn { color: #fff; }
+.sponsor-body a.btn:hover { color: #fff; }

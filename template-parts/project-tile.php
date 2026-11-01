@@ -70,7 +70,7 @@ if ( $onderwerp ) {
 				}
 				?>
 			</ul>
-			<a class="btn btn--outline tile-meer" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Lees meer', 'diespe' ); ?> &rarr;</a>
+			<a class="btn btn--outline tile-meer" href="https://www.google.com/maps/search/?api=1&query=<?php echo rawurlencode( get_the_title() . ' Nederland' ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk de projectlocatie op de kaart', 'diespe' ); ?></a>
 		</div>
 	</div>
 </div>

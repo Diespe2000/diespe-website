@@ -190,6 +190,26 @@ function diespe_customize_register( $wp_customize ) {
 		'label'   => __( 'Hero-afbeelding (ronde uitsnede)', 'diespe' ),
 		'section' => 'diespe_contact',
 	) ) );
+
+	for ( $i = 1; $i <= 8; $i++ ) {
+		$wp_customize->add_setting( 'diespe_netwerk_logo_' . $i, array(
+			'default'           => '',
+			'sanitize_callback' => 'esc_url_raw',
+		) );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'diespe_netwerk_logo_' . $i, array(
+			'label'   => sprintf( __( 'Netwerk-logo %d', 'diespe' ), $i ),
+			'section' => 'diespe_homepage',
+		) ) );
+		$wp_customize->add_setting( 'diespe_netwerk_url_' . $i, array(
+			'default'           => '',
+			'sanitize_callback' => 'esc_url_raw',
+		) );
+		$wp_customize->add_control( 'diespe_netwerk_url_' . $i, array(
+			'label'   => sprintf( __( 'Netwerk-website %d (optioneel)', 'diespe' ), $i ),
+			'section' => 'diespe_homepage',
+			'type'    => 'url',
+		) );
+	}
 }
 add_action( 'customize_register', 'diespe_customize_register' );
 

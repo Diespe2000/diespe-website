@@ -751,3 +751,36 @@ button[type="submit"], .wp-block-search__button, .search-submit { border: 0; cur
   color: var(--diespe-muted);
 }
 .lid-van strong { color: var(--diespe-blue); }
+
+/* =Netwerk-logo's
+-------------------------------------------------------------- */
+.logo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  justify-content: center;
+  align-items: center;
+}
+.logo-item {
+  flex: 0 1 170px;
+  background: #fff;
+  border: 1px solid var(--diespe-border);
+  border-radius: var(--diespe-radius);
+  padding: 18px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 92px;
+}
+.logo-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.75;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+.logo-item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}

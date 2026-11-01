@@ -82,6 +82,17 @@ Alle inhoudelijke teksten op de homepage zijn **zonder code aan te passen** via
 Laat je een veld leeg, dan geldt de ingebouwde standaardtekst. De Customizer toont
 live een voorvertoning naast het aanpassen.
 
+## Netwerk-logo's op de homepage
+
+Onderaan de homepage staat de sectie **"Ons netwerk"** met een logo-strip. Beheer via
+**Customizer → Homepage-teksten** (scroll naar beneden):
+
+- **Netwerk-logo 1 t/m 8**: upload het logo van elk partnerbedrijf (witte kaart,
+  automatisch in grijstinten; bij hover kleur)
+- **Netwerk-website 1 t/m 8** (optioneel): vul de website-URL in en het logo wordt
+  klikbaar (opent in nieuw tabblad)
+- De sectie toont alleen de logo's die je hebt ingevuld; lege plekken vallen weg
+
 ## Projecten toevoegen
 
 Nieuwe projecten voeg je in WordPress toe via **Projecten → Nieuw project**:

@@ -836,3 +836,21 @@ a.logo-item:hover { opacity: 0.8; }
   border-radius: var(--diespe-radius);
   box-shadow: var(--diespe-shadow);
 }
+
+/* Sponsoring: gecentreerde titel + 3 kolommen */
+.sponsor-grid { margin-top: 32px; }
+.sponsor-card { display: flex; flex-direction: column; overflow: hidden; }
+.sponsor-visual { flex: 0 0 220px; overflow: hidden; }
+.sponsor-visual img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.sponsor-visual--placeholder {
+  display: flex; align-items: center; justify-content: center;
+  background: #f4f6fb;
+}
+.sponsor-visual--placeholder span {
+  font-size: 64px; font-weight: 800; color: var(--diespe-blue); opacity: 0.25; line-height: 1;
+}
+.sponsor-body { padding: 22px 24px 24px; display: flex; flex-direction: column; flex: 1; }
+.sponsor-body h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.sponsor-body p { font-size: 0.9rem; color: var(--diespe-muted); margin-bottom: 12px; flex: 1; }
+.sponsor-body a { color: var(--diespe-blue); font-weight: 700; text-decoration: none; }
+.sponsor-body a:hover { color: var(--diespe-orange); }

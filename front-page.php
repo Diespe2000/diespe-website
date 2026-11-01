@@ -237,14 +237,32 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 
 <section class="section" id="sponsoring">
 	<div class="container">
-		<div class="sponsor-blok">
-			<div class="sponsor-tekst">
-				<h2><?php esc_html_e( 'DIESPE in de regio', 'diespe' ); ?></h2>
-				<p><?php esc_html_e( 'DIESPE sponsort het Dames 2-team van Handbalvereniging Erix uit Lichtenvoorde. Sportiviteit, teamgeest en verbinding — in de club en in de regio — vinden wij belangrijk en ondersteunen wij graag.', 'diespe' ); ?></p>
-				<a href="https://hverix.nl" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk de vereniging', 'diespe' ); ?> &rarr;</a>
+		<h2 class="section-title"><?php esc_html_e( 'DIESPE in de regio', 'diespe' ); ?></h2>
+		<p class="section-intro"><?php esc_html_e( 'Vanuit Lichtenvoorde ondersteunt DIESPE graag de club en de regio — met sponsoring, betrokkenheid en een actieve rol bij lokale accommodaties.', 'diespe' ); ?></p>
+		<div class="grid-3 sponsor-grid">
+			<div class="card sponsor-card">
+				<div class="sponsor-visual"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/sponsor-dames2.jpg' ); ?>" alt="<?php echo esc_attr( 'Dames 2 van Handbalvereniging Erix in de sportzaal' ); ?>"></div>
+				<div class="sponsor-body">
+					<h3><?php esc_html_e( 'Sponsor van Erix Dames 2', 'diespe' ); ?></h3>
+					<p><?php esc_html_e( 'DIESPE is shirtsponsor van het Dames 2-team van Handbalvereniging Erix. Bij DIESPE hechten we veel waarde aan samenwerking, vertrouwen en het versterken van elkaars krachten — op het veld én daarbuiten.', 'diespe' ); ?></p>
+					<a href="https://hverix.nl" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk de vereniging', 'diespe' ); ?> &rarr;</a>
+				</div>
 			</div>
-			<div class="sponsor-foto">
-				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/sponsor-dames2.jpg' ); ?>" alt="<?php echo esc_attr( 'Dames 2 van Handbalvereniging Erix in de sportzaal' ); ?>">
+			<div class="card sponsor-card">
+				<div class="sponsor-visual"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/sponsor-bmx-3d.jpg' ); ?>" alt="<?php echo esc_attr( '3D-visualisatie van de nieuwe BMX-accommodatie van FCCL op het Eschpark' ); ?>"></div>
+				<div class="sponsor-body">
+					<h3><?php esc_html_e( 'BMX-accommodatie FCCL', 'diespe' ); ?></h3>
+					<p><?php esc_html_e( 'Diederik is als projectleider nauw betrokken bij de nieuwe BMX-accommodatie van Fietscrossclub Lichtenvoorde (FCCL) op het Eschpark — van de eerste aanzet en locatiestudie tot de realisatie van de baan.', 'diespe' ); ?></p>
+					<a href="https://fccl.nl" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk het project', 'diespe' ); ?> &rarr;</a>
+				</div>
+			</div>
+			<div class="card sponsor-card sponsor-card--leeg">
+				<div class="sponsor-visual sponsor-visual--placeholder"><span aria-hidden="true">+</span></div>
+				<div class="sponsor-body">
+					<h3><?php esc_html_e( 'Uw initiatief hier?', 'diespe' ); ?></h3>
+					<p><?php esc_html_e( 'Werkt u aan een sportief of maatschappelijk initiatief in de regio? DIESPE denkt graag mee over betrokkenheid en samenwerking.', 'diespe' ); ?></p>
+					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Neem contact op', 'diespe' ); ?> &rarr;</a>
+				</div>
 			</div>
 		</div>
 	</div>

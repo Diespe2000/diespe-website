@@ -51,8 +51,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Met de focus op duurzame, e
 		<div class="hero-text">
 			<h1><?php echo esc_html( $hero_titel ); ?></h1>
 			<p><?php echo esc_html( $hero_tekst ); ?></p>
-			<a class="btn btn--accent" href="<?php echo esc_url( home_url( '/over-diederik-speksnijder/' ) ); ?>"><?php esc_html_e( 'Maak kennis', 'diespe' ); ?></a>
-			<a class="btn btn--white" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Contact', 'diespe' ); ?></a>
+			<a class="btn btn--accent" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Maak kennis', 'diespe' ); ?></a>
 		</div>
 		<div class="hero-visual" aria-hidden="true">
 			<?php if ( get_theme_mod( 'diespe_hero_afbeelding' ) ) : ?>

@@ -209,14 +209,13 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 </section>
 
 
-<section class="section section--alt" id="netwerk">
+<section class="section partners-strip" id="partners">
 	<div class="container">
-		<h2 class="section-title"><?php esc_html_e( 'Ons netwerk', 'diespe' ); ?></h2>
-		<p class="section-intro"><?php esc_html_e( 'DIESPE werkt samen met een groot netwerk van specialisten en partnerbedrijven.', 'diespe' ); ?></p>
+		<h2 class="section-title"><?php esc_html_e( 'Onze partners', 'diespe' ); ?></h2>
+		<p class="section-intro"><p class="section-intro" style="color:rgba(255,255,255,0.85);"><?php esc_html_e( 'DIESPE werkt samen met een vast netwerk van specialisten en partnerbedrijven.', 'diespe' ); ?></p>
 		<div class="logo-strip">
 			<?php
-			$netwerk_titel = diespe_home_text( 'netwerk_titel', __( 'Ons netwerk', 'diespe' ) );
-			for ( $i = 1; $i <= 8; $i++ ) {
+						for ( $i = 1; $i <= 8; $i++ ) {
 				$logo = get_theme_mod( 'diespe_netwerk_logo_' . $i );
 				$url  = get_theme_mod( 'diespe_netwerk_url_' . $i );
 				if ( $logo ) {

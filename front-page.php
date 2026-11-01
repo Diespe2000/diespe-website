@@ -206,8 +206,6 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 				<a class="btn btn--kleur3 card-more" href="<?php echo esc_url( get_post_type_archive_link( 'diespe_project' ) ); ?>"><?php esc_html_e( 'Bekijk de projecten', 'diespe' ); ?></a>
 			</div>
 		</div>
-		<p class="section-intro" style="margin-top:44px; margin-bottom:0;"><?php esc_html_e( 'We voeren onze diensten en werkzaamheden uit volgens De Nieuwe Regeling 2011 (DNR 2011), herziening juli 2013.', 'diespe' ); ?></p>
-		<p class="lid-van"><?php esc_html_e( 'Lid van:', 'diespe' ); ?> <strong><a href="https://www.waternetwerk.nl" target="_blank" rel="noopener"><?php esc_html_e( 'KNW — Koninklijk Waternetwerk', 'diespe' ); ?></a></strong></p>
 	</div>
 </section>
 

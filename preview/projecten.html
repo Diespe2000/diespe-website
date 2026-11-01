@@ -820,7 +820,7 @@ Realisatie</li><li><strong>Rol:</strong> Integraal projectleider</li><li><strong
       <div><h4>Contact</h4><p>Mercurius 19<br>7131 HS Lichtenvoorde</p><p><a href="tel:+31653142395">+31 653 14 23 95</a></p></div>
       <div><h4>Quick links</h4><ul><li><a href="index.html">Home</a></li><li><a href="projecten.html">Projecten</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>&copy; 2025 DIESPE Omgevingsprojecten</span><span>Algemene voorwaarden: DNR 2011 &nbsp;&middot;&nbsp; KvK 94509832</span></div>
+    <div class="footer-bottom"><span>&copy; <span class="js-jaar">2026</span> DIESPE Omgevingsprojecten</span><span>Algemene voorwaarden: DNR 2011 &nbsp;&middot;&nbsp; KvK 94509832 &nbsp;&middot;&nbsp; Lid van: <a href="https://www.waternetwerk.nl" target="_blank" rel="noopener" style="color:inherit;">KNW &mdash; Koninklijk Waternetwerk</a></span></div>
   </div>
 </footer>
 
@@ -846,6 +846,9 @@ if (hash) {
   var doel = document.querySelector('.filter-btn[data-filter="' + hash + '"]');
   if (doel) { doel.click(); }
 }
+</script>
+<script>
+document.querySelectorAll('.js-jaar').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 </script>
 </body>
 </html>

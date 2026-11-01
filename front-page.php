@@ -213,22 +213,24 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 	<div class="container">
 		<h2 class="section-title"><?php esc_html_e( 'Onze partners', 'diespe' ); ?></h2>
 		<p class="section-intro" style="color:rgba(255,255,255,0.85);"><?php esc_html_e( 'Een selectie van de specialisten en partnerbedrijven waarmee DIESPE samenwerkt.', 'diespe' ); ?></p>
-		<div class="logo-strip">
+		<div class="logo-marquee">
+			<div class="logo-track">
 			<?php
-						for ( $i = 1; $i <= 8; $i++ ) {
-				$logo = get_theme_mod( 'diespe_netwerk_logo_' . $i );
-				$url  = get_theme_mod( 'diespe_netwerk_url_' . $i );
-				if ( $logo ) {
-					echo '<div class="logo-item">';
-					if ( $url ) {
-						echo '<a href="' . esc_url( $url ) . '" target="_blank" rel="noopener"><img src="' . esc_url( $logo ) . '" alt="" loading="lazy"></a>';
-					} else {
-						echo '<img src="' . esc_url( $logo ) . '" alt="" loading="lazy">';
+			for ( $set = 1; $set <= 2; $set++ ) {
+				for ( $i = 1; $i <= 8; $i++ ) {
+					$logo = get_theme_mod( 'diespe_netwerk_logo_' . $i );
+					$url  = get_theme_mod( 'diespe_netwerk_url_' . $i );
+					if ( $logo ) {
+						if ( $url ) {
+							echo '<a class="logo-item" href="' . esc_url( $url ) . '" target="_blank" rel="noopener"><img src="' . esc_url( $logo ) . '" alt="" loading="lazy"></a>';
+						} else {
+							echo '<span class="logo-item"><img src="' . esc_url( $logo ) . '" alt="" loading="lazy"></span>';
+						}
 					}
-					echo '</div>';
 				}
 			}
 			?>
+			</div>
 		</div>
 	</div>
 </section>

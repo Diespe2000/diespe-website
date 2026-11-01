@@ -132,10 +132,13 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 				'orderby'        => 'post__in',
 			) );
 		} else {
+			// Cachevriendelijke selectie: seed per dag, zodat de drie projecten
+			// per dag rouleren maar binnen een dag stabiel blijven.
+			$dag_seed = (int) gmdate( 'Ymd' );
 			$showcase = new WP_Query( array(
 				'post_type'      => 'diespe_project',
 				'posts_per_page' => 3,
-				'orderby'        => 'rand',
+				'orderby'        => 'rand(' . $dag_seed . ')',
 			) );
 		}
 

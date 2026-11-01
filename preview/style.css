@@ -352,7 +352,7 @@ p { margin: 0 0 1.2em; }
 
 /* =Secties
 -------------------------------------------------------------- */
-.section { padding: 72px 0; }
+.section { padding: 36px 0 72px; }
 .section--alt { background: var(--diespe-bg-alt); }
 
 .section-title {
@@ -364,7 +364,7 @@ p { margin: 0 0 1.2em; }
 .section-intro {
   text-align: center;
   max-width: 62ch;
-  margin: 0 auto 44px;
+  margin: 0 auto 32px;
   color: var(--diespe-muted);
 }
 

@@ -33,6 +33,5 @@ foreach ( array( $cat_slug, 'gebiedsontwikkeling' ) as $slug ) {
 		<?php endif; ?>
 		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 		<p><?php echo esc_html( get_the_excerpt() ); ?></p>
-		<a class="btn btn--outline" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Lees meer', 'diespe' ); ?></a>
 	</div>
 </article>

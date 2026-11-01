@@ -135,6 +135,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 			$showcase = new WP_Query( array(
 				'post_type'      => 'diespe_project',
 				'posts_per_page' => 3,
+				'orderby'        => 'rand',
 			) );
 		}
 

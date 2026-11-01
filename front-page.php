@@ -181,7 +181,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 					<span class="card-icon" aria-hidden="true">card-icon--oranje"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/ster.svg' ); ?>" alt=""></span>
 					<h3><?php esc_html_e( 'Waarom DIESPE', 'diespe' ); ?></h3>
 				</div>
-				<p><?php esc_html_e( 'DIESPE staat voor pragmatisch projectmanagement met de mens en de omgeving centraal. Denkt in kansen en oplossingen — ook out-of-the-box — en werkt resultaatgericht aan duurzame projecten.', 'diespe' ); ?></p>
+				<p><?php esc_html_e( 'DIESPE staat voor pragmatisch projectmanagement met de mens en de omgeving centraal, op zoek naar maatschappelijke meerwaarde.', 'diespe' ); ?></p>
 				<ul>
 					<li><?php esc_html_e( 'Eerst denken, dan doen', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Denkt in kansen en oplossingen, ook out-of-the-box', 'diespe' ); ?></li>
@@ -244,7 +244,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 			<div class="card sponsor-card">
 				<div class="sponsor-visual"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/sponsor-dames2.jpg' ); ?>" alt="<?php echo esc_attr( 'Dames 2 van Handbalvereniging Erix in de sportzaal' ); ?>"></div>
 				<div class="sponsor-body">
-					<h3><?php esc_html_e( 'Sponsor van Erix Dames 2', 'diespe' ); ?></h3>
+					<h3><?php esc_html_e( 'Sponsor van HV Erix Dames 2', 'diespe' ); ?></h3>
 					<p><?php esc_html_e( 'DIESPE is shirtsponsor van het Dames 2-team van Handbalvereniging Erix. Bij DIESPE hechten we veel waarde aan samenwerking, vertrouwen en het versterken van elkaars krachten — op het veld én daarbuiten.', 'diespe' ); ?></p>
 					<a class="btn btn--kleur1 card-more" href="https://hverix.nl" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk HV Erix', 'diespe' ); ?></a>
 				</div>

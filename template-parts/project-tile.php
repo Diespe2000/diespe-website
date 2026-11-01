@@ -70,7 +70,10 @@ if ( $onderwerp ) {
 				}
 				?>
 			</ul>
-			<a class="btn btn--outline tile-meer" href="https://www.google.com/maps/search/?api=1&query=<?php echo rawurlencode( get_the_title() . ' Nederland' ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk de projectlocatie op de kaart', 'diespe' ); ?></a>
+			<?php $locatie = get_post_meta( get_the_ID(), 'diespe_locatie', true ); ?>
+		<?php if ( $locatie ) : ?>
+			<a class="btn btn--outline tile-meer" href="<?php echo esc_url( $locatie ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk de projectlocatie op de kaart', 'diespe' ); ?></a>
+		<?php endif; ?>
 		</div>
 	</div>
 </div>

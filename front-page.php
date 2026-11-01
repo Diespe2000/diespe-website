@@ -42,8 +42,8 @@ $kaarten = array(
 
 $over_intro = diespe_home_text( 'over_intro', __( 'DIESPE is Diederik Speksnijder: betrokken, proactief en met een pragmatische "eerst denken, dan doen"-aanpak. Al meer dan 25 jaar het gezicht achter duurzame omgevingsprojecten in de grond-, weg- en waterbouwsector.', 'diespe' ) );
 $over_naam  = diespe_home_text( 'over_naam', __( 'Diederik Speksnijder', 'diespe' ) );
-$over_tekst1 = diespe_home_text( 'over_tekst1', __( 'Als ervaren manager verbindt Diederik specialisten en stakeholders om gezamenlijke doelen te bereiken. Hij denkt in kansen, balanceert belangen en zet teamleden in hun kracht. Diederik weet het proces te verbinden aan de inhoud, doorziet de materie snel en komt tot oplossingen.', 'diespe' ) );
-$over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Met de focus op duurzame, effici&euml;nte oplossingen realiseert hij solide projecten met maatschappelijke meerwaarde die voldoen aan de behoeften van de gemeenschap.', 'diespe' ) );
+$over_tekst1 = diespe_home_text( 'over_tekst1', __( 'Diederik Speksnijder is oprichter van DIESPE en al meer dan 25 jaar een bevlogen, betrokken en integer manager in de grond-, weg- en waterbouw. Hij stuurt het team van DIESPE aan en is zelf, als een van de gepassioneerde medewerkers, dagelijks betrokken bij de projecten.', 'diespe' ) );
+$over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proces aan de inhoud, doorziet de materie snel en komt tot oplossingen. Met de focus op duurzame, effici&euml;nte oplossingen realiseert hij solide projecten met maatschappelijke meerwaarde.', 'diespe' ) );
 ?>
 
 <section class="hero">
@@ -177,15 +177,15 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Met de focus op duurzame, e
 			<div class="card">
 				<div class="card-header">
 					<span class="card-icon" aria-hidden="true">&#9733;</span>
-					<h3><?php esc_html_e( 'Kernkwaliteiten', 'diespe' ); ?></h3>
+					<h3><?php esc_html_e( 'Waarom DIESPE', 'diespe' ); ?></h3>
 				</div>
+				<p><?php esc_html_e( 'DIESPE staat voor pragmatisch projectmanagement met de mens en de omgeving centraal. Denkt in kansen en oplossingen — ook out-of-the-box — en werkt resultaatgericht aan duurzame projecten.', 'diespe' ); ?></p>
 				<ul>
-					<li><?php esc_html_e( 'Eerst denken, dan doen', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Denkt in kansen en oplossingen', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Verbindt specialisten en stakeholders', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Omgevingsgericht werken, oog voor belang van stakeholders', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Integrale benadering, innovatieve methoden', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Maatschappelijke meerwaarde als uitgangspunt', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Eerst denken, dan doen — pragmatisch en resultaatgericht', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Omgevingsbewust werken met oog voor belang van stakeholders', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Solide, duurzame projecten met maatschappelijke meerwaarde', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Uitgebreid netwerk van specialisten — van natuurontwikkeling tot rioleringstechniek', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Eén aanspreekpunt, van initiatief tot realisatie', 'diespe' ); ?></li>
 				</ul>
 				<a class="btn btn--kleur2 card-more" href="<?php echo esc_url( home_url( '/werkvelden/' ) ); ?>"><?php esc_html_e( 'Naar de werkvelden', 'diespe' ); ?></a>
 			</div>
@@ -194,6 +194,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Met de focus op duurzame, e
 					<span class="card-icon" aria-hidden="true">&#127757;</span>
 					<h3><?php esc_html_e( 'Werkwijze', 'diespe' ); ?></h3>
 				</div>
+				<p><?php esc_html_e( 'Persoonlijk contact staat bij DIESPE voorop. Na een uitgebreide kennismaking om uw vraag echt te doorgronden, volgt een gedegen analyse en aanpak die met u wordt besproken — maatwerk, opnieuw en opnieuw.', 'diespe' ); ?></p>
 				<ul>
 					<li><?php esc_html_e( 'Verkennen: opgave helder krijgen, kansen benoemen', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Ontwerpen: integrale oplossingen, realiseerbaar en betaalbaar', 'diespe' ); ?></li>

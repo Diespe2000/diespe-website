@@ -860,3 +860,43 @@ a.logo-item:hover { opacity: 0.8; }
 /* Titel-icoon en categorie-icoontjes */
 .titel-icoon { margin-right: 8px; }
 .meta-icoon { margin-right: 4px; }
+
+/* =Titel-bullets (ronde huisstijl-badge met wit icoon)
+-------------------------------------------------------------- */
+.titel-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--diespe-blue);
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  margin-right: 12px;
+  vertical-align: middle;
+  box-shadow: 0 2px 6px rgba(0, 31, 153, 0.25);
+}
+.titel-badge--oranje { background: var(--diespe-orange); box-shadow: 0 2px 6px rgba(255, 128, 0, 0.25); }
+.titel-badge--groen { background: var(--diespe-green); box-shadow: 0 2px 6px rgba(65, 217, 44, 0.25); }
+.titel-badge--donkerblauw { background: var(--diespe-blue); }
+.section--alt .titel-badge--blauw { background: var(--diespe-blue); }
+
+/* kaart-headers: bestaande losse iconen vervangen door badges */
+.card-header .card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--diespe-blue);
+  color: #fff;
+  font-size: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+  box-shadow: 0 2px 6px rgba(0, 31, 153, 0.25);
+}
+.card-header .card-icon--oranje { background: var(--diespe-orange); }
+.card-header .card-icon--groen { background: var(--diespe-green); }

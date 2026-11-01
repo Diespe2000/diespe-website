@@ -14,7 +14,7 @@ $postal  = get_theme_mod( 'diespe_postal', '7131 HS Lichtenvoorde' );
 <footer class="site-footer" role="contentinfo">
 	<div class="diespe-stripes" aria-hidden="true"></div>
 	<div class="container">
-		<div class="footer-grid">
+		<div class="footer-grid footer-grid--twee">
 			<div>
 				<h4>DIESPE Omgevingsprojecten</h4>
 				<p><?php esc_html_e( 'Partner in duurzame omgevingsprojecten. Project-, Technisch- en Omgevingsmanagement van omgevings- en energieprojecten.', 'diespe' ); ?></p>
@@ -22,22 +22,14 @@ $postal  = get_theme_mod( 'diespe_postal', '7131 HS Lichtenvoorde' );
 			<div>
 				<h4><?php esc_html_e( 'Contact', 'diespe' ); ?></h4>
 				<?php if ( $address || $postal ) : ?>
-					<p><?php echo esc_html( $address ); ?><br><?php echo esc_html( $postal ); ?></p>
+					<p><?php echo esc_html( $address ); ?><br><?php echo esc_html( $postal ); ?><br><?php esc_html_e( 'Nederland', 'diespe' ); ?></p>
 				<?php endif; ?>
-				<?php if ( $phone ) : ?>
-					<p><a href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', $phone ) ); ?>"><?php echo esc_html( $phone ); ?></a></p>
-				<?php endif; ?>
-			</div>
-			<div>
-				<h4><?php esc_html_e( 'Quick links', 'diespe' ); ?></h4>
-				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'footer',
-					'container'      => false,
-					'fallback_cb'    => false,
-					'depth'          => 1,
-				) );
-				?>
+				<p>
+					<?php if ( $phone ) : ?>
+						<a href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', $phone ) ); ?>"><?php echo esc_html( $phone ); ?></a><br>
+					<?php endif; ?>
+					<a href="mailto:<?php echo esc_attr( antispambot( $email ) ); ?>"><?php echo esc_html( antispambot( $email ) ); ?></a>
+				</p>
 			</div>
 		</div>
 		<div class="footer-bottom">

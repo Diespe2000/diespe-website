@@ -580,18 +580,20 @@ button[type="submit"], .wp-block-search__button, .search-submit { border: 0; cur
 .site-footer {
   background: var(--diespe-blue);
   color: rgba(255, 255, 255, 0.85);
-  padding: 56px 0 0;
-  margin-top: 72px;
+  padding: 32px 0 0;
+  margin-top: 56px;
   position: relative;
 }
-.site-footer .diespe-stripes { margin-top: 0; margin-bottom: 56px; }
+.site-footer .diespe-stripes { margin-top: 0; margin-bottom: 28px; }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 36px;
-  padding-bottom: 40px;
+  gap: 28px;
+  padding-bottom: 24px;
 }
+.footer-grid--twee { grid-template-columns: 1.4fr 1fr; }
+.footer-grid--twee p { margin: 0; line-height: 1.55; }
 
 @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr; } }
 
@@ -611,7 +613,7 @@ button[type="submit"], .wp-block-search__button, .search-submit { border: 0; cur
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 18px 0;
+  padding: 12px 0;
   font-size: 0.85rem;
   display: flex;
   justify-content: space-between;

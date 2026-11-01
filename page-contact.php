@@ -23,7 +23,7 @@ $postal = get_theme_mod( 'diespe_postal', '7131 HS Lichtenvoorde' );
 			<p><?php esc_html_e( 'Partner in duurzame omgevingsprojecten', 'diespe' ); ?></p>
 			<?php if ( $addr || $postal ) : ?>
 				<p><strong><?php esc_html_e( 'Bezoekadres', 'diespe' ); ?></strong><br>
-				<?php echo esc_html( $addr ); ?><br><?php echo esc_html( $postal ); ?></p>
+				<?php echo esc_html( $addr ); ?><br><?php echo esc_html( $postal ); ?><br><?php esc_html_e( 'Nederland', 'diespe' ); ?></p>
 			<?php endif; ?>
 			<?php if ( $phone ) : ?>
 				<p><strong><?php esc_html_e( 'Telefoon', 'diespe' ); ?></strong><br>

@@ -164,7 +164,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 
 <section class="section" id="over">
 	<div class="container">
-		<h2 class="section-title"><span class="titel-badge titel-badge--donkerblauw" aria-hidden="true">&#128100;</span> <?php esc_html_e( 'Over DIESPE', 'diespe' ); ?></h2>
+		<h2 class="section-title"><span class="titel-badge titel-badge--donkerblauw" aria-hidden="true">&#9734;</span> <?php esc_html_e( 'Over DIESPE', 'diespe' ); ?></h2>
 		<p class="section-intro"><?php echo esc_html( $over_intro ); ?></p>
 		<div class="grid-3">
 			<div class="card card--diederik">
@@ -212,7 +212,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 
 <section class="section partners-strip" id="partners">
 	<div class="container">
-		<h2 class="section-title" style="color:#fff;"><span class="titel-badge" style="background:#fff;color:var(--diespe-blue);" aria-hidden="true">&#129309;</span> <?php esc_html_e( 'Onze partners', 'diespe' ); ?></h2>
+		<h2 class="section-title" style="color:#fff;"><span class="titel-badge" style="background:#fff;color:var(--diespe-blue);" aria-hidden="true">&#9757;</span> <?php esc_html_e( 'Onze partners', 'diespe' ); ?></h2>
 		<p class="section-intro" style="color:rgba(255,255,255,0.85);"><?php esc_html_e( 'Een selectie van de specialisten en partnerbedrijven waarmee DIESPE samenwerkt.', 'diespe' ); ?></p>
 		<div class="logo-marquee">
 			<div class="logo-track">
@@ -238,7 +238,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 
 <section class="section" id="sponsoring">
 	<div class="container">
-		<h2 class="section-title"><span class="titel-badge titel-badge--groen" aria-hidden="true">&#128205;</span> <?php esc_html_e( 'DIESPE in de regio', 'diespe' ); ?></h2>
+		<h2 class="section-title"><span class="titel-badge titel-badge--groen" aria-hidden="true">&#9873;</span> <?php esc_html_e( 'DIESPE in de regio', 'diespe' ); ?></h2>
 		<p class="section-intro"><?php esc_html_e( 'Vanuit Lichtenvoorde ondersteunt DIESPE graag de club en de regio — met sponsoring, betrokkenheid en een actieve rol bij lokale accommodaties.', 'diespe' ); ?></p>
 		<div class="grid-3 sponsor-grid">
 			<div class="card sponsor-card">

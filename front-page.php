@@ -183,10 +183,10 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 				</div>
 				<p><?php esc_html_e( 'DIESPE staat voor pragmatisch projectmanagement met de mens en de omgeving centraal. Denkt in kansen en oplossingen — ook out-of-the-box — en werkt resultaatgericht aan duurzame projecten.', 'diespe' ); ?></p>
 				<ul>
-					<li><?php esc_html_e( 'Eerst denken, dan doen — omgevingsbewust en resultaatgericht', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Omgevingsbewust werken met oog voor belang van stakeholders', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Solide, duurzame projecten met maatschappelijke meerwaarde', 'diespe' ); ?></li>
-					<li><?php esc_html_e( 'Werkt samen met een grote groep specialisten — van natuurontwikkeling tot rioleringstechniek — voor een hoge dienstverlening', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Eerst denken, dan doen', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Denkt in kansen en oplossingen, ook out-of-the-box', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Omgevingsbewust en resultaatgericht', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Hoge dienstverlening', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Eén aanspreekpunt, van initiatief tot realisatie', 'diespe' ); ?></li>
 				</ul>
 				<a class="btn btn--kleur4 card-more" href="<?php echo esc_url( home_url( '/werkvelden/' ) ); ?>"><?php esc_html_e( 'Naar de werkvelden', 'diespe' ); ?></a>

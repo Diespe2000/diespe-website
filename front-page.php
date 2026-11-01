@@ -95,7 +95,6 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 						<?php endforeach; ?>
 					</ul>
 					<p class="card-case"><?php echo esc_html( $kaart['voorbeeld'] ); ?></p>
-					<a class="btn btn--outline card-more" href="<?php echo esc_url( home_url( '/werkvelden/' ) ); ?>"><?php esc_html_e( 'Lees verder', 'diespe' ); ?></a>
 				</div>
 			<?php endforeach; ?>
 		</div>

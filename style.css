@@ -900,3 +900,25 @@ a.logo-item:hover { opacity: 0.8; }
 }
 .card-header .card-icon--oranje { background: var(--diespe-orange); }
 .card-header .card-icon--groen { background: var(--diespe-green); }
+
+/* Categorie-icoontjes (projectkaarten) ook als ronde badge met wit icoon */
+.meta-icoon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--diespe-blue);
+  color: #fff;
+  font-size: 15px;
+  margin-right: 8px;
+  vertical-align: middle;
+  box-shadow: 0 1px 4px rgba(0, 31, 153, 0.2);
+}
+.meta-icoon--oranje { background: var(--diespe-orange); }
+.meta-icoon--groen { background: var(--diespe-green); }
+.meta-icoon--donkerblauw { background: var(--diespe-blue); }
+/* de tekst ernaast behoudt de categorielkleur; badge neemt die kleur over via currentColor */
+.project-meta { color: var(--diespe-muted); }
+.project-meta .meta-icoon { background: currentColor; }

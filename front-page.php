@@ -258,7 +258,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 				</div>
 			</div>
 			<div class="card sponsor-card">
-				<div class="sponsor-visual sponsor-visual--placeholder"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/trein.svg' ); ?>" alt="" style="width:120px;opacity:0.3;"></div>
+				<div class="sponsor-visual"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/sponsor-modelspoor.jpg' ); ?>" alt="<?php echo esc_attr( 'Modulebaan met tunnel op een FREMO/FKTT Treffen' ); ?>"></div>
 				<div class="sponsor-body">
 					<div class="card-header"><span class="card-icon card-icon--groen" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/trein.svg' ); ?>" alt=""></span><h3><?php esc_html_e( 'Modelspoor: FREMO & FKTT', 'diespe' ); ?></h3></div>
 					<p><?php esc_html_e( 'Diederik is aangesloten bij FREMO en de Freundeskreis TT-Module (FKTT), en bouwt zelf aan modulebanen. Hij helpt mee met het organiseren van diverse Treffen, waar spoorwegbouw en treinbewegingen samenkomen.', 'diespe' ); ?></p>

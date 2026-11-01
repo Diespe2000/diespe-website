@@ -253,7 +253,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 				<div class="sponsor-visual"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/sponsor-bmx-3d.jpg' ); ?>" alt="<?php echo esc_attr( '3D-visualisatie van de nieuwe BMX-accommodatie van FCCL op het Eschpark' ); ?>"></div>
 				<div class="sponsor-body">
 					<h3><?php esc_html_e( 'BMX-accommodatie FCCL', 'diespe' ); ?></h3>
-					<p><?php esc_html_e( 'Diederik is als projectleider nauw betrokken bij de nieuwe BMX-accommodatie van Fietscrossclub Lichtenvoorde (FCCL) op het Eschpark — van de eerste aanzet en locatiestudie tot de realisatie van de baan.', 'diespe' ); ?></p>
+					<p><?php esc_html_e( 'DIESPE heeft als projectleider een sleutelrol gespeeld bij de realisatie van de nieuwe BMX-accommodatie van Fietscrossclub Lichtenvoorde (FCCL) op het Eschpark — van de eerste aanzet en locatiestudie tot de voltooide baan.', 'diespe' ); ?></p>
 					<a href="https://fccl.nl" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk het project', 'diespe' ); ?> &rarr;</a>
 				</div>
 			</div>

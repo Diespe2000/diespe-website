@@ -920,3 +920,9 @@ a.logo-item:hover { opacity: 0.8; }
 /* de tekst ernaast behoudt de categorielkleur; badge neemt die kleur over via currentColor */
 .project-meta { color: var(--diespe-muted); }
 .project-meta .meta-icoon { background: currentColor; }
+
+/* Sponsor-cards gelijk aan andere kaarten */
+.sponsor-body .card-header { margin-bottom: 10px; }
+.sponsor-body h3 { font-size: 1.15rem; margin-bottom: 0.5em; color: var(--diespe-blue); }
+
+.titel-badge img, .card-icon img, .meta-icoon img { width: 60%; height: 60%; }

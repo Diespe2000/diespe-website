@@ -210,31 +210,6 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 </section>
 
 
-<section class="section partners-strip" id="partners">
-	<div class="container">
-		<h2 class="section-title" style="color:#fff;"><span class="titel-badge" style="background:#fff;color:var(--diespe-blue);" aria-hidden="true">&#9757;</span> <?php esc_html_e( 'Onze partners', 'diespe' ); ?></h2>
-		<p class="section-intro" style="color:rgba(255,255,255,0.85);"><?php esc_html_e( 'Een selectie van de specialisten en partnerbedrijven waarmee DIESPE samenwerkt.', 'diespe' ); ?></p>
-		<div class="logo-marquee">
-			<div class="logo-track">
-			<?php
-			for ( $set = 1; $set <= 2; $set++ ) {
-				for ( $i = 1; $i <= 8; $i++ ) {
-					$logo = get_theme_mod( 'diespe_netwerk_logo_' . $i );
-					$url  = get_theme_mod( 'diespe_netwerk_url_' . $i );
-					if ( $logo ) {
-						if ( $url ) {
-							echo '<a class="logo-item" href="' . esc_url( $url ) . '" target="_blank" rel="noopener"><img src="' . esc_url( $logo ) . '" alt="" loading="lazy"></a>';
-						} else {
-							echo '<span class="logo-item"><img src="' . esc_url( $logo ) . '" alt="" loading="lazy"></span>';
-						}
-					}
-				}
-			}
-			?>
-			</div>
-		</div>
-	</div>
-</section>
 
 <section class="section" id="sponsoring">
 	<div class="container">
@@ -264,6 +239,32 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 					<p><?php esc_html_e( 'Diederik is lid van de Freundeskreis TT-Module (FKTT) en FREMO, en bouwt zelf aan modulebanen. Hij is ook lid van modelspoorvereniging De Seinpaal te Eibergen en helpt mee met het organiseren van diverse Treffen.', 'diespe' ); ?></p>
 					<a class="btn btn--kleur3 card-more" href="https://www.fktt-module.de/de" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk FKTT', 'diespe' ); ?></a>
 				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section partners-strip" id="partners">
+	<div class="container">
+		<h2 class="section-title" style="color:#fff;"><span class="titel-badge" style="background:#fff;" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/samenwerking.svg' ); ?>" alt="" style="filter:invert(1);"></span> <?php esc_html_e( 'Onze partners', 'diespe' ); ?></h2>
+		<p class="section-intro" style="color:rgba(255,255,255,0.85);"><?php esc_html_e( 'Een selectie van de specialisten en partnerbedrijven waarmee DIESPE samenwerkt.', 'diespe' ); ?></p>
+		<div class="logo-marquee">
+			<div class="logo-track">
+			<?php
+			for ( $set = 1; $set <= 2; $set++ ) {
+				for ( $i = 1; $i <= 8; $i++ ) {
+					$logo = get_theme_mod( 'diespe_netwerk_logo_' . $i );
+					$url  = get_theme_mod( 'diespe_netwerk_url_' . $i );
+					if ( $logo ) {
+						if ( $url ) {
+							echo '<a class="logo-item" href="' . esc_url( $url ) . '" target="_blank" rel="noopener"><img src="' . esc_url( $logo ) . '" alt="" loading="lazy"></a>';
+						} else {
+							echo '<span class="logo-item"><img src="' . esc_url( $logo ) . '" alt="" loading="lazy"></span>';
+						}
+					}
+				}
+			}
+			?>
 			</div>
 		</div>
 	</div>

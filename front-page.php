@@ -246,7 +246,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 				<div class="sponsor-body">
 					<h3><?php esc_html_e( 'Sponsor van Erix Dames 2', 'diespe' ); ?></h3>
 					<p><?php esc_html_e( 'DIESPE is shirtsponsor van het Dames 2-team van Handbalvereniging Erix. Bij DIESPE hechten we veel waarde aan samenwerking, vertrouwen en het versterken van elkaars krachten — op het veld én daarbuiten.', 'diespe' ); ?></p>
-					<a href="https://hverix.nl" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk de vereniging', 'diespe' ); ?> &rarr;</a>
+					<a class="btn btn--kleur1 card-more" href="https://hverix.nl" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk HV Erix', 'diespe' ); ?></a>
 				</div>
 			</div>
 			<div class="card sponsor-card">
@@ -254,7 +254,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 				<div class="sponsor-body">
 					<h3><?php esc_html_e( 'BMX-accommodatie FCCL', 'diespe' ); ?></h3>
 					<p><?php esc_html_e( 'DIESPE heeft het projectmanagement verzorgd voor de nieuwe BMX-accommodatie van Fietscrossclub Lichtenvoorde (FCCL) op het Eschpark — van de eerste aanzet en locatiestudie tot de voltooide baan.', 'diespe' ); ?></p>
-					<a href="https://fccl.nl" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk het project', 'diespe' ); ?> &rarr;</a>
+					<a class="btn btn--kleur2 card-more" href="https://fccl.nl" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk FCCL', 'diespe' ); ?></a>
 				</div>
 			</div>
 			<div class="card sponsor-card">
@@ -262,7 +262,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 				<div class="sponsor-body">
 					<div class="card-header"><span class="card-icon card-icon--groen" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/trein.svg' ); ?>" alt=""></span><h3><?php esc_html_e( 'Modelspoor: FREMO & FKTT', 'diespe' ); ?></h3></div>
 					<p><?php esc_html_e( 'Diederik is aangesloten bij FREMO en de Freundeskreis TT-Module (FKTT), en bouwt zelf aan modulebanen. Hij helpt mee met het organiseren van diverse Treffen, waar spoorwegbouw en treinbewegingen samenkomen.', 'diespe' ); ?></p>
-					<a href="https://www.fremo-net.eu" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk FREMO', 'diespe' ); ?> &rarr;</a>
+					<a class="btn btn--kleur3 card-more" href="https://www.fktt-module.de/de" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk FKTT', 'diespe' ); ?></a>
 				</div>
 			</div>
 		</div>

@@ -829,3 +829,10 @@ a.logo-item:hover { opacity: 0.8; }
   .sponsor-blok { padding: 26px 24px; }
   .sponsor-logo { margin: 0 auto; }
 }
+.sponsor-foto { flex: 1 1 420px; }
+.sponsor-foto img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--diespe-radius);
+  box-shadow: var(--diespe-shadow);
+}

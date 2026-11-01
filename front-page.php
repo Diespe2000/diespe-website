@@ -243,8 +243,8 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 				<p><?php esc_html_e( 'DIESPE sponsort het Dames 2-team van Handbalvereniging Erix uit Lichtenvoorde. Sportiviteit, teamgeest en verbinding — in de club en in de regio — vinden wij belangrijk en ondersteunen wij graag.', 'diespe' ); ?></p>
 				<a href="https://hverix.nl" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk de vereniging', 'diespe' ); ?> &rarr;</a>
 			</div>
-			<div class="sponsor-logo">
-				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/partners/erix.png' ); ?>" alt="<?php echo esc_attr( 'Handbalvereniging Erix Lichtenvoorde' ); ?>">
+			<div class="sponsor-foto">
+				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/sponsor-dames2.jpg' ); ?>" alt="<?php echo esc_attr( 'Dames 2 van Handbalvereniging Erix in de sportzaal' ); ?>">
 			</div>
 		</div>
 	</div>

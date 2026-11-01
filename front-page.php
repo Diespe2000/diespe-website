@@ -180,7 +180,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 				</div>
 				<p><?php esc_html_e( 'DIESPE staat voor pragmatisch projectmanagement met de mens en de omgeving centraal. Denkt in kansen en oplossingen — ook out-of-the-box — en werkt resultaatgericht aan duurzame projecten.', 'diespe' ); ?></p>
 				<ul>
-					<li><?php esc_html_e( 'Eerst denken, dan doen — pragmatisch en resultaatgericht', 'diespe' ); ?></li>
+					<li><?php esc_html_e( 'Eerst denken, dan doen — omgevingsbewust en resultaatgericht', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Omgevingsbewust werken met oog voor belang van stakeholders', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Solide, duurzame projecten met maatschappelijke meerwaarde', 'diespe' ); ?></li>
 					<li><?php esc_html_e( 'Werkt samen met een grote groep specialisten — van natuurontwikkeling tot rioleringstechniek — voor een hoge dienstverlening', 'diespe' ); ?></li>
@@ -204,7 +204,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 			</div>
 		</div>
 		<p class="section-intro" style="margin-top:44px; margin-bottom:0;"><?php esc_html_e( 'We voeren onze diensten en werkzaamheden uit volgens De Nieuwe Regeling 2011 (DNR 2011), herziening juli 2013.', 'diespe' ); ?></p>
-		<p class="lid-van"><?php esc_html_e( 'Lid van:', 'diespe' ); ?> <strong><a href="https://zzpnederland.nl" target="_blank" rel="noopener">ZZP Nederland</a></strong> &nbsp;&middot;&nbsp; <strong><a href="https://www.waternetwerk.nl" target="_blank" rel="noopener"><?php esc_html_e( 'KNW — Koninklijk Waternetwerk', 'diespe' ); ?></a></strong></p>
+		<p class="lid-van"><?php esc_html_e( 'Lid van:', 'diespe' ); ?> <strong><a href="https://www.waternetwerk.nl" target="_blank" rel="noopener"><?php esc_html_e( 'KNW — Koninklijk Waternetwerk', 'diespe' ); ?></a></strong></p>
 	</div>
 </section>
 
@@ -212,7 +212,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 <section class="section partners-strip" id="partners">
 	<div class="container">
 		<h2 class="section-title"><?php esc_html_e( 'Onze partners', 'diespe' ); ?></h2>
-		<p class="section-intro"><p class="section-intro" style="color:rgba(255,255,255,0.85);"><?php esc_html_e( 'DIESPE werkt samen met een vast netwerk van specialisten en partnerbedrijven.', 'diespe' ); ?></p>
+		<p class="section-intro" style="color:rgba(255,255,255,0.85);"><?php esc_html_e( 'Een selectie van de specialisten en partnerbedrijven waarmee DIESPE samenwerkt.', 'diespe' ); ?></p>
 		<div class="logo-strip">
 			<?php
 						for ( $i = 1; $i <= 8; $i++ ) {

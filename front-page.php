@@ -178,7 +178,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 			</div>
 			<div class="card">
 				<div class="card-header">
-					<span class="card-icon" aria-hidden="true">card-icon--oranje"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/ster.svg' ); ?>" alt=""></span>
+					<span class="card-icon card-icon--oranje" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/ster.svg' ); ?>" alt=""></span>
 					<h3><?php esc_html_e( 'Waarom DIESPE', 'diespe' ); ?></h3>
 				</div>
 				<p><?php esc_html_e( 'DIESPE staat voor pragmatisch projectmanagement met de mens en de omgeving centraal, op zoek naar maatschappelijke meerwaarde.', 'diespe' ); ?></p>
@@ -193,7 +193,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 			</div>
 			<div class="card">
 				<div class="card-header">
-					<span class="card-icon" aria-hidden="true">card-icon--groen"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/wereld.svg' ); ?>" alt=""></span>
+					<span class="card-icon card-icon--groen" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/wereld.svg' ); ?>" alt=""></span>
 					<h3><?php esc_html_e( 'Werkwijze', 'diespe' ); ?></h3>
 				</div>
 				<p><?php esc_html_e( 'Persoonlijk contact staat bij DIESPE voorop. Na een uitgebreide kennismaking om uw vraag echt te doorgronden, volgt een gedegen analyse en aanpak die met u wordt besproken — maatwerk, opnieuw en opnieuw.', 'diespe' ); ?></p>
@@ -229,7 +229,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 				<div class="sponsor-body">
 					<h3><?php esc_html_e( 'BMX-accommodatie FCCL', 'diespe' ); ?></h3>
 					<p><?php esc_html_e( 'DIESPE heeft het projectmanagement verzorgd voor de nieuwe BMX-accommodatie van Fietscrossclub Lichtenvoorde (FCCL) op het Eschpark — van de eerste aanzet en locatiestudie tot de voltooide baan.', 'diespe' ); ?></p>
-					<a class="btn btn--kleur2 card-more" href="https://fccl.nl" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk FCCL', 'diespe' ); ?></a>
+					<a class="btn btn--kleur4 card-more" href="https://fccl.nl" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk FCCL', 'diespe' ); ?></a>
 				</div>
 			</div>
 			<div class="card sponsor-card">

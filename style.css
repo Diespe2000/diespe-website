@@ -984,3 +984,22 @@ a.logo-item:hover { opacity: 0.8; }
 .card--blauw { border-top: 4px solid var(--diespe-blue); }
 .card--oranje { border-top: 4px solid var(--diespe-orange); }
 .card--groen { border-top: 4px solid var(--diespe-green); }
+
+/* Projectkaarten: badge en titel op één regel (flex-uitlijning) */
+.project-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+.project-card .card-header h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  flex: 1;
+  min-width: 0;
+}
+.project-card .card-header h3 a {
+  color: var(--diespe-blue);
+  text-decoration: none;
+}

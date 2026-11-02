@@ -34,7 +34,7 @@ $postal  = get_theme_mod( 'diespe_postal', '7131 HS Lichtenvoorde' );
 		</div>
 		<div class="footer-bottom">
 			<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> DIESPE Omgevingsprojecten</span>
-			<span><a href="<?php echo esc_url( wp_get_attachment_url( 2188 ) ); ?>" target="_blank" rel="noopener" style="color:inherit;"><?php esc_html_e( 'Algemene voorwaarden: DNR 2011', 'diespe' ); ?></a> &nbsp;&middot;&nbsp; <?php $kvk = get_theme_mod( 'diespe_kvk', '94509832' ); if ( $kvk ) : ?>KvK <?php echo esc_html( $kvk ); ?><?php endif; ?> &nbsp;&middot;&nbsp; <?php esc_html_e( 'Lid van:', 'diespe' ); ?> <a href="https://www.waternetwerk.nl" target="_blank" rel="noopener" style="color:inherit;"><?php esc_html_e( 'KNW — Koninklijk Waternetwerk', 'diespe' ); ?></a></span>
+			<span><a href="<?php echo esc_url( wp_get_attachment_url( 2188 ) ); ?>" target="_blank" rel="noopener" style="color:inherit;"><?php esc_html_e( 'Algemene voorwaarden: DNR 2011', 'diespe' ); ?></a> <em style="opacity:.7;">(<?php esc_html_e( 'bron: BNA', 'diespe' ); ?>)</em> &nbsp;&middot;&nbsp; <?php $kvk = get_theme_mod( 'diespe_kvk', '94509832' ); if ( $kvk ) : ?>KvK <?php echo esc_html( $kvk ); ?><?php endif; ?> &nbsp;&middot;&nbsp; <?php esc_html_e( 'Lid van:', 'diespe' ); ?> <a href="https://www.waternetwerk.nl" target="_blank" rel="noopener" style="color:inherit;"><?php esc_html_e( 'KNW — Koninklijk Waternetwerk', 'diespe' ); ?></a></span>
 		</div>
 	</div>
 </footer>

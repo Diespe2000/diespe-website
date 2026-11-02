@@ -38,7 +38,7 @@ $postal = get_theme_mod( 'diespe_postal', '7131 HS Lichtenvoorde' );
 				<p><strong><?php esc_html_e( 'KvK', 'diespe' ); ?></strong><br><?php echo esc_html( $kvk ); ?></p>
 			<?php endif; ?>
 				<p class="lid-van"><?php esc_html_e( 'Lid van:', 'diespe' ); ?> <strong><a href="https://www.waternetwerk.nl" target="_blank" rel="noopener" style="color:inherit;"><?php esc_html_e( 'KNW — Koninklijk Waternetwerk', 'diespe' ); ?></a></strong></p>
-				<p class="lid-van"><?php esc_html_e( 'We voeren onze diensten en werkzaamheden uit volgens', 'diespe' ); ?> <a href="<?php echo esc_url( wp_get_attachment_url( 2188 ) ); ?>" target="_blank" rel="noopener" style="color:inherit;"><?php esc_html_e( 'De Nieuwe Regeling 2011 (DNR 2011)', 'diespe' ); ?></a>, <?php esc_html_e( 'herziening juli 2013', 'diespe' ); ?>.</p>
+				<p class="lid-van"><?php esc_html_e( 'We voeren onze diensten en werkzaamheden uit volgens', 'diespe' ); ?> <a href="<?php echo esc_url( wp_get_attachment_url( 2188 ) ); ?>" target="_blank" rel="noopener" style="color:inherit;"><?php esc_html_e( 'De Nieuwe Regeling 2011 (DNR 2011)', 'diespe' ); ?></a>, <?php esc_html_e( 'herziening juli 2013', 'diespe' ); ?> <em>(<?php esc_html_e( 'bron: BNA', 'diespe' ); ?>)</em>.</p>
 		</div>
 
 		<div>

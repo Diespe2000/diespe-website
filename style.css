@@ -972,3 +972,12 @@ a.logo-item:hover { opacity: 0.8; }
 
 /* Categorie-badge op projectkaarten (homepage) */
 .meta-icoon--badge { width: 24px; height: 24px; font-size: 13px; margin-right: 7px; }
+
+/* Projectkaarten: gekleurde bovenrand + badge-structuur (zelfde als werkveld-kaarten) */
+.project-card { border-top: 4px solid var(--diespe-blue); }
+.project-card .card-header { margin-bottom: 10px; }
+.project-card .card-header h3 { margin: 0; font-size: 1.15rem; }
+.project-card .card-header h3 a { color: var(--diespe-blue); text-decoration: none; }
+.project-card .project-meta { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5em; }
+.project-card .btn.card-more { margin-top: auto; align-self: flex-start; }
+.project-card .project-body { display: flex; flex-direction: column; flex: 1; padding: 22px 22px 26px; }

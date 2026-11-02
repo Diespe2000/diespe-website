@@ -12,11 +12,11 @@ $cat_slug  = $cat_slugs ? $cat_slugs[0] : '';
 
 $kleuren = array(
 	'watersysteem'        => '#2b97d9',
-	'energietransitie'   => '#ff8000',
+	'energietransitie'    => '#ff8000',
 	'waterketen'          => '#41d92c',
 	'waterveiligheid'     => '#001f99',
 	'gebiedsontwikkeling' => '#84db2d',
-	'natuurherstel'      => '#84db2d',
+	'natuurherstel'       => '#84db2d',
 );
 $kleur = isset( $kleuren[ $cat_slug ] ) ? $kleuren[ $cat_slug ] : '#84db2d';
 
@@ -51,7 +51,7 @@ if ( $thumb_id ) {
 	$geldige_thumb = (bool) wp_get_attachment_url( $thumb_id );
 }
 ?>
-<article <?php post_class( 'project-card' ); ?>>
+<article class="project-card" style="border-top:4px solid <?php echo esc_attr( $kleur ); ?>;">
 	<?php if ( $geldige_thumb ) : ?>
 		<a class="project-thumb" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
 			<?php the_post_thumbnail( 'large' ); ?>
@@ -62,10 +62,12 @@ if ( $thumb_id ) {
 		</a>
 	<?php endif; ?>
 	<div class="project-body">
-		<?php if ( $terms ) : ?>
-			<p class="project-meta" style="color:<?php echo esc_attr( $kleur ); ?>;"><span class="meta-icoon meta-icoon--badge" style="background:<?php echo esc_attr( $kleur ); ?>;"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/' . $icoon . '.svg' ); ?>" alt=""></span><?php echo wp_kses_post( $terms ); ?></p>
-		<?php endif; ?>
-		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+		<div class="card-header">
+			<span class="card-icon" style="background:<?php echo esc_attr( $kleur ); ?>;" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/' . $icoon . '.svg' ); ?>" alt=""></span>
+			<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+		</div>
+		<p class="project-meta" style="color:<?php echo esc_attr( $kleur ); ?>;"><?php echo wp_kses_post( $terms ); ?></p>
 		<p><?php echo esc_html( get_the_excerpt() ); ?></p>
+		<a class="btn card-more" style="background:<?php echo esc_attr( $kleur ); ?>; border-color:<?php echo esc_attr( $kleur ); ?>; color:#fff;" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Bekijk het project', 'diespe' ); ?></a>
 	</div>
 </article>

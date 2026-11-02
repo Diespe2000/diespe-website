@@ -182,7 +182,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 				<p><?php echo esc_html( $over_tekst2 ); ?></p>
 				<a class="btn btn--kleur1 card-more" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Neem contact op', 'diespe' ); ?></a>
 			</div>
-			<div class="card card--oranje">>
+			<div class="card card--oranje">
 				<div class="card-header">
 					<span class="card-icon card-icon--oranje" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/ster.svg' ); ?>" alt=""></span>
 					<h3><?php esc_html_e( 'Waarom DIESPE', 'diespe' ); ?></h3>
@@ -197,7 +197,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 				</ul>
 				<a class="btn btn--kleur4 card-more" href="<?php echo esc_url( home_url( '/werkvelden/' ) ); ?>"><?php esc_html_e( 'Naar de werkvelden', 'diespe' ); ?></a>
 			</div>
-			<div class="card card--groen">>
+			<div class="card card--groen">
 				<div class="card-header">
 					<span class="card-icon card-icon--groen" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/wereld.svg' ); ?>" alt=""></span>
 					<h3><?php esc_html_e( 'Werkwijze', 'diespe' ); ?></h3>

@@ -440,18 +440,22 @@ add_action( 'add_meta_boxes', 'diespe_project_meta_boxes' );
 function diespe_project_meta_box( $post ) {
 	wp_nonce_field( 'diespe_project_meta', 'diespe_project_meta_nonce' );
 	$velden = array(
-		'diespe_opdrachtgever' => __( 'Opdrachtgever', 'diespe' ),
-		'diespe_fasen'         => __( 'Projectfasen', 'diespe' ),
-		'diespe_rol'           => __( 'Rol', 'diespe' ),
-		'diespe_contract'      => __( 'Contractvorm', 'diespe' ),
+		'diespe_opdrachtgever' => array( __( 'Opdrachtgever', 'diespe' ), __( 'bijv. Waterschap Rijn en IJssel', 'diespe' ) ),
+		'diespe_fasen'         => array( __( 'Projectfasen', 'diespe' ), __( 'bijv. Verkenning / Planuitwerking / Realisatie', 'diespe' ) ),
+		'diespe_rol'           => array( __( 'Rol', 'diespe' ), __( 'bijv. Integraal projectmanager', 'diespe' ) ),
+		'diespe_contract'      => array( __( 'Contractvorm', 'diespe' ), __( 'bijv. Bouwteam, UAV-GC, Eigen beheer', 'diespe' ) ),
+		'diespe_locatie'       => array( __( 'Kaartlocatie (Google Maps link)', 'diespe' ), __( 'https://maps.app.goo.gl/... — voor de knop op de tegel', 'diespe' ) ),
+		'diespe_placeholder'   => array( __( 'Illustratie-thema', 'diespe' ), __( 'vispassage, leiding, zuivering, riool, weg, dijk, gemaal, peilbesluit, klimaat, natuur, beek, water, windpark', 'diespe' ) ),
 	);
+	echo '<p style="color:#666; margin-bottom:12px;">' . esc_html__( 'Deze gegevens verschijnen op de projectenpagina (tegel-achterzijde) en de projectpagina. Vul ze zo volledig mogelijk in.', 'diespe' ) . '</p>';
 	echo '<table class="form-table">';
-	foreach ( $velden as $key => $label ) {
+	foreach ( $velden as $key => $info ) {
 		$waarde = get_post_meta( $post->ID, $key, true );
-		echo '<tr><th><label for="' . esc_attr( $key ) . '">' . esc_html( $label ) . '</label></th>';
-		echo '<td><input type="text" id="' . esc_attr( $key ) . '" name="' . esc_attr( $key ) . '" value="' . esc_attr( $waarde ) . '" class="regular-text"></td></tr>';
+		echo '<tr><th><label for="' . esc_attr( $key ) . '"><strong>' . esc_html( $info[0] ) . '</strong></label></th>';
+		echo '<td><input type="text" id="' . esc_attr( $key ) . '" name="' . esc_attr( $key ) . '" value="' . esc_attr( $waarde ) . '" class="regular-text" placeholder="' . esc_attr( $info[1] ) . '"></td></tr>';
 	}
 	echo '</table>';
+	echo '<p style="color:#666;"><em>' . esc_html__( 'Tip: zonder echte foto toont de tegel automatisch de illustratie uit het veld hierboven. Een eigen foto upload je rechts bij Uitgelichte afbeelding.', 'diespe' ) . '</em></p>';
 }
 
 /**
@@ -466,7 +470,7 @@ function diespe_project_meta_save( $post_id ) {
 	if ( ! current_user_can( 'edit_post', $post_id ) ) {
 		return;
 	}
-	foreach ( array( 'diespe_opdrachtgever', 'diespe_fasen', 'diespe_rol', 'diespe_contract' ) as $key ) {
+	foreach ( array( 'diespe_opdrachtgever', 'diespe_fasen', 'diespe_rol', 'diespe_contract', 'diespe_locatie', 'diespe_placeholder' ) as $key ) {
 		if ( isset( $_POST[ $key ] ) ) {
 			update_post_meta( $post_id, $key, sanitize_text_field( wp_unslash( $_POST[ $key ] ) ) );
 		}

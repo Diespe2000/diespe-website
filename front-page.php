@@ -220,7 +220,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 <section class="section" id="sponsoring">
 	<div class="container">
 		<h2 class="section-title"><span class="titel-badge titel-badge--groen" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/vlag.svg' ); ?>" alt=""></span> <?php esc_html_e( 'DIESPE in de regio', 'diespe' ); ?></h2>
-		<p class="section-intro"><?php esc_html_e( 'Vanuit Lichtenvoorde ondersteunt DIESPE graag de club en de regio — met sponsoring, betrokkenheid en een actieve rol bij lokale accommodaties.', 'diespe' ); ?></p>
+		<p class="section-intro"><?php esc_html_e( 'DIESPE is maatschappelijk betrokken en ondersteunt regionale clubs en verenigingen.', 'diespe' ); ?></p>
 		<div class="grid-3 sponsor-grid">
 			<div class="card card--blauw sponsor-card">
 				<div class="sponsor-visual"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/sponsor-dames2.jpg' ); ?>" alt="<?php echo esc_attr( 'Dames 2 van Handbalvereniging Erix in de sportzaal' ); ?>"></div>

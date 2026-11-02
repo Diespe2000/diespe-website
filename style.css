@@ -981,3 +981,8 @@ a.logo-item:hover { opacity: 0.8; }
 .project-card .project-meta { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5em; }
 .project-card .btn.card-more { margin-top: auto; align-self: flex-start; }
 .project-card .project-body { display: flex; flex-direction: column; flex: 1; padding: 22px 22px 26px; }
+
+/* Kaart-randkleuren per kolom (badge-, knop- en randkleur gelijk) */
+.card--blauw { border-top: 4px solid var(--diespe-blue); }
+.card--oranje { border-top: 4px solid var(--diespe-orange); }
+.card--groen { border-top: 4px solid var(--diespe-green); }

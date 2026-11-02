@@ -20,6 +20,7 @@ $kaarten = array(
 	array(
 		'icon'    => '<img src="' . esc_url( get_template_directory_uri() . '/assets/img/iconen/gereedschap.svg' ) . '" alt="">',
 		'kleur'   => '',
+		'kaartkleur' => ' card--blauw',
 		'titel'   => diespe_home_text( 'kaart1_titel', __( 'Management', 'diespe' ) ),
 		'tekst'   => diespe_home_text( 'kaart1_tekst', __( 'Leidinggeven aan teams van professionals: integrale projectteams en IPM-teams, van initiatief tot realisatie.', 'diespe' ) ),
 		'punten'  => diespe_home_text( 'kaart1_punten', __( "Leidinggeven aan teams van professionals, integrale projectteams, IPM-teams\nTeamleden in hun kracht zetten\nProcesregie en bestuurlijke besluitvorming\nRisicomanagement, inkoop en contracteren", 'diespe' ) ),
@@ -28,6 +29,7 @@ $kaarten = array(
 	array(
 		'icon'    => '<img src="' . esc_url( get_template_directory_uri() . '/assets/img/iconen/tandwiel.svg' ) . '" alt="">',
 		'kleur'   => ' card-icon--oranje',
+		'kaartkleur' => ' card--oranje',
 		'titel'   => diespe_home_text( 'kaart2_titel', __( 'Integrale ontwerpleiding', 'diespe' ) ),
 		'tekst'   => diespe_home_text( 'kaart2_tekst', __( 'Vertalen van beleidsdoelen en opgaven naar integrale oplossingen: realiseerbaar, betaalbaar en acceptabel, met oog voor detail en duurzaamheid.', 'diespe' ) ),
 		'punten'  => diespe_home_text( 'kaart2_punten', __( "Beleidsdoelen en opgaven vertalen naar integrale, realiseerbare oplossingen\nOntwerpfasering: verkenning, planuitwerking, realiseerbaar ontwerp\nSysteembenadering en passende contractvormen", 'diespe' ) ),
@@ -36,6 +38,7 @@ $kaarten = array(
 	array(
 		'icon'    => '<img src="' . esc_url( get_template_directory_uri() . '/assets/img/iconen/natuur.svg' ) . '" alt="">',
 		'kleur'   => ' card-icon--groen',
+		'kaartkleur' => ' card--groen',
 		'titel'   => diespe_home_text( 'kaart3_titel', __( 'Omgevingsgericht werken', 'diespe' ) ),
 		'tekst'   => diespe_home_text( 'kaart3_tekst', __( 'Samenwerking, vertrouwen en het versterken van elkaars krachten — binnen en buiten het project.', 'diespe' ) ),
 		'punten'  => diespe_home_text( 'kaart3_punten', __( "Omgevingsbewust werken met oog voor belangen\nDraagvlak creëren en betrokkenheid van belanghebbenden\nBelangen balanceren en win-win oplossingen vinden\nGebiedsontwikkeling met maatschappelijke meerwaarde", 'diespe' ) ),
@@ -86,7 +89,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 		<p class="section-intro"><?php echo esc_html( $werkvelden_intro ); ?></p>
 		<div class="grid-3">
 			<?php foreach ( $kaarten as $kaart ) : ?>
-				<div class="card">
+				<div class="card<?php echo esc_attr( $kaart['kaartkleur'] ?? '' ); ?>">
 					<div class="card-header">
 						<span class="card-icon<?php echo esc_attr( $kaart['kleur'] ?? '' ); ?>" aria-hidden="true"><?php echo $kaart['icon']; ?></span>
 						<h3><?php echo esc_html( $kaart['titel'] ); ?></h3>
@@ -170,7 +173,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 		<h2 class="section-title"><span class="titel-badge titel-badge--donkerblauw" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/persoon.svg' ); ?>" alt=""></span> <?php esc_html_e( 'Over DIESPE', 'diespe' ); ?></h2>
 		<p class="section-intro"><?php echo esc_html( $over_intro ); ?></p>
 		<div class="grid-3">
-			<div class="card card--diederik">
+			<div class="card card--blauw card--diederik">
 				<div class="card-header">
 					<span class="card-icon" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/persoon.svg' ); ?>" alt=""></span>
 					<h3><?php echo esc_html( $over_naam ); ?></h3>
@@ -179,7 +182,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 				<p><?php echo esc_html( $over_tekst2 ); ?></p>
 				<a class="btn btn--kleur1 card-more" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Neem contact op', 'diespe' ); ?></a>
 			</div>
-			<div class="card">
+			<div class="card card--oranje">>
 				<div class="card-header">
 					<span class="card-icon card-icon--oranje" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/ster.svg' ); ?>" alt=""></span>
 					<h3><?php esc_html_e( 'Waarom DIESPE', 'diespe' ); ?></h3>
@@ -194,7 +197,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 				</ul>
 				<a class="btn btn--kleur4 card-more" href="<?php echo esc_url( home_url( '/werkvelden/' ) ); ?>"><?php esc_html_e( 'Naar de werkvelden', 'diespe' ); ?></a>
 			</div>
-			<div class="card">
+			<div class="card card--groen">>
 				<div class="card-header">
 					<span class="card-icon card-icon--groen" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/wereld.svg' ); ?>" alt=""></span>
 					<h3><?php esc_html_e( 'Werkwijze', 'diespe' ); ?></h3>
@@ -219,7 +222,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 		<h2 class="section-title"><span class="titel-badge titel-badge--groen" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/vlag.svg' ); ?>" alt=""></span> <?php esc_html_e( 'DIESPE in de regio', 'diespe' ); ?></h2>
 		<p class="section-intro"><?php esc_html_e( 'Vanuit Lichtenvoorde ondersteunt DIESPE graag de club en de regio — met sponsoring, betrokkenheid en een actieve rol bij lokale accommodaties.', 'diespe' ); ?></p>
 		<div class="grid-3 sponsor-grid">
-			<div class="card sponsor-card">
+			<div class="card card--blauw sponsor-card">
 				<div class="sponsor-visual"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/sponsor-dames2.jpg' ); ?>" alt="<?php echo esc_attr( 'Dames 2 van Handbalvereniging Erix in de sportzaal' ); ?>"></div>
 				<div class="sponsor-body">
 					<div class="card-header"><span class="card-icon" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/sport.svg' ); ?>" alt=""></span><h3><?php esc_html_e( 'Sponsor van HV Erix Dames 2', 'diespe' ); ?></h3></div>
@@ -227,7 +230,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 					<a class="btn btn--kleur1 card-more" href="https://hverix.nl" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk HV Erix', 'diespe' ); ?></a>
 				</div>
 			</div>
-			<div class="card sponsor-card">
+			<div class="card card--oranje sponsor-card">
 				<div class="sponsor-visual"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/sponsor-bmx-3d.jpg' ); ?>" alt="<?php echo esc_attr( '3D-visualisatie van de nieuwe BMX-accommodatie van FCCL op het Eschpark' ); ?>"></div>
 				<div class="sponsor-body">
 					<div class="card-header"><span class="card-icon card-icon--oranje" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/fiets.svg' ); ?>" alt=""></span><h3><?php esc_html_e( 'BMX-accommodatie FCCL', 'diespe' ); ?></h3></div>
@@ -235,7 +238,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 					<a class="btn btn--kleur4 card-more" href="https://fccl.nl" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk FCCL', 'diespe' ); ?></a>
 				</div>
 			</div>
-			<div class="card sponsor-card">
+			<div class="card card--groen sponsor-card">
 				<div class="sponsor-visual"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/sponsor-modelspoor.jpg' ); ?>" alt="<?php echo esc_attr( 'Modulebaan met tunnel op een FREMO/FKTT Treffen' ); ?>"></div>
 				<div class="sponsor-body">
 					<div class="card-header"><span class="card-icon card-icon--groen" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/trein.svg' ); ?>" alt=""></span><h3><?php esc_html_e( 'Modelspoor', 'diespe' ); ?></h3></div>

@@ -15,7 +15,7 @@ $cats = get_terms( array(
 <div class="container section">
 	<header class="entry-header">
 		<h1><?php esc_html_e( 'Projecten', 'diespe' ); ?></h1>
-		<p class="section-intro" style="margin-bottom:0;"><?php esc_html_e( 'Op deze pagina een selectie van de projecten waaraan DIESPE heeft bijgedragen — van watersysteem- en energieprojecten tot waterveiligheid en gebiedsontwikkeling. Klik op een tegel voor meer informatie.', 'diespe' ); ?></p>
+		<p class="section-intro" style="margin-bottom:0;"><?php esc_html_e( 'Van vispassage tot windpark: een selectie van projecten waarmee DIESPE verschil maakte. Draai een tegel om en ontdek het verhaal erachter.', 'diespe' ); ?></p>
 	</header>
 
 	<?php if ( $cats && ! is_wp_error( $cats ) ) : ?>

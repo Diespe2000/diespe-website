@@ -7,7 +7,7 @@
  */
 
 get_header();
-$over_intro  = diespe_home_text( 'over_intro', __( 'DIESPE Omgevingsprojecten is het bureau van oprichter Diederik Speksnijder: pragmatisch, betrokken en proactief — met de focus op duurzame omgevingsprojecten in de grond-, weg- en waterbouwsector.', 'diespe' ) );
+$over_intro  = diespe_home_text( 'over_intro', __( 'DIESPE Omgevingsprojecten is het adviesbureau van oprichter Diederik Speksnijder. Bevlogen, betrokken en integer — met de focus op omgevingsprojecten in de grond-, weg- en waterbouw.', 'diespe' ) );
 $over_tekst1 = diespe_home_text( 'over_tekst1', __( 'Diederik is oprichter en eigenaar van DIESPE, en al meer dan 25 jaar een bevlogen en integer manager in de grond-, weg- en waterbouw. Hij stuurt het DIESPE-team aan en is zelf één van de gepassioneerde medewerkers.', 'diespe' ) );
 $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proces aan de inhoud, doorziet de materie snel en komt tot oplossingen — met persoonlijke aandacht voor opdrachtgevers en teamleden. Denk aan watersysteem- en energieprojecten, waterveiligheid en gebiedsontwikkeling.', 'diespe' ) );
 ?>

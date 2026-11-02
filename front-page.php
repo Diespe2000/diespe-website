@@ -19,6 +19,7 @@ $werkvelden_intro = diespe_home_text( 'werkvelden_intro', __( 'Van initiëring t
 $kaarten = array(
 	array(
 		'icon'    => '&#9851;',
+		'kleur'   => '',
 		'titel'   => diespe_home_text( 'kaart1_titel', __( 'Management', 'diespe' ) ),
 		'tekst'   => diespe_home_text( 'kaart1_tekst', __( 'Leidinggeven aan teams van professionals: integrale projectteams en IPM-teams, van initiatief tot realisatie.', 'diespe' ) ),
 		'punten'  => diespe_home_text( 'kaart1_punten', __( "Leidinggeven aan teams van professionals, integrale projectteams, IPM-teams\nTeamleden in hun kracht zetten\nProcesregie en bestuurlijke besluitvorming\nRisicomanagement, inkoop en contracteren", 'diespe' ) ),
@@ -26,6 +27,7 @@ $kaarten = array(
 	),
 	array(
 		'icon'    => '&#9881;',
+		'kleur'   => ' card-icon--oranje',
 		'titel'   => diespe_home_text( 'kaart2_titel', __( 'Integrale ontwerpleiding', 'diespe' ) ),
 		'tekst'   => diespe_home_text( 'kaart2_tekst', __( 'Vertalen van beleidsdoelen en opgaven naar integrale oplossingen: realiseerbaar, betaalbaar en acceptabel, met oog voor detail en duurzaamheid.', 'diespe' ) ),
 		'punten'  => diespe_home_text( 'kaart2_punten', __( "Beleidsdoelen en opgaven vertalen naar integrale, realiseerbare oplossingen\nOntwerpfasering: verkenning, planuitwerking, realiseerbaar ontwerp\nSysteembenadering en passende contractvormen", 'diespe' ) ),
@@ -33,6 +35,7 @@ $kaarten = array(
 	),
 	array(
 		'icon'    => '&#127795;',
+		'kleur'   => ' card-icon--groen',
 		'titel'   => diespe_home_text( 'kaart3_titel', __( 'Omgevingsgericht werken', 'diespe' ) ),
 		'tekst'   => diespe_home_text( 'kaart3_tekst', __( 'Samenwerking, vertrouwen en het versterken van elkaars krachten — binnen en buiten het project.', 'diespe' ) ),
 		'punten'  => diespe_home_text( 'kaart3_punten', __( "Omgevingsbewust werken met oog voor belangen\nDraagvlak creëren en betrokkenheid van belanghebbenden\nBelangen balanceren en win-win oplossingen vinden\nGebiedsontwikkeling met maatschappelijke meerwaarde", 'diespe' ) ),
@@ -85,7 +88,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 			<?php foreach ( $kaarten as $kaart ) : ?>
 				<div class="card">
 					<div class="card-header">
-						<span class="card-icon" aria-hidden="true"><?php echo $kaart['icon']; ?></span>
+						<span class="card-icon<?php echo esc_attr( $kaart['kleur'] ?? '' ); ?>" aria-hidden="true"><?php echo $kaart['icon']; ?></span>
 						<h3><?php echo esc_html( $kaart['titel'] ); ?></h3>
 					</div>
 					<p><?php echo esc_html( $kaart['tekst'] ); ?></p>

@@ -52,7 +52,7 @@ if ( $onderwerp ) {
 			</div>
 		</div>
 		<div class="flip-face flip-back" style="border-top-color:<?php echo esc_attr( $kleur ); ?>">
-			<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+			<h3 title="<?php echo esc_attr( get_the_title() ); ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 			<p><?php echo esc_html( wp_trim_words( get_the_excerpt(), 22 ) ); ?></p>
 			<ul class="tile-info">
 				<?php

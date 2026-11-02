@@ -7,7 +7,7 @@
  */
 
 get_header();
-$intro = diespe_home_text( 'werkvelden_intro', __( 'Van initiatief tot oplevering: DIESPE verbindt denkkracht en uitvoering in de gebouwde en levende omgeving.', 'diespe' ) );
+$intro = diespe_home_text( 'werkvelden_intro', __( 'Van initiatief tot oplevering: DIESPE verbindt denkkracht en uitvoering in de gebouwde en landelijke omgeving.', 'diespe' ) );
 ?>
 <div class="container section">
 	<header class="entry-header">

@@ -14,7 +14,7 @@ $hero_tekst  = diespe_home_text( 'hero_tekst', __( 'Kansen benutten en denken in
 $werkgebieden_raw = diespe_home_text( 'werkgebieden', __( "Watersysteem\nEnergietransitie\nWaterketen\nWaterveiligheid\nGebiedsontwikkeling\nNatuurherstel", 'diespe' ) );
 $werkgebieden     = array_filter( array_map( 'trim', explode( "\n", $werkgebieden_raw ) ) );
 
-$werkvelden_intro = diespe_home_text( 'werkvelden_intro', __( 'Van initiëring tot oplevering: DIESPE verbindt denkkracht en uitvoering in de gebouwde en levende omgeving.', 'diespe' ) );
+$werkvelden_intro = diespe_home_text( 'werkvelden_intro', __( 'Van initiëring tot oplevering: DIESPE verbindt denkkracht en uitvoering in de gebouwde en landelijke omgeving.', 'diespe' ) );
 
 $kaarten = array(
 	array(

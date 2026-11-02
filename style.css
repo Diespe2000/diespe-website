@@ -969,3 +969,6 @@ a.logo-item:hover { opacity: 0.8; }
 /* scrollbare info subtiel stylen */
 .flip-back .tile-info::-webkit-scrollbar { width: 4px; }
 .flip-back .tile-info::-webkit-scrollbar-thumb { background: rgba(0,31,153,0.25); border-radius: 2px; }
+
+/* Categorie-badge op projectkaarten (homepage) */
+.meta-icoon--badge { width: 24px; height: 24px; font-size: 13px; margin-right: 7px; }

@@ -18,7 +18,7 @@ $werkvelden_intro = diespe_home_text( 'werkvelden_intro', __( 'Van initiëring t
 
 $kaarten = array(
 	array(
-		'icon'    => '&#9851;',
+		'icon'    => '<img src="' . esc_url( get_template_directory_uri() . '/assets/img/iconen/gereedschap.svg' ) . '" alt="">',
 		'kleur'   => '',
 		'titel'   => diespe_home_text( 'kaart1_titel', __( 'Management', 'diespe' ) ),
 		'tekst'   => diespe_home_text( 'kaart1_tekst', __( 'Leidinggeven aan teams van professionals: integrale projectteams en IPM-teams, van initiatief tot realisatie.', 'diespe' ) ),
@@ -26,7 +26,7 @@ $kaarten = array(
 		'voorbeeld' => diespe_home_text( 'kaart1_voorbeeld', __( 'Zoals: Vispassage Doesburg — één van Nederlands grootste vispassages, van verkenning tot realisatie.', 'diespe' ) ),
 	),
 	array(
-		'icon'    => '&#9881;',
+		'icon'    => '<img src="' . esc_url( get_template_directory_uri() . '/assets/img/iconen/tandwiel.svg' ) . '" alt="">',
 		'kleur'   => ' card-icon--oranje',
 		'titel'   => diespe_home_text( 'kaart2_titel', __( 'Integrale ontwerpleiding', 'diespe' ) ),
 		'tekst'   => diespe_home_text( 'kaart2_tekst', __( 'Vertalen van beleidsdoelen en opgaven naar integrale oplossingen: realiseerbaar, betaalbaar en acceptabel, met oog voor detail en duurzaamheid.', 'diespe' ) ),
@@ -34,7 +34,7 @@ $kaarten = array(
 		'voorbeeld' => diespe_home_text( 'kaart2_voorbeeld', __( 'Zoals: Waardevolle Kleine Wateren, Bovenlopen Loolee — KRW-doelen vertaald naar inrichtingsmaatregelen voor vier beken.', 'diespe' ) ),
 	),
 	array(
-		'icon'    => '&#127795;',
+		'icon'    => '<img src="' . esc_url( get_template_directory_uri() . '/assets/img/iconen/natuur.svg' ) . '" alt="">',
 		'kleur'   => ' card-icon--groen',
 		'titel'   => diespe_home_text( 'kaart3_titel', __( 'Omgevingsgericht werken', 'diespe' ) ),
 		'tekst'   => diespe_home_text( 'kaart3_tekst', __( 'Samenwerking, vertrouwen en het versterken van elkaars krachten — binnen en buiten het project.', 'diespe' ) ),
@@ -172,7 +172,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 		<div class="grid-3">
 			<div class="card card--diederik">
 				<div class="card-header">
-					<span class="card-icon" aria-hidden="true">&#128100;</span>
+					<span class="card-icon" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/persoon.svg' ); ?>" alt=""></span>
 					<h3><?php echo esc_html( $over_naam ); ?></h3>
 				</div>
 				<p><?php echo esc_html( $over_tekst1 ); ?></p>
@@ -222,7 +222,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 			<div class="card sponsor-card">
 				<div class="sponsor-visual"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/sponsor-dames2.jpg' ); ?>" alt="<?php echo esc_attr( 'Dames 2 van Handbalvereniging Erix in de sportzaal' ); ?>"></div>
 				<div class="sponsor-body">
-					<h3><?php esc_html_e( 'Sponsor van HV Erix Dames 2', 'diespe' ); ?></h3>
+					<div class="card-header"><span class="card-icon" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/sport.svg' ); ?>" alt=""></span><h3><?php esc_html_e( 'Sponsor van HV Erix Dames 2', 'diespe' ); ?></h3></div>
 					<p><?php esc_html_e( 'DIESPE is shirtsponsor van het Dames 2-team van Handbalvereniging Erix. Bij DIESPE hechten we veel waarde aan samenwerking, vertrouwen en het versterken van elkaars krachten — op het veld én daarbuiten.', 'diespe' ); ?></p>
 					<a class="btn btn--kleur1 card-more" href="https://hverix.nl" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk HV Erix', 'diespe' ); ?></a>
 				</div>
@@ -230,7 +230,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 			<div class="card sponsor-card">
 				<div class="sponsor-visual"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/sponsor-bmx-3d.jpg' ); ?>" alt="<?php echo esc_attr( '3D-visualisatie van de nieuwe BMX-accommodatie van FCCL op het Eschpark' ); ?>"></div>
 				<div class="sponsor-body">
-					<h3><?php esc_html_e( 'BMX-accommodatie FCCL', 'diespe' ); ?></h3>
+					<div class="card-header"><span class="card-icon card-icon--oranje" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/fiets.svg' ); ?>" alt=""></span><h3><?php esc_html_e( 'BMX-accommodatie FCCL', 'diespe' ); ?></h3></div>
 					<p><?php esc_html_e( 'DIESPE heeft het projectmanagement verzorgd voor de nieuwe BMX-accommodatie van Fietscrossclub Lichtenvoorde (FCCL) op het Eschpark — van de eerste aanzet en locatiestudie tot de voltooide baan.', 'diespe' ); ?></p>
 					<a class="btn btn--kleur4 card-more" href="https://fccl.nl" target="_blank" rel="noopener"><?php esc_html_e( 'Bekijk FCCL', 'diespe' ); ?></a>
 				</div>

@@ -47,7 +47,6 @@ $kaarten = array(
 );
 
 $over_intro = diespe_home_text( 'over_intro', __( 'DIESPE Omgevingsprojecten is het adviesbureau van oprichter Diederik Speksnijder. Bevlogen, betrokken en integer — met de focus op omgevingsprojecten in de grond-, weg- en waterbouw.', 'diespe' ) );
-$over_naam  = diespe_home_text( 'over_naam', __( 'Diederik Speksnijder', 'diespe' ) );
 $over_tekst1 = diespe_home_text( 'over_tekst1', __( 'Diederik Speksnijder is oprichter van DIESPE en al meer dan 25 jaar een bevlogen, betrokken en integer manager in de grond-, weg- en waterbouw. Hij stuurt het team van DIESPE aan en is zelf, als een van de gepassioneerde medewerkers, dagelijks betrokken bij de projecten.', 'diespe' ) );
 $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proces aan de inhoud, doorziet de materie snel en komt tot oplossingen — met persoonlijke aandacht voor opdrachtgevers en teamleden. Denk aan watersysteem- en energieprojecten, waterveiligheid en gebiedsontwikkeling.', 'diespe' ) );
 ?>

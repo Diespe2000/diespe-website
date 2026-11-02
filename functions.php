@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DIESPE_VERSION', '1.4.2' );
+define( 'DIESPE_VERSION', '1.5.0' );
 
 /**
  * Themasetup.

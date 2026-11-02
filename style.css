@@ -382,6 +382,8 @@ p { margin: 0 0 1.2em; }
   border-radius: var(--diespe-radius);
   padding: 30px 26px;
   box-shadow: var(--diespe-shadow);
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -420,7 +422,6 @@ p { margin: 0 0 1.2em; }
   margin-bottom: 16px;
 }
 
-.card .card-more { padding: 9px 18px; font-size: 0.9rem; }
 
 .card ul { list-style: none; padding: 0; margin: 0 0 1em; }
 .card li { padding-left: 24px; position: relative; margin-bottom: 6px; color: var(--diespe-muted); }
@@ -454,8 +455,6 @@ p { margin: 0 0 1.2em; }
 
 .project-card .project-thumb { aspect-ratio: 16 / 10; overflow: hidden; background: var(--diespe-bg-alt); }
 .project-card .project-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.project-card .project-foto { aspect-ratio: 16 / 10; overflow: hidden; background: var(--diespe-bg-alt); }
-.project-card .project-foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .project-card .project-body { padding: 22px 22px 26px; flex: 1; display: flex; flex-direction: column; }
 
@@ -468,8 +467,6 @@ p { margin: 0 0 1.2em; }
   margin-bottom: 8px;
 }
 
-.project-card h3 { font-size: 1.2rem; margin-bottom: 0.4em; }
-.project-card h3 a { color: var(--diespe-blue); }
 
 .project-card .btn { margin-top: auto; align-self: flex-start; padding: 9px 18px; font-size: 0.9rem; }
 
@@ -677,7 +674,6 @@ button[type="submit"], .wp-block-search__button, .search-submit { border: 0; cur
 
 /* Over DIESPE: accent voor de Diederik-kaart */
 .card--diederik {
-  border-top-color: var(--diespe-blue);
   background: linear-gradient(180deg, var(--diespe-bg-alt) 0%, #fff 40%);
 }
 
@@ -690,11 +686,9 @@ button[type="submit"], .wp-block-search__button, .search-submit { border: 0; cur
 .btn--kleur3:hover, .btn--kleur3:focus { background: var(--diespe-orange); border-color: var(--diespe-orange); }
 
 /* Kaarten gelijk hoog: knop onderaan vastpunten */
-.card { display: flex; flex-direction: column; }
 .card > :last-child, .card > .card-more { margin-top: auto; }
 .card ul { margin-bottom: 0; }
 .card p:last-of-type { margin-bottom: 0; }
-.card .card-more { align-self: flex-start; margin-top: 16px; }
 
 /* =Projecten: filterbare flip-tegels
 -------------------------------------------------------------- */
@@ -729,9 +723,7 @@ button[type="submit"], .wp-block-search__button, .search-submit { border: 0; cur
 }
 .tile-cat { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
 .tile-titel { font-size: 1.05rem; font-weight: 700; line-height: 1.25; }
-.flip-back { transform: rotateY(180deg); padding: 20px 20px 16px; }
-.flip-back h3 { font-size: 1rem; margin-bottom: 0.5em; }
-.flip-back p { font-size: 0.85rem; color: var(--diespe-muted); margin-bottom: 0.7em; }
+.flip-back { transform: rotateY(180deg); padding: 20px 20px 16px; display: flex; flex-direction: column; }
 .tile-info { list-style: none; padding: 0; margin: 0 0 0.8em; font-size: 0.8rem; color: var(--diespe-muted); }
 .tile-info li { margin-bottom: 4px; }
 .tile-info strong { color: var(--diespe-blue); }
@@ -753,9 +745,6 @@ button[type="submit"], .wp-block-search__button, .search-submit { border: 0; cur
 
 /* =Partners-logo's
 -------------------------------------------------------------- */
-.partners-strip {
-  background: var(--diespe-blue);
-}
 .logo-marquee {
   overflow: hidden;
   position: relative;
@@ -797,7 +786,11 @@ a.logo-item:hover { opacity: 0.8; }
 }
 .partners-strip .section-title { color: #fff; }
 
-.partners-strip { padding-top: 44px; padding-bottom: 44px; }
+.partners-strip {
+  background: var(--diespe-blue);
+  padding-top: 44px;
+  padding-bottom: 44px;
+}
 .partners-strip .section-intro { margin-bottom: 22px; }
 
 /* =Sponsoring (DIESPE in de regio)
@@ -856,7 +849,6 @@ a.logo-item:hover { opacity: 0.8; }
 
 /* Titel-icoon en categorie-icoontjes */
 .titel-icoon { margin-right: 8px; }
-.meta-icoon { margin-right: 4px; }
 
 /* =Titel-bullets (ronde huisstijl-badge met wit icoon)
 -------------------------------------------------------------- */
@@ -917,7 +909,6 @@ a.logo-item:hover { opacity: 0.8; }
 .meta-icoon--groen { background: var(--diespe-green); }
 .meta-icoon--donkerblauw { background: var(--diespe-blue); }
 /* de tekst ernaast behoudt de categorielkleur; badge neemt die kleur over via currentColor */
-.project-meta { color: var(--diespe-muted); }
 .project-meta .meta-icoon { background: currentColor; }
 
 /* Sponsor-cards gelijk aan andere kaarten */
@@ -935,7 +926,6 @@ a.logo-item:hover { opacity: 0.8; }
 
 /* =Tegel-achterzijde: tekst past altijd (compacte weergave)
 -------------------------------------------------------------- */
-.flip-back { display: flex; flex-direction: column; }
 .flip-back h3 {
   font-size: 0.95rem;
   margin-bottom: 0.5em;
@@ -972,13 +962,8 @@ a.logo-item:hover { opacity: 0.8; }
 .meta-icoon--badge { width: 24px; height: 24px; font-size: 13px; margin-right: 7px; }
 
 /* Projectkaarten: gekleurde bovenrand + badge-structuur (zelfde als werkveld-kaarten) */
-.project-card { border-top: 4px solid var(--diespe-blue); }
-.project-card .card-header { margin-bottom: 10px; }
-.project-card .card-header h3 { margin: 0; font-size: 1.15rem; }
-.project-card .card-header h3 a { color: var(--diespe-blue); text-decoration: none; }
-.project-card .project-meta { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5em; }
+.project-card roject-card .project-card .project-card .project-meta { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5em; }
 .project-card .btn.card-more { margin-top: auto; align-self: flex-start; }
-.project-card .project-body { display: flex; flex-direction: column; flex: 1; padding: 22px 22px 26px; }
 
 /* Kaart-randkleuren per kolom (badge-, knop- en randkleur gelijk) */
 .card--blauw { border-top: 4px solid var(--diespe-blue); }

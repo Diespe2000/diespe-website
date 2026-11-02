@@ -110,7 +110,7 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 <section class="section section--alt" id="projecten">
 	<div class="container">
 		<h2 class="section-title"><span class="titel-badge titel-badge--oranje" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/meetlat.svg' ); ?>" alt=""></span> <?php esc_html_e( 'Projecten', 'diespe' ); ?></h2>
-		<p class="section-intro"><?php esc_html_e( 'Een selectie van de opgaven waaraan wij werken.', 'diespe' ); ?></p>
+		<p class="section-intro"><?php esc_html_e( 'Een selectie van opgaven waaraan DIESPE heeft gewerkt.', 'diespe' ); ?></p>
 
 		<?php
 		$showcase = new WP_Query( array(

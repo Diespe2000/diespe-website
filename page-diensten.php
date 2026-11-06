@@ -16,38 +16,45 @@ $intro = diespe_home_text( 'werkvelden_intro', __( 'Van initiatief tot opleverin
 	</header>
 
 	<div class="grid-3">
-		<div class="card">
-			<div class="card-header"><span class="card-icon" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/gereedschap.svg' ); ?>" alt=""></span><h3><?php esc_html_e( 'Management', 'diespe' ); ?></h3></div>
-			<p><?php esc_html_e( 'Leidinggeven aan teams van professionals: integrale projectteams en IPM-teams, van initiatief tot realisatie.', 'diespe' ); ?></p>
+		<?php
+		$diensten_kaarten = array(
+			array(
+				'icon'  => 'gereedschap.svg',
+				'kleur' => '',
+				'titel' => diespe_home_text( 'kaart1_titel', __( 'Management', 'diespe' ) ),
+				'tekst' => diespe_home_text( 'kaart1_tekst', __( 'Leidinggeven aan teams van professionals: integrale projectteams en IPM-teams, van initiatief tot realisatie.', 'diespe' ) ),
+				'punten' => diespe_home_text( 'kaart1_punten', __( "Leidinggeven aan teams van professionals, integrale projectteams, IPM-teams\nTeamleden in hun kracht zetten\nProcesregie en bestuurlijke besluitvorming\nRisicomanagement, inkoop en contracteren", 'diespe' ) ),
+				'voorbeeld' => diespe_home_text( 'kaart1_voorbeeld', __( 'Zoals: Vispassage Doesburg — één van Nederlands grootste vispassages, van verkenning tot realisatie.', 'diespe' ) ),
+			),
+			array(
+				'icon'  => 'tandwiel.svg',
+				'kleur' => ' card-icon--oranje',
+				'titel' => diespe_home_text( 'kaart2_titel', __( 'Integrale ontwerpleiding', 'diespe' ) ),
+				'tekst' => diespe_home_text( 'kaart2_tekst', __( 'Vertalen van beleidsdoelen en opgaven naar integrale oplossingen: realiseerbaar, betaalbaar en acceptabel, met oog voor detail en duurzaamheid.', 'diespe' ) ),
+				'punten' => diespe_home_text( 'kaart2_punten', __( "Beleidsdoelen en opgaven vertalen naar integrale, realiseerbare oplossingen\nOntwerpfasering: verkenning, planuitwerking, realiseerbaar ontwerp\nSysteembenadering en passende contractvormen", 'diespe' ) ),
+				'voorbeeld' => diespe_home_text( 'kaart2_voorbeeld', __( 'Zoals: Waardevolle Kleine Wateren, Bovenlopen Loolee — KRW-doelen vertaald naar inrichtingsmaatregelen voor vier beken.', 'diespe' ) ),
+			),
+			array(
+				'icon'  => 'natuur.svg',
+				'kleur' => ' card-icon--groen',
+				'titel' => diespe_home_text( 'kaart3_titel', __( 'Omgevingsgericht werken', 'diespe' ) ),
+				'tekst' => diespe_home_text( 'kaart3_tekst', __( 'Samenwerking, vertrouwen en het versterken van elkaars krachten — binnen en buiten het project.', 'diespe' ) ),
+				'punten' => diespe_home_text( 'kaart3_punten', __( "Omgevingsbewust werken met oog voor belangen\nDraagvlak creéren en betrokkenheid van belanghebbenden\nBelangen balanceren en win-win oplossingen vinden\nGebiedsontwikkeling met maatschappelijke meerwaarde", 'diespe' ) ),
+				'voorbeeld' => diespe_home_text( 'kaart3_voorbeeld', __( 'Zoals: Optimalisatie watersysteem Lichtenvoorde — wateroverlast aangepakt met draagvlak in de wijk.', 'diespe' ) ),
+			),
+		);
+		foreach ( $diensten_kaarten as $kaart ) : ?>
+			<div class="card">
+				<div class="card-header"><span class="card-icon<?php echo esc_attr( $kaart['kleur'] ); ?>" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/' . $kaart['icon'] ); ?>" alt=""></span><h3><?php echo esc_html( $kaart['titel'] ); ?></h3></div>
+				<p><?php echo esc_html( $kaart['tekst'] ); ?></p>
 			<ul>
-				<li><?php esc_html_e( 'Leidinggeven aan teams van professionals, integrale projectteams, IPM-teams', 'diespe' ); ?></li>
-				<li><?php esc_html_e( 'Teamleden in hun kracht zetten', 'diespe' ); ?></li>
-				<li><?php esc_html_e( 'Procesregie en bestuurlijke besluitvorming', 'diespe' ); ?></li>
-				<li><?php esc_html_e( 'Risicomanagement, inkoop en contracteren', 'diespe' ); ?></li>
+				<?php foreach ( array_filter( array_map( 'trim', explode( "\n", $kaart['punten'] ) ) ) as $punt ) : ?>
+					<li><?php echo esc_html( $punt ); ?></li>
+				<?php endforeach; ?>
 			</ul>
-			<p class="card-case"><?php esc_html_e( 'Zoals: Vispassage Doesburg — één van Nederlands grootste vispassages, van verkenning tot realisatie.', 'diespe' ); ?></p>
-		</div>
-		<div class="card">
-			<div class="card-header"><span class="card-icon card-icon--oranje" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/tandwiel.svg' ); ?>" alt=""></span><h3><?php esc_html_e( 'Integrale ontwerpleiding', 'diespe' ); ?></h3></div>
-			<p><?php esc_html_e( 'Vertalen van beleidsdoelen en opgaven naar integrale oplossingen: realiseerbaar, betaalbaar en acceptabel, met oog voor detail en duurzaamheid.', 'diespe' ); ?></p>
-			<ul>
-				<li><?php esc_html_e( 'Beleidsdoelen en opgaven vertalen naar integrale, realiseerbare oplossingen', 'diespe' ); ?></li>
-				<li><?php esc_html_e( 'Ontwerpfasering: verkenning, planuitwerking, realiseerbaar ontwerp', 'diespe' ); ?></li>
-				<li><?php esc_html_e( 'Systeembenadering en passende contractvormen', 'diespe' ); ?></li>
-			</ul>
-			<p class="card-case"><?php esc_html_e( 'Zoals: Waardevolle Kleine Wateren, Bovenlopen Loolee — KRW-doelen vertaald naar inrichtingsmaatregelen voor vier beken.', 'diespe' ); ?></p>
-		</div>
-		<div class="card">
-			<div class="card-header"><span class="card-icon card-icon--groen" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/natuur.svg' ); ?>" alt=""></span><h3><?php esc_html_e( 'Omgevingsgericht werken', 'diespe' ); ?></h3></div>
-			<p><?php esc_html_e( 'Samenwerking, vertrouwen en het versterken van elkaars krachten — binnen en buiten het project.', 'diespe' ); ?></p>
-			<ul>
-				<li><?php esc_html_e( 'Omgevingsbewust werken met oog voor belangen', 'diespe' ); ?></li>
-				<li><?php esc_html_e( 'Draagvlak creëren en betrokkenheid van belanghebbenden', 'diespe' ); ?></li>
-				<li><?php esc_html_e( 'Belangen balanceren en win-win oplossingen vinden', 'diespe' ); ?></li>
-				<li><?php esc_html_e( 'Gebiedsontwikkeling met maatschappelijke meerwaarde', 'diespe' ); ?></li>
-			</ul>
-			<p class="card-case"><?php esc_html_e( 'Zoals: Optimalisatie watersysteem Lichtenvoorde — wateroverlast aangepakt met draagvlak in de wijk.', 'diespe' ); ?></p>
-		</div>
+			<p class="card-case"><?php echo esc_html( $kaart['voorbeeld'] ); ?></p>
+			</div>
+		<?php endforeach; ?>
 	</div>
 
 	<p style="text-align:center; margin-top:44px;">

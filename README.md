@@ -75,9 +75,20 @@ Alle inhoudelijke teksten op de homepage zijn **zonder code aan te passen** via
 
 - Hero: titel en tekst
 - Werkgebieden-balk: één werkgebied per regel (vul je eigen lijst in)
-- Werkvelden: intro en per kaart titel, omschrijving, punten (één per regel) en
-  praktijkvoorbeeld
-- Over DIESPE: intro, naam en twee tekstblokken
+- Werkvelden: sectietitel, intro en per kaart titel, omschrijving, punten
+  (één per regel) en praktijkvoorbeeld
+- Projecten: sectietitel en intro
+- Over DIESPE: sectietitel, intro, naam en twee tekstblokken
+- Waarom DIESPE: titel, omschrijving en punten (één per regel) — ook op de Over-pagina
+- Werkwijze: titel, omschrijving en punten (één per regel) — ook op de Over-pagina
+- Sponsoring ("DIESPE in de regio"): sectietitel, intro en per sponsorkaart titel,
+  tekst, knoptekst, link en afbeelding
+- Partners: sectietitel en intro
+- Footer: omschrijving
+
+De drie dienstenkaarten op de Diensten-pagina gebruiken dezelfde velden als de
+werkveldkaarten op de homepage (Kaart 1 t/m 3): pas ze één keer aan en ze veranderen
+op beide plekken mee.
 
 Laat je een veld leeg, dan geldt de ingebouwde standaardtekst. De Customizer toont
 live een voorvertoning naast het aanpassen.

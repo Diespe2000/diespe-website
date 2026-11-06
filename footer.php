@@ -8,6 +8,7 @@
 $phone   = get_theme_mod( 'diespe_phone', '+31 653 14 23 95' );
 $address = get_theme_mod( 'diespe_address', 'Mercurius 19' );
 $postal  = get_theme_mod( 'diespe_postal', '7131 HS Lichtenvoorde' );
+$footer_tekst = diespe_home_text( 'footer_tekst', __( 'Partner in duurzame omgevingsprojecten. Project-, Technisch- en Omgevingsmanagement van omgevings- en energieprojecten.', 'diespe' ) );
 ?>
 </main>
 
@@ -17,7 +18,7 @@ $postal  = get_theme_mod( 'diespe_postal', '7131 HS Lichtenvoorde' );
 		<div class="footer-grid footer-grid--twee">
 			<div>
 				<h4>DIESPE Omgevingsprojecten</h4>
-				<p><?php esc_html_e( 'Partner in duurzame omgevingsprojecten. Project-, Technisch- en Omgevingsmanagement van omgevings- en energieprojecten.', 'diespe' ); ?></p>
+				<p><?php echo esc_html( $footer_tekst ); ?></p>
 			</div>
 			<div>
 				<h4><?php esc_html_e( 'Contact', 'diespe' ); ?></h4>

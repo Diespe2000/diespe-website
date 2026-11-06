@@ -25,25 +25,22 @@ $over_tekst2 = diespe_home_text( 'over_tekst2', __( 'Diederik verbindt het proce
 			<a class="btn btn--kleur1 card-more" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Neem contact op', 'diespe' ); ?></a>
 		</div>
 		<div class="card">
-			<div class="card-header"><span class="card-icon card-icon--oranje" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/ster.svg' ); ?>" alt=""></span><h3><?php esc_html_e( 'Waarom DIESPE', 'diespe' ); ?></h3></div>
-			<p><?php esc_html_e( 'DIESPE staat voor pragmatisch projectmanagement met de mens en de omgeving centraal, op zoek naar maatschappelijke meerwaarde.', 'diespe' ); ?></p>
+			<div class="card-header"><span class="card-icon card-icon--oranje" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/ster.svg' ); ?>" alt=""></span><h3><?php echo esc_html( $waarom_titel ); ?></h3></div>
+			<p><?php echo esc_html( $waarom_tekst ); ?></p>
 			<ul>
-				<li><?php esc_html_e( 'Eerst denken, dan doen', 'diespe' ); ?></li>
-				<li><?php esc_html_e( 'Denkt in kansen en oplossingen, ook out-of-the-box', 'diespe' ); ?></li>
-				<li><?php esc_html_e( 'Omgevingsbewust en resultaatgericht', 'diespe' ); ?></li>
-				<li><?php esc_html_e( 'Hoge dienstverlening', 'diespe' ); ?></li>
-				<li><?php esc_html_e( 'Eén aanspreekpunt, van initiatief tot realisatie', 'diespe' ); ?></li>
+				<?php foreach ( array_filter( array_map( 'trim', explode( "\n", $waarom_punten ) ) ) as $punt ) : ?>
+					<li><?php echo esc_html( $punt ); ?></li>
+				<?php endforeach; ?>
 			</ul>
 			<a class="btn btn--kleur4 card-more" href="<?php echo esc_url( home_url( '/werkvelden/' ) ); ?>"><?php esc_html_e( 'Naar de diensten', 'diespe' ); ?></a>
 		</div>
 		<div class="card">
-			<div class="card-header"><span class="card-icon card-icon--groen" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/wereld.svg' ); ?>" alt=""></span><h3><?php esc_html_e( 'Werkwijze', 'diespe' ); ?></h3></div>
-			<p><?php esc_html_e( 'Persoonlijk contact staat bij DIESPE voorop. Na een uitgebreide kennismaking om uw vraag echt te doorgronden, volgt een gedegen analyse en aanpak die met u wordt besproken — maatwerk, opnieuw en opnieuw.', 'diespe' ); ?></p>
+			<div class="card-header"><span class="card-icon card-icon--groen" aria-hidden="true"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/iconen/wereld.svg' ); ?>" alt=""></span><h3><?php echo esc_html( $werkwijze_titel ); ?></h3></div>
+			<p><?php echo esc_html( $werkwijze_tekst ); ?></p>
 			<ul>
-				<li><?php esc_html_e( 'Verkennen: opgave helder krijgen, kansen benoemen', 'diespe' ); ?></li>
-				<li><?php esc_html_e( 'Ontwerpen: integrale oplossingen, realiseerbaar en betaalbaar', 'diespe' ); ?></li>
-				<li><?php esc_html_e( 'Verbinden: draagvlak bij belanghebbenden en bestuur', 'diespe' ); ?></li>
-				<li><?php esc_html_e( 'Realiseren: passende contractvorm, van plan tot oplevering', 'diespe' ); ?></li>
+				<?php foreach ( array_filter( array_map( 'trim', explode( "\n", $werkwijze_punten ) ) ) as $punt ) : ?>
+					<li><?php echo esc_html( $punt ); ?></li>
+				<?php endforeach; ?>
 			</ul>
 			<a class="btn btn--kleur2 card-more" href="<?php echo esc_url( get_post_type_archive_link( 'diespe_project' ) ); ?>"><?php esc_html_e( 'Bekijk de projecten', 'diespe' ); ?></a>
 		</div>

@@ -210,6 +210,22 @@ function diespe_customize_register( $wp_customize ) {
 			'type'    => 'url',
 		) );
 	}
+
+	$sponsor_afbeeldingen = array(
+		1 => __( 'Sponsorkaart 1: afbeelding', 'diespe' ),
+		2 => __( 'Sponsorkaart 2: afbeelding', 'diespe' ),
+		3 => __( 'Sponsorkaart 3: afbeelding', 'diespe' ),
+	);
+	foreach ( $sponsor_afbeeldingen as $i => $label ) {
+		$wp_customize->add_setting( 'diespe_sponsor' . $i . '_afbeelding', array(
+			'default'           => '',
+			'sanitize_callback' => 'esc_url_raw',
+		) );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'diespe_sponsor' . $i . '_afbeelding', array(
+				'label'   => $label,
+				'section' => 'diespe_homepage',
+		) ) );
+	}
 }
 add_action( 'customize_register', 'diespe_customize_register' );
 
@@ -253,12 +269,39 @@ function diespe_customize_homepage_texts( $wp_customize ) {
 		'over_naam'         => array( __( 'Over DIESPE: naam', 'diespe' ), 'text' ),
 		'over_tekst1'       => array( __( 'Over DIESPE: tekst 1', 'diespe' ), 'textarea' ),
 		'over_tekst2'       => array( __( 'Over DIESPE: tekst 2', 'diespe' ), 'textarea' ),
+		'werkvelden_titel'  => array( __( 'Sectietitel: Werkvelden', 'diespe' ), 'text' ),
+		'projecten_titel'   => array( __( 'Sectietitel: Projecten', 'diespe' ), 'text' ),
+		'projecten_intro'   => array( __( 'Projecten: intro', 'diespe' ), 'textarea' ),
+		'over_titel'        => array( __( 'Sectietitel: Over DIESPE', 'diespe' ), 'text' ),
+		'waarom_titel'      => array( __( 'Waarom DIESPE: titel', 'diespe' ), 'text' ),
+		'waarom_tekst'      => array( __( 'Waarom DIESPE: omschrijving', 'diespe' ), 'textarea' ),
+		'waarom_punten'     => array( __( 'Waarom DIESPE: punten (een per regel)', 'diespe' ), 'textarea' ),
+		'werkwijze_titel'   => array( __( 'Werkwijze: titel', 'diespe' ), 'text' ),
+		'werkwijze_tekst'   => array( __( 'Werkwijze: omschrijving', 'diespe' ), 'textarea' ),
+		'werkwijze_punten'  => array( __( 'Werkwijze: punten (een per regel)', 'diespe' ), 'textarea' ),
+		'sponsoring_titel'  => array( __( 'Sponsoring: sectietitel', 'diespe' ), 'text' ),
+		'sponsoring_intro'  => array( __( 'Sponsoring: intro', 'diespe' ), 'textarea' ),
+		'sponsor1_titel'    => array( __( 'Sponsorkaart 1: titel', 'diespe' ), 'text' ),
+		'sponsor1_tekst'    => array( __( 'Sponsorkaart 1: tekst', 'diespe' ), 'textarea' ),
+		'sponsor1_knop'     => array( __( 'Sponsorkaart 1: knoptekst', 'diespe' ), 'text' ),
+		'sponsor1_url'      => array( __( 'Sponsorkaart 1: link (URL)', 'diespe' ), 'url' ),
+		'sponsor2_titel'    => array( __( 'Sponsorkaart 2: titel', 'diespe' ), 'text' ),
+		'sponsor2_tekst'    => array( __( 'Sponsorkaart 2: tekst', 'diespe' ), 'textarea' ),
+		'sponsor2_knop'     => array( __( 'Sponsorkaart 2: knoptekst', 'diespe' ), 'text' ),
+		'sponsor2_url'      => array( __( 'Sponsorkaart 2: link (URL)', 'diespe' ), 'url' ),
+		'sponsor3_titel'    => array( __( 'Sponsorkaart 3: titel', 'diespe' ), 'text' ),
+		'sponsor3_tekst'    => array( __( 'Sponsorkaart 3: tekst', 'diespe' ), 'textarea' ),
+		'sponsor3_knop'     => array( __( 'Sponsorkaart 3: knoptekst', 'diespe' ), 'text' ),
+		'sponsor3_url'      => array( __( 'Sponsorkaart 3: link (URL)', 'diespe' ), 'url' ),
+		'partners_titel'    => array( __( 'Partners: sectietitel', 'diespe' ), 'text' ),
+		'partners_intro'    => array( __( 'Partners: intro', 'diespe' ), 'textarea' ),
+		'footer_tekst'      => array( __( 'Footer: omschrijving', 'diespe' ), 'textarea' ),
 	);
 
 	foreach ( $fields as $id => $field ) {
 		$wp_customize->add_setting( 'diespe_txt_' . $id, array(
 			'default'           => '',
-			'sanitize_callback' => 'text' === $field[1] ? 'sanitize_text_field' : 'wp_kses_post',
+			'sanitize_callback' => 'url' === $field[1] ? 'esc_url_raw' : ( 'text' === $field[1] ? 'sanitize_text_field' : 'wp_kses_post' ),
 		) );
 		$wp_customize->add_control( 'diespe_txt_' . $id, array(
 			'label'   => $field[0],

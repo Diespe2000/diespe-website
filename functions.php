@@ -166,9 +166,31 @@ function diespe_customize_register( $wp_customize ) {
 		'diespe_postal'   => __( 'Postcode en plaats', 'diespe' ),
 		'diespe_kvk'      => __( 'KvK-nummer', 'diespe' ),
 		'diespe_tagline'  => __( 'Payoff', 'diespe' ),
-		'diespe_ts_site'  => __( 'Turnstile site-sleutel (optioneel)', 'diespe' ),
-		'diespe_ts_secret' => __( 'Turnstile secret-sleutel (optioneel)', 'diespe' ),
 	);
+
+	$turnstile_fields = array(
+		'diespe_ts_site'   => array(
+			'label'       => __( 'Turnstile site-sleutel (optioneel)', 'diespe' ),
+			'description' => __( 'Cloudflare-dashboard → Turnstile → widget → "Site Key" (de publieke code). Zonder deze sleutel wordt geen checkbox getoond.', 'diespe' ),
+		),
+		'diespe_ts_secret' => array(
+			'label'       => __( 'Turnstile secret-sleutel (optioneel)', 'diespe' ),
+			'description' => __( 'Cloudflare-dashboard → Turnstile → widget → "Secret Key" (de privécode). Verificatie is alleen actief als ook de site-sleutel is ingevuld.', 'diespe' ),
+		),
+	);
+
+	foreach ( $turnstile_fields as $id => $info ) {
+		$wp_customize->add_setting( $id, array(
+			'default'           => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		) );
+		$wp_customize->add_control( $id, array(
+			'label'       => $info['label'],
+			'description' => $info['description'],
+			'section'     => 'diespe_contact',
+			'type'        => 'text',
+		) );
+	}
 
 	foreach ( $fields as $id => $label ) {
 		$wp_customize->add_setting( $id, array(
@@ -329,7 +351,7 @@ function diespe_contact_form_shortcode() {
 		} elseif ( isset( $_POST['diespe_tijd'] ) && ( time() - (int) $_POST['diespe_tijd'] ) < 5 ) {
 			// Te snel verzonden: vrijwel zeker een bot.
 			$verzonden = true;
-		} elseif ( get_theme_mod( 'diespe_ts_secret' ) && ! diespe_turnstile_ok() ) {
+		} elseif ( get_theme_mod( 'diespe_ts_secret' ) && get_theme_mod( 'diespe_ts_site' ) && ! diespe_turnstile_ok() ) {
 			$fout = __( 'De verificatie is niet gelukt. Probeer het opnieuw.', 'diespe' );
 		} else {
 			$naam    = sanitize_text_field( wp_unslash( $_POST['diespe_naam'] ?? '' ) );
@@ -361,6 +383,9 @@ function diespe_contact_form_shortcode() {
 	ob_start();
 	?>
 	<div class="diespe-contactform">
+		<?php if ( current_user_can( 'manage_options' ) && (bool) get_theme_mod( 'diespe_ts_secret' ) !== (bool) get_theme_mod( 'diespe_ts_site' ) ) : ?>
+			<p class="diespe-notice diespe-notice--error" style="opacity:.85;"><?php esc_html_e( 'Let op (alleen zichtbaar voor beheerders): Turnstile is niet compleet geconfigureerd — vul zowel de site-sleutel als de secret-sleutel in via de Customizer (Contactgegevens), of maak beide velden leeg. Zolang er slechts één sleutel is ingevuld, is de Turnstile-verificatie uitgeschakeld.', 'diespe' ); ?></p>
+		<?php endif; ?>
 		<?php if ( $verzonden ) : ?>
 			<p class="diespe-notice diespe-notice--success"><?php esc_html_e( 'Bedankt! Uw bericht is verzonden. Ik neem zo snel mogelijk contact met u op.', 'diespe' ); ?></p>
 		<?php else : ?>

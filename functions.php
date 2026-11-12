@@ -166,9 +166,31 @@ function diespe_customize_register( $wp_customize ) {
 		'diespe_postal'   => __( 'Postcode en plaats', 'diespe' ),
 		'diespe_kvk'      => __( 'KvK-nummer', 'diespe' ),
 		'diespe_tagline'  => __( 'Payoff', 'diespe' ),
-		'diespe_ts_site'  => __( 'Turnstile site-sleutel (optioneel)', 'diespe' ),
-		'diespe_ts_secret' => __( 'Turnstile secret-sleutel (optioneel)', 'diespe' ),
 	);
+
+	$turnstile_fields = array(
+		'diespe_ts_site'   => array(
+			'label'       => __( 'Turnstile site-sleutel (optioneel)', 'diespe' ),
+			'description' => __( 'Cloudflare-dashboard → Turnstile → widget → "Site Key" (de publieke code). Zonder deze sleutel wordt geen checkbox getoond.', 'diespe' ),
+		),
+		'diespe_ts_secret' => array(
+			'label'       => __( 'Turnstile secret-sleutel (optioneel)', 'diespe' ),
+			'description' => __( 'Cloudflare-dashboard → Turnstile → widget → "Secret Key" (de privécode). Verificatie is alleen actief als ook de site-sleutel is ingevuld.', 'diespe' ),
+		),
+	);
+
+	foreach ( $turnstile_fields as $id => $info ) {
+		$wp_customize->add_setting( $id, array(
+			'default'           => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		) );
+		$wp_customize->add_control( $id, array(
+			'label'       => $info['label'],
+			'description' => $info['description'],
+			'section'     => 'diespe_contact',
+			'type'        => 'text',
+		) );
+	}
 
 	foreach ( $fields as $id => $label ) {
 		$wp_customize->add_setting( $id, array(
@@ -209,6 +231,22 @@ function diespe_customize_register( $wp_customize ) {
 			'section' => 'diespe_homepage',
 			'type'    => 'url',
 		) );
+	}
+
+	$sponsor_afbeeldingen = array(
+		1 => __( 'Sponsorkaart 1: afbeelding', 'diespe' ),
+		2 => __( 'Sponsorkaart 2: afbeelding', 'diespe' ),
+		3 => __( 'Sponsorkaart 3: afbeelding', 'diespe' ),
+	);
+	foreach ( $sponsor_afbeeldingen as $i => $label ) {
+		$wp_customize->add_setting( 'diespe_sponsor' . $i . '_afbeelding', array(
+			'default'           => '',
+			'sanitize_callback' => 'esc_url_raw',
+		) );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'diespe_sponsor' . $i . '_afbeelding', array(
+				'label'   => $label,
+				'section' => 'diespe_homepage',
+		) ) );
 	}
 }
 add_action( 'customize_register', 'diespe_customize_register' );
@@ -253,12 +291,39 @@ function diespe_customize_homepage_texts( $wp_customize ) {
 		'over_naam'         => array( __( 'Over DIESPE: naam', 'diespe' ), 'text' ),
 		'over_tekst1'       => array( __( 'Over DIESPE: tekst 1', 'diespe' ), 'textarea' ),
 		'over_tekst2'       => array( __( 'Over DIESPE: tekst 2', 'diespe' ), 'textarea' ),
+		'werkvelden_titel'  => array( __( 'Sectietitel: Werkvelden', 'diespe' ), 'text' ),
+		'projecten_titel'   => array( __( 'Sectietitel: Projecten', 'diespe' ), 'text' ),
+		'projecten_intro'   => array( __( 'Projecten: intro', 'diespe' ), 'textarea' ),
+		'over_titel'        => array( __( 'Sectietitel: Over DIESPE', 'diespe' ), 'text' ),
+		'waarom_titel'      => array( __( 'Waarom DIESPE: titel', 'diespe' ), 'text' ),
+		'waarom_tekst'      => array( __( 'Waarom DIESPE: omschrijving', 'diespe' ), 'textarea' ),
+		'waarom_punten'     => array( __( 'Waarom DIESPE: punten (een per regel)', 'diespe' ), 'textarea' ),
+		'werkwijze_titel'   => array( __( 'Werkwijze: titel', 'diespe' ), 'text' ),
+		'werkwijze_tekst'   => array( __( 'Werkwijze: omschrijving', 'diespe' ), 'textarea' ),
+		'werkwijze_punten'  => array( __( 'Werkwijze: punten (een per regel)', 'diespe' ), 'textarea' ),
+		'sponsoring_titel'  => array( __( 'Sponsoring: sectietitel', 'diespe' ), 'text' ),
+		'sponsoring_intro'  => array( __( 'Sponsoring: intro', 'diespe' ), 'textarea' ),
+		'sponsor1_titel'    => array( __( 'Sponsorkaart 1: titel', 'diespe' ), 'text' ),
+		'sponsor1_tekst'    => array( __( 'Sponsorkaart 1: tekst', 'diespe' ), 'textarea' ),
+		'sponsor1_knop'     => array( __( 'Sponsorkaart 1: knoptekst', 'diespe' ), 'text' ),
+		'sponsor1_url'      => array( __( 'Sponsorkaart 1: link (URL)', 'diespe' ), 'url' ),
+		'sponsor2_titel'    => array( __( 'Sponsorkaart 2: titel', 'diespe' ), 'text' ),
+		'sponsor2_tekst'    => array( __( 'Sponsorkaart 2: tekst', 'diespe' ), 'textarea' ),
+		'sponsor2_knop'     => array( __( 'Sponsorkaart 2: knoptekst', 'diespe' ), 'text' ),
+		'sponsor2_url'      => array( __( 'Sponsorkaart 2: link (URL)', 'diespe' ), 'url' ),
+		'sponsor3_titel'    => array( __( 'Sponsorkaart 3: titel', 'diespe' ), 'text' ),
+		'sponsor3_tekst'    => array( __( 'Sponsorkaart 3: tekst', 'diespe' ), 'textarea' ),
+		'sponsor3_knop'     => array( __( 'Sponsorkaart 3: knoptekst', 'diespe' ), 'text' ),
+		'sponsor3_url'      => array( __( 'Sponsorkaart 3: link (URL)', 'diespe' ), 'url' ),
+		'partners_titel'    => array( __( 'Partners: sectietitel', 'diespe' ), 'text' ),
+		'partners_intro'    => array( __( 'Partners: intro', 'diespe' ), 'textarea' ),
+		'footer_tekst'      => array( __( 'Footer: omschrijving', 'diespe' ), 'textarea' ),
 	);
 
 	foreach ( $fields as $id => $field ) {
 		$wp_customize->add_setting( 'diespe_txt_' . $id, array(
 			'default'           => '',
-			'sanitize_callback' => 'text' === $field[1] ? 'sanitize_text_field' : 'wp_kses_post',
+			'sanitize_callback' => 'url' === $field[1] ? 'esc_url_raw' : ( 'text' === $field[1] ? 'sanitize_text_field' : 'wp_kses_post' ),
 		) );
 		$wp_customize->add_control( 'diespe_txt_' . $id, array(
 			'label'   => $field[0],
@@ -286,7 +351,7 @@ function diespe_contact_form_shortcode() {
 		} elseif ( isset( $_POST['diespe_tijd'] ) && ( time() - (int) $_POST['diespe_tijd'] ) < 5 ) {
 			// Te snel verzonden: vrijwel zeker een bot.
 			$verzonden = true;
-		} elseif ( get_theme_mod( 'diespe_ts_secret' ) && ! diespe_turnstile_ok() ) {
+		} elseif ( get_theme_mod( 'diespe_ts_secret' ) && get_theme_mod( 'diespe_ts_site' ) && ! diespe_turnstile_ok() ) {
 			$fout = __( 'De verificatie is niet gelukt. Probeer het opnieuw.', 'diespe' );
 		} else {
 			$naam    = sanitize_text_field( wp_unslash( $_POST['diespe_naam'] ?? '' ) );
@@ -318,6 +383,9 @@ function diespe_contact_form_shortcode() {
 	ob_start();
 	?>
 	<div class="diespe-contactform">
+		<?php if ( current_user_can( 'manage_options' ) && (bool) get_theme_mod( 'diespe_ts_secret' ) !== (bool) get_theme_mod( 'diespe_ts_site' ) ) : ?>
+			<p class="diespe-notice diespe-notice--error" style="opacity:.85;"><?php esc_html_e( 'Let op (alleen zichtbaar voor beheerders): Turnstile is niet compleet geconfigureerd — vul zowel de site-sleutel als de secret-sleutel in via de Customizer (Contactgegevens), of maak beide velden leeg. Zolang er slechts één sleutel is ingevuld, is de Turnstile-verificatie uitgeschakeld.', 'diespe' ); ?></p>
+		<?php endif; ?>
 		<?php if ( $verzonden ) : ?>
 			<p class="diespe-notice diespe-notice--success"><?php esc_html_e( 'Bedankt! Uw bericht is verzonden. Ik neem zo snel mogelijk contact met u op.', 'diespe' ); ?></p>
 		<?php else : ?>
@@ -350,7 +418,7 @@ function diespe_contact_form_shortcode() {
 				</p>
 				<?php $ts_site = get_theme_mod( 'diespe_ts_site' ); ?>
 				<?php if ( $ts_site ) : ?>
-					<div class="diespe-turnstile" data-sitekey="<?php echo esc_attr( $ts_site ); ?>"></div>
+					<div class="cf-turnstile diespe-turnstile" data-sitekey="<?php echo esc_attr( $ts_site ); ?>"></div>
 					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 				<?php endif; ?>
 				<div>

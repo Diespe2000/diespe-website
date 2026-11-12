@@ -418,7 +418,7 @@ function diespe_contact_form_shortcode() {
 				</p>
 				<?php $ts_site = get_theme_mod( 'diespe_ts_site' ); ?>
 				<?php if ( $ts_site ) : ?>
-					<div class="diespe-turnstile" data-sitekey="<?php echo esc_attr( $ts_site ); ?>"></div>
+					<div class="cf-turnstile diespe-turnstile" data-sitekey="<?php echo esc_attr( $ts_site ); ?>"></div>
 					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 				<?php endif; ?>
 				<div>
